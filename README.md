@@ -191,7 +191,7 @@ The following mechanisms have been quantitatively excluded:
 
 | File | Contents |
 |------|----------|
-| [README_EN.md](README_EN.md) | This file — full English overview |
+| [README.md](README.md) | This file — full English overview |
 | [05_Predictions_EN.md](05_Predictions_EN.md) | **Sealed predictions (JUICE & Europa Clipper)** |
 | [06_Falsification_EN.md](06_Falsification_EN.md) | Falsification conditions |
 | [04_Mathematics_EN.md](04_Mathematics_EN.md) | Mathematical derivations |
@@ -205,7 +205,7 @@ The following mechanisms have been quantitatively excluded:
 
 | 文件 | 內容 |
 |------|------|
-| [README.md](README.md) | 中文總索引 |
+| [README_ZH.md](README_ZH.md) | 中文總索引 |
 | [01_Observations.md](01_Observations.md) | 飛掠觀測數據 |
 | [02_Constraints.md](02_Constraints.md) | 觀測約束、封閉軌道定理 |
 | [03_Hypotheses.md](03_Hypotheses.md) | 假說架構 |
