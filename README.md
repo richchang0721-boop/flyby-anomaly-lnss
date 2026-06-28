@@ -1,3 +1,4 @@
+**[English](README.md) | [中文](README_ZH.md)**
 # LNSS Framework for Earth Flyby Anomaly
 
 **Author:** Rich Chang (2026)  
