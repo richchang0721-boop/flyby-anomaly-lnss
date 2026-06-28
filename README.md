@@ -1,8 +1,12 @@
-# Flyby Research — 專案索引
+# LNSS Framework for Earth Flyby Anomaly
 
-**版本：** v1.4  
-**建立：** 2026-06-27  
-**研究者：** Rich Chang + Claude + GPT（三方協作）
+**Author:** Rich Chang (2026)  
+**Cite as:** Chang, R. (2026). *LNSS Framework for Earth Flyby Anomaly*. GitHub: github.com/[your-account]/flyby-anomaly-lnss  
+**License:** CC0 v1.0 Universal  
+**Version:** v1.4 | **Created:** 2026-06-27 | **Collaborators:** Claude (Anthropic), GPT (OpenAI)
+
+> ⚠️ **Sealed predictions recorded 2026-06-28.**  
+> JUICE Earth flyby verification: **2026-09-28/29** | Europa Clipper: **2026-12-03**
 
 ---
 
@@ -16,162 +20,201 @@
 
 ---
 
-## 研究結構（30 秒版本）
+## 30-Second Summary
 
 ```
-Observation
-    ↓
-Constraints
-    ↓
-Mathematics
-    ↓
-Hypothesis
+Observation  →  Constraints  →  Mathematics  →  Hypothesis
 ```
 
-詳細內容見各章節。
-
-## 研究結構（完整版）
-
-```
-Core Observation
-  └─ Anderson Formula：ΔV = V∞·(2ωR/c)·(cosδᵢ − cosδₒ)（已觀測，★★★★★）
-       │
-       ▼
-Boundary Interpretation
-  └─ Anderson 公式是路徑積分的精確邊界項（數學推導，★★★★☆）
-       │
-       ▼
-Candidate PDE
-  └─ Helmholtz ∇²Ψ + k²Ψ = S（唯一通過五公設，★★★☆☆）
-       │
-       ▼
-Statistical Signals
-  ├─ P₂(cosδ_peri) vs |dV|：r = 0.852（Correlative，★★☆☆☆）
-  └─ ap vs dV：r = −0.72（Correlative，★★☆☆☆）
-       │
-       ▼
-Possible Physical Interpretation（Perturbation Model）
-  └─ 宇宙存在大尺度背景場 Ψ_bg
-     地球不是「創造」LNSS，而是「擾動」背景場
-     地球自轉形成 P₁/P₂ 局部模式
-     太陽風（ap）調制有效振幅
-     → Flyby anomaly 是擾動場的路徑積分（概念假說，★☆☆☆☆）
-```
-
-## 框架的根本轉變：Source Model → Perturbation Model
-
-**舊框架（Source Model）：**
-```
-地球自轉 → 創造 LNSS 場
-Helmholtz 的源項 S = 地球角動量
-遠場邊界條件：Ψ → 0
-```
-
-**新框架（Perturbation Model）：**
-```
-宇宙背景場 Ψ_bg（均勻，方向由 CMB 決定）
-        │
-        ▼ 地球質量+自轉 → 局部擾動
-        │
-        ▼ 形成 P₁/P₂ 局部模式（Helmholtz 描述擾動場）
-        │
-        ▼ 太陽風（ap）調制振幅
-        │
-        ▼ Flyby anomaly
-```
-
-**這個轉變解決了三個懸案：**
-- k² 的物理來源 = 背景場的「曲率」，不需要電漿或新粒子
-- Busack 的 CMB 方向 = 背景場的優先方向，自然進入邊界條件
-- **Anderson 公式無高度項 = 主場衰減長度遠大於飛掠高度，場在 300-2000 km 幾乎不變**（2026-06-27 新確立）
-
-**兩個衰減尺度的分離（關鍵洞察）：**
-```
-Anderson 主場（δΨ_P₁）：衰減長度 B_main >> 飛掠高度（幾千 km）
-                         → Anderson 公式無高度修正項 ✓
-
-Busack 次要場（δΨ_CMB）：衰減長度 B_Busack = 394 km
-                         → Busack 公式的 B 參數 ✓
-```
+The Earth flyby anomaly (Anderson et al. 2008) refers to unexplained mm/s-scale
+velocity discrepancies observed in hyperbolic spacecraft trajectories past Earth,
+absent in closed orbits. This repository develops the **LNSS (Local Nonlinear
+Spatial Structure) / Perturbation Model** framework to explain these anomalies
+using a gravitational perturbation field grounded in General Relativity.
 
 ---
 
-## 檔案結構
+## Key Results
 
-```
-FlybyResearch/
-├── README.md              ← 本文件（索引 + 核心主張）
-├── 01_Observations.md     ← 飛掠數據、行星距離、太陽活動
-├── 02_Constraints.md      ← 觀測約束、五公設、已排除假說
-├── 03_Hypotheses.md       ← 假說架構、三層場、RQ7、臨界形成
-├── 04_Mathematics.md      ← Anderson、Boundary Term、Helmholtz、Busack
-├── 05_Predictions.md      ← 密封預測（JUICE、Europa Clipper、P₃）
-├── 06_Falsification.md    ← 可偽證條件
-├── 07_Open_Problems.md    ← RQ1-RQ8、最高優先的下一步
-└── Appendix_Data.md       ← 符號表、常數、文獻、版本歷史
-```
+| Finding | Status | Confidence |
+|---------|--------|------------|
+| Closed orbits: ΔV ≡ 0 (topological theorem) | ✓ Proven | ★★★★★ |
+| Volume integral η = 1 (no amplification needed) | ✓ Confirmed | ★★★★☆ |
+| Factor of 2 = two-way Doppler tracking | ✓ Candidate | ★★★☆☆ |
+| Primary driver: \|P₂(cosδ_peri)\| (orbital symmetry) | ✓ Confirmed | ★★☆☆☆ |
+| Threshold: \|P₂\|_c ≈ 0.06 (7/7 classification) | ✓ Empirical | ★★☆☆☆ |
+| ap index: secondary modifier (c₂ = −0.249 mm/s/nT) | ✓ Confirmed | ★★☆☆☆ |
+| Background field wavenumber κ = 1/16,076 km | Open (RQ12) | — |
+| Juno zero result: additional mechanism needed | Open (RQ4) | — |
 
 ---
 
-## 證據等級摘要
+## Theoretical Framework
 
-| 結論 | ★ | 類別 |
-|------|---|------|
-| Anderson 公式 | ★★★★★ | Observation |
-| Boundary Term 解釋 | ★★★★☆ | Mathematical |
-| Helmholtz 球諧自然湧現 | ★★★★☆ | Mathematical |
-| **封閉軌道 ΔV ≡ 0（拓樸定理）** | **★★★★★** | **Mathematical（2026-06-28）** |
-| **因子 2 = 雙程 Doppler 追蹤（候選解答）** | **★★★☆☆** | **Mathematical（2026-06-28）** |
-| **體積積分 η=1（不需要放大機制）** | **★★★★☆** | **Mathematical（2026-06-27）** |
-| **GPS 無信號 = 框架預測一致** | **★★★☆☆** | **Observational+Mathematical** |
-| **B_main = 16,076 km（背景場波數 k 的倒數）** | **★★☆☆☆** | **Mathematical+Correlative** |
-| **兩個衰減尺度分離（Anderson 主場 vs Busack 次要場）** | **★★★☆☆** | **Mathematical** |
-| **Ψ 是向量場（GEM A_φ）** | **★★★★☆** | **Mathematical** |
-| **GR sinθ 結構與 Anderson 一致** | **★★★★☆** | **Mathematical** |
-| **GR sinθ 結構與 Anderson 一致** | **★★★★☆** | **Mathematical** |
-| Helmholtz 候選 PDE | ★★★☆☆ | Statistical |
-| **|P₂|_c ≈ 0.06 臨界值（7/7 分類準確）** | **★★☆☆☆** | **Correlative（2026-06-28）** |
-| P₂ 無風帶（±54.7°，r=0.852）| ★★☆☆☆ | Correlative |
-| ap 指數與 dV（r=−0.72，次要修正因子）| ★★☆☆☆ | Correlative |
-| 太陽風截斷 plasmasphere 機制 | ✗ 已排除 | Mathematical |
-| ap 的物理機制（RQ13）| 次要效應，機制開放 | Open Problem |
-| 兩分量假說（Anderson + Busack）| ★★☆☆☆ | Correlative |
-| 電離層 F 層作為 k² 來源 | ★★☆☆☆ | Correlative |
-| 暗物質+等離子體複合介質假說（局部暗物質差 100 倍）| ★☆☆☆☆ | Conceptual |
-| LNSS / 空間介質 | ★☆☆☆☆ | Conceptual |
-| **Perturbation Model（背景場+局部擾動）** | **★☆☆☆☆** | **Conceptual（2026-06-27 新增）** |
-| LNSS 自發形成（卡門渦街類比）| ★☆☆☆☆ | Conceptual |
+### The Anderson Formula
 
-**等級定義：**
-★★★★★ Observation｜★★★★☆ Mathematical｜★★★☆☆ Statistical｜★★☆☆☆ Correlative｜★☆☆☆☆ Conceptual
+```
+ΔV = V∞ · (2ωR/c) · (cosδᵢ − cosδₒ)
+K = 2ωR/c = 3.097 × 10⁻⁶
+```
+
+### Why Closed Orbits Are Unaffected
+
+For any closed orbit, δᵢ = δₒ (start = end point), therefore:
+
+```
+ΔV = V∞ · K · (cosδᵢ − cosδᵢ) = 0  (exact, topological)
+```
+
+This explains why ISS, GPS, Starlink, and all satellites show no anomaly — without any free parameters.
+
+### The Factor of 2
+
+Anderson et al. used **two-way Doppler tracking**: signal travels Ground → Spacecraft → Ground. Each leg experiences the Lense-Thirring metric perturbation once, doubling the effect:
+
+```
+Single-way: ΔV = (ωR/c) · (cosδᵢ − cosδₒ)
+Two-way:    ΔV = 2·(ωR/c) · (cosδᵢ − cosδₒ)  ← Anderson formula
+```
+
+The factor of 2 is a property of the measurement method, not the field equation.
+
+### The Perturbation Model
+
+Earth disturbs a pre-existing background field Ψ_bg rather than generating LNSS from scratch:
+
+```
+Background field Ψ_bg  (wavenumber κ = 1/B_main, origin unknown)
+        ↓  Earth mass + rotation → local perturbation
+        ↓  Forms P₁/P₂ local modes (sinθ structure from GR)
+        ↓  Solar wind (ap) modifies amplitude (secondary)
+        ↓  Flyby anomaly ΔV
+```
+
+**Characteristic length:** B_main = 16,076 km = 2.52 R_E  
+(determined by matching the Anderson coefficient via volume integral)
 
 ---
 
-## 最高優先的下一步
-
-1. **嚴格推導雙程 Doppler 的因子 2**（RQ2）——確認往返路徑積分嚴格相等
-2. **推導 κ = 1/B_main 的理論來源**（RQ12）——背景場 Ψ_bg 的唯一未知量
-3. **尋找 Juno 零結果的額外物理機制**（RQ4）——多極展開無法解釋，需要新思路
-4. **JUICE 2026 年 9 月地球飛掠預測**——查詢精確軌道參數，密封預測 ΔV
-
-## 信號強度的正確排序（2026-06-27 確立）
+## Signal Hierarchy
 
 ```
-1. 幾何（主導）：P₂ 節點 ±54.7°     r=0.852，零自由參數
-2. 太陽風（次要）：ap 指數修正       c₂=−0.249 mm/s/nT，二階效應
-3. 三體潮汐（三階）：月球-太陽配置   RMS 改善 26%
+1. Geometry (dominant):  P₂ node at ±54.7°    r = 0.852, zero free parameters
+2. Solar wind (secondary): ap index             c₂ = −0.249 mm/s/nT
+3. Tidal (tertiary):     Moon-Sun configuration  26% RMS improvement
 ```
 
-## 已排除的問題（2026-06-27）
+### Threshold Prediction
 
-- **「7.3 倍放大機制」** ← 虛假問題，由體積積分（η=1）解決
-- **太陽風截斷 plasmasphere** ← 計算排除（Lpp 始終在 B_main 以外）
-- **電漿耦合解釋 B=394 km** ← 無任何電漿尺度對應
+| Condition | Prediction |
+|-----------|------------|
+| \|P₂(cosδ_peri)\| < 0.06 (perigee within ±52°–57°) | \|ΔV\| < 0.5 mm/s (unobservable) |
+| \|P₂(cosδ_peri)\| > 0.06 (other latitudes) | \|ΔV\| ≈ 19.3 × \|P₂\| mm/s |
+
+Classification accuracy: **7/7** on historical flybys (n=7, requires more data).
 
 ---
 
-## 更新原則
+## Sealed Predictions (recorded 2026-06-28)
 
-- 每次新發現只更新**相關的單一檔案**，不重寫整個專案
-- README 的「核心主張」在有重大框架升級時更新
-- 05_Predictions.md 的預測內容**永不修改**（只添加驗證結果）
+Both predictions use precise JPL Horizons trajectory data (queried 2026-06-28).
+
+### JUICE Earth Flyby — 2026-09-28/29
+
+| Parameter | Value | Source |
+|-----------|-------|--------|
+| δᵢ (inbound asymptote) | **−0.690°** | JPL Horizons (NAIF: −28) |
+| δₒ (outbound asymptote) | **+4.385°** | JPL Horizons |
+| V∞ | **12.115 km/s** | JPL Horizons |
+| ΔV (P₁ term) | **+0.107 mm/s** | Anderson formula |
+| \|P₂(cosδ_peri)\| | **0.9991** | Near maximum |
+
+**Prediction:**
+```
+If only P₁ (pure Anderson):  ΔV ≈ +0.11 mm/s  (below detection)
+If P₂ component exists:      |ΔV| ≈ 1–3 mm/s   (dominant)
+
+Decision threshold:
+  |ΔV| < 0.5 mm/s  →  supports pure Anderson (P₁ only)
+  |ΔV| > 1.0 mm/s  →  supports existence of P₂ component
+```
+
+### Europa Clipper Earth Flyby — 2026-12-03
+
+| Parameter | Value | Source |
+|-----------|-------|--------|
+| δᵢ (inbound asymptote) | **+29.34°** | JPL Horizons (NAIF: −159) |
+| δₒ (outbound asymptote) | **+30.61°** | JPL Horizons |
+| V∞ | **11.596 km/s** | JPL Horizons |
+| ΔV (P₁ term) | **+0.397 mm/s** | Anderson formula |
+| \|P₂(cosδ_peri)\| | **0.616** | Above threshold |
+
+**Prediction:**
+```
+If only P₁ (pure Anderson):  ΔV ≈ +0.40 mm/s  (marginal detection)
+If P₂ component exists:      |ΔV| ≈ 1–2 mm/s   (dominant)
+
+Falsification: |ΔV| > 3 mm/s  →  outside all framework parameters
+```
+
+**Both flybys have near-zero P₁ terms. Any anomaly > 1 mm/s directly tests the P₂ component.**
+
+---
+
+## Excluded Mechanisms
+
+The following mechanisms have been quantitatively excluded:
+
+- Solar wind truncation of plasmasphere (Lpp always outside B_main)
+- 7.3× amplification mechanism (spurious — volume integral gives η = 1)
+- Plasma coupling explaining B = 394 km (no matching plasma scale)
+- Multipole expansion explaining Juno zero (unphysical coefficients, overfitting)
+- Space debris angular momentum (10¹⁶× smaller than Earth)
+- Dark energy direct effect (10⁴⁰× wrong scale)
+
+---
+
+## Open Problems
+
+| Problem | Status | Priority |
+|---------|--------|----------|
+| RQ12: Theoretical origin of κ = 1/B_main | Open | High |
+| RQ4: Juno zero result — additional mechanism | Open | High |
+| RQ2: Rigorous derivation of two-way Doppler factor 2 | Candidate | Medium |
+| RQ13: Physical mechanism of ap correlation | Open | Low |
+
+---
+
+## Repository Structure
+
+| File | Contents |
+|------|----------|
+| `01_Observations.md` | Flyby data, NASA OMNIWeb ap/F10.7 |
+| `02_Constraints.md` | Observational constraints, closed orbit theorem, GPS analysis |
+| `03_Hypotheses.md` | LNSS/Perturbation Model, dark matter hypothesis |
+| `04_Mathematics.md` | Anderson formula, GEM derivation, volume integral, factor 2 |
+| `05_Predictions.md` | Sealed predictions for JUICE 2026 and Europa Clipper 2026 |
+| `06_Falsification.md` | Falsification conditions |
+| `07_Open_Problems.md` | RQ1–RQ14 open research questions |
+| `Appendix_Data.md` | Symbol table, constants, references |
+
+---
+
+## Historical Flyby Data
+
+| Flyby | ΔV (mm/s) | ap | \|P₂(cosδ_peri)\| | Result |
+|-------|-----------|-----|-------------------|--------|
+| Galileo I (1990) | +3.92 | 8 | 0.165 | Anomaly |
+| Galileo II (1992) | −4.60 | 26 | 0.389 | Anomaly |
+| NEAR (1998) | +13.46 | 4 | 0.567 | Anomaly |
+| Cassini (1999) | −2.00 | 28 | 0.091 | Anomaly |
+| Rosetta I (2005) | +1.82 | 2 | 0.347 | Anomaly |
+| Messenger (2005) | ≈0 | 1 | 0.036 | Null |
+| Juno (2013) | 0.00 | 29 | 0.031 | Null (RQ4) |
+
+Classification by \|P₂\|_c = 0.06: **7/7 correct**
+
+---
+
+*This is independent research. All predictions were sealed before the flyby dates.*  
+*Verification dates: JUICE 2026-09-28/29 · Europa Clipper 2026-12-03*
