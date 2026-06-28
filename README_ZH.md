@@ -200,3 +200,34 @@ FlybyResearch/
 - 每次新發現只更新**相關的單一檔案**，不重寫整個專案
 - README 的「核心主張」在有重大框架升級時更新
 - 05_Predictions.md 的預測內容**永不修改**（只添加驗證結果）
+
+---
+
+## 文件索引
+
+### 中文版
+
+| 文件 | 內容 |
+|------|------|
+| [01_Observations.md](01_Observations.md) | 飛掠觀測數據、NASA OMNIWeb ap/F10.7 |
+| [02_Constraints.md](02_Constraints.md) | 觀測約束、封閉軌道定理、GPS 分析、臨界值約束 |
+| [03_Hypotheses.md](03_Hypotheses.md) | LNSS/Perturbation Model、暗物質假說、外部相關假說 |
+| [04_Mathematics.md](04_Mathematics.md) | Anderson 公式推導、GEM、體積積分、因子 2、Juno 分析 |
+| [05_Predictions.md](05_Predictions.md) | **密封預測：JUICE 2026-09、Europa Clipper 2026-12** |
+| [06_Falsification.md](06_Falsification.md) | 可偽證條件、封閉軌道驗證 |
+| [07_Open_Problems.md](07_Open_Problems.md) | RQ1–RQ14 開放問題 |
+| [Appendix_Data.md](Appendix_Data.md) | 符號表、常數、文獻 |
+
+### English Versions
+
+| File | Contents |
+|------|----------|
+| [README_EN.md](README_EN.md) | Full English README |
+| [05_Predictions_EN.md](05_Predictions_EN.md) | Sealed predictions (JUICE & Europa Clipper) |
+| [06_Falsification_EN.md](06_Falsification_EN.md) | Falsification conditions |
+| [04_Mathematics_EN.md](04_Mathematics_EN.md) | Mathematical derivations |
+| [02_Constraints_EN.md](02_Constraints_EN.md) | Observational constraints |
+| [07_Open_Problems_EN.md](07_Open_Problems_EN.md) | Open research questions |
+| [01_Observations_EN.md](01_Observations_EN.md) | Flyby data |
+| [03_Hypotheses_EN.md](03_Hypotheses_EN.md) | Hypotheses |
+| [Appendix_Data_EN.md](Appendix_Data_EN.md) | Symbol table & constants |

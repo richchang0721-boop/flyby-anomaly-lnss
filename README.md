@@ -1,4 +1,3 @@
-**[English](README.md) | [中文](README_ZH.md)**
 # LNSS Framework for Earth Flyby Anomaly
 
 **Author:** Rich Chang (2026)  
@@ -188,16 +187,33 @@ The following mechanisms have been quantitatively excluded:
 
 ## Repository Structure
 
+### English Versions
+
 | File | Contents |
 |------|----------|
-| `01_Observations.md` | Flyby data, NASA OMNIWeb ap/F10.7 |
-| `02_Constraints.md` | Observational constraints, closed orbit theorem, GPS analysis |
-| `03_Hypotheses.md` | LNSS/Perturbation Model, dark matter hypothesis |
-| `04_Mathematics.md` | Anderson formula, GEM derivation, volume integral, factor 2 |
-| `05_Predictions.md` | Sealed predictions for JUICE 2026 and Europa Clipper 2026 |
-| `06_Falsification.md` | Falsification conditions |
-| `07_Open_Problems.md` | RQ1–RQ14 open research questions |
-| `Appendix_Data.md` | Symbol table, constants, references |
+| [README_EN.md](README_EN.md) | This file — full English overview |
+| [05_Predictions_EN.md](05_Predictions_EN.md) | **Sealed predictions (JUICE & Europa Clipper)** |
+| [06_Falsification_EN.md](06_Falsification_EN.md) | Falsification conditions |
+| [04_Mathematics_EN.md](04_Mathematics_EN.md) | Mathematical derivations |
+| [02_Constraints_EN.md](02_Constraints_EN.md) | Observational constraints |
+| [07_Open_Problems_EN.md](07_Open_Problems_EN.md) | Open research questions (RQ1–RQ14) |
+| [01_Observations_EN.md](01_Observations_EN.md) | Flyby observational data |
+| [03_Hypotheses_EN.md](03_Hypotheses_EN.md) | Hypotheses and excluded mechanisms |
+| [Appendix_Data_EN.md](Appendix_Data_EN.md) | Symbol table, constants, references |
+
+### 中文版 (Chinese)
+
+| 文件 | 內容 |
+|------|------|
+| [README.md](README.md) | 中文總索引 |
+| [01_Observations.md](01_Observations.md) | 飛掠觀測數據 |
+| [02_Constraints.md](02_Constraints.md) | 觀測約束、封閉軌道定理 |
+| [03_Hypotheses.md](03_Hypotheses.md) | 假說架構 |
+| [04_Mathematics.md](04_Mathematics.md) | 數學推導 |
+| [05_Predictions.md](05_Predictions.md) | 密封預測 |
+| [06_Falsification.md](06_Falsification.md) | 可偽證條件 |
+| [07_Open_Problems.md](07_Open_Problems.md) | 開放問題 |
+| [Appendix_Data.md](Appendix_Data.md) | 附錄數據 |
 
 ---
 
