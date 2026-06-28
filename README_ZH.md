@@ -1,6 +1,6 @@
 # LNSS Framework for Earth Flyby Anomaly
 
-**Author:** Rich Chang (2026)  
+**Author:** Mao Lin Chang (2026)  
 **Cite as:** Chang, R. (2026). *LNSS Framework for Earth Flyby Anomaly*. GitHub: github.com/[your-account]/flyby-anomaly-lnss  
 **License:** CC0 v1.0 Universal  
 **Version:** v1.4 | **Created:** 2026-06-27 | **Collaborators:** Claude (Anthropic), GPT (OpenAI)
