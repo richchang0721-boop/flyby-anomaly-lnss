@@ -97,7 +97,7 @@ Ruling out "speed → retardation" does not rule out the broader concern that sp
 
 ### Candidate 4: Medium Backreaction (detailed, 2026-06-30)
 
-**Core idea (proposed by Rich Chang):**
+**Core idea (proposed by Mao Lin Chang):**
 
 The existing framework (spherical harmonics, retarded Green's functions) assumes the spacecraft **passively reads** the background field Ψ_bg — the field is unaffected by the spacecraft's presence. Candidate 4 proposes the opposite class of mechanism: the spacecraft, in passing through the medium, **actively perturbs it**, and this perturbation backreacts on the spacecraft's trajectory.
 
@@ -241,7 +241,7 @@ Keeping P₁ instantaneous (already well-established) and applying memory correc
 
 ### Candidate 5: Nonlinear Field Coupling (detailed, 2026-06-30)
 
-**Core idea (proposed by Rich Chang):**
+**Core idea (proposed by Mao Lin Chang):**
 
 A complete physical picture in four layers: (1) background field Ψ_bg as a uniform "sea"; (2) Earth's rotation perturbs this sea, forming local field structure δΨ_Earth; (3) the spacecraft flies through this **already-perturbed** field; (4) the Earth-Moon-Sun three-body system further shapes the field.
 
