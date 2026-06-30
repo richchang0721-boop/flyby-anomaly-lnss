@@ -135,6 +135,110 @@ True Cherenkov radiation is not a monotonic function of speed but is concentrate
 
 ---
 
+### Candidate 4 Upgrade: Fractional Calculus as the Language of Memory Effects (2026-06-30, GPT suggestion)
+
+**Background:** GPT proposed an evaluation table of seven candidate mathematical languages for describing "path," "memory," and "long-range coupling" — structures that Candidates 4 and 5 require but the current Legendre spherical harmonic expansion cannot provide.
+
+| Mathematical Language | Describes | Relation to Existing Candidates |
+|-----------------------|-----------|----------------------------------|
+| Legendre Harmonics | Angle (current approach) | Known limitation (Juno same-sign problem) |
+| Functional (path functional) | Whole path | Formal mathematical skeleton for Candidate 5 |
+| Delay Equation | Fixed delay | Concrete form of Candidate 4's "retarded Green's function," but must avoid a single delay scale |
+| **Fractional Calculus** | **Memory (power-law decay)** | **Key upgrade for Candidate 4, see below** |
+| Non-local Field | Long-range coupling | Spatial version of Candidate 5 |
+| Dynamical System | Resonance | Corresponds to Candidate 4's "directional/geometric coupling" version |
+| Topology | Path classification | Same origin as the established closed-orbit theorem, but limited use for Juno's fine structure |
+
+**Why fractional calculus may resolve what has stalled Candidate 4:**
+
+The previously tested "speed retardation" (Candidate 4 initial version) and "Cherenkov intensity" hypotheses both died on the same counterexample — Cassini (V∞=16.0 km/s) is faster than Juno (V∞=9.8 km/s), yet Cassini shows a more significant effect. Both share a common flaw: **each assumes a single characteristic time/speed scale**, and is therefore inevitably refuted by a simple "which is faster" ordering.
+
+Fractional calculus memory effects (d^α Ψ/dt^α, 0<α<1) are not a fixed delay but a **continuous spectrum of power-law decay** — every moment in history contributes, decaying as a power law rather than exponentially or as a step function, with **no single "characteristic speed" available for simply ranking different flybys**. This structurally avoids the counterexample form that defeated the earlier hypotheses.
+
+**Status:** Concept proposed, not yet formalized or computationally tested. Next step, if pursued: build a toy model with a fractional memory kernel and test whether it can simultaneously fit Juno (null) and Cassini (anomaly) without introducing a single characteristic scale | **Priority: Low (conceptual record; requires specialized fractional calculus tools beyond the current framework)**
+
+---
+
+### First Toy Model Test (2026-06-30): Unsuccessful, but Instructive
+
+**Model design:**
+
+```
+ΔV_frac = ∫ (d cosδ/dt) × K_frac(t_now − t) dt
+K_frac(τ) = τ^(α-1) / Γ(α)    [Caputo fractional memory kernel]
+```
+
+Spacecraft trajectory modeled as a smooth tanh transition from δᵢ to δₒ, with transition sharpness proportional to each flyby's V∞.
+
+**Test results:**
+
+| α | Cassini/Cassini(α=1) | Juno/Juno(α=1) |
+|---|----------------------|----------------|
+| 1.00 | 1.0000 | 1.0000 |
+| 0.70 | 0.3410 | 0.3452 |
+| 0.30 | 0.0499 | 0.0514 |
+| 0.10 | 0.0091 | 0.0095 |
+
+**Conclusion: Failed.** The two decay curves nearly overlap — the fractional memory effect suppresses Cassini and Juno proportionally, producing no selective differentiation (cannot drive Juno toward zero while preserving Cassini's anomaly).
+
+**Root cause diagnosis:** The model scaled transition sharpness with spacecraft speed V∞, but the fractional kernel is insensitive to the transition's *shape* — only to the *temporal distribution* of the transition. When both flybys' time axes are scaled by their own speeds, the kernel sees similar relative historical structure for both, producing no differentiation.
+
+**Directions suggested by this failure (untested):**
+
+1. **τ should be a characteristic time scale of the field itself, not the spacecraft.** Different flybys should share the same memory kernel (scaled by field propagation speed v_p, not spacecraft speed V∞), rather than each being independently rescaled — this echoes the insight retained after the "speed retardation" hypothesis failed in Candidate 4.
+
+2. **Memory effects should act on a specific field component (e.g., P₂), not a blanket weighting of the entire path.**
+
+3. **α itself may couple to the perigee value |P₂(cosδ_peri)|**, rather than being an independent free parameter — this would connect Candidate 4 to the already-established P₂ calm-zone evidence (RQ14), rather than introducing a new mechanism from scratch.
+
+**Status: First model tested and failed; failure mode points to three specific correction directions, pending further verification | Priority: Low (requires more precise physical assumptions to proceed)**
+
+---
+
+### Second Toy Model Test (2026-06-30): Field-Native Time Scale, Still Unsuccessful
+
+**Correction applied (following direction 1 from the first failure's diagnosis):**
+
+Instead of scaling the memory kernel's time axis by spacecraft speed V∞, use the field's own characteristic time scale:
+
+```
+τ_field = B_main / v_p = 16,076 km / 1,172 m/s ≈ 13,713 s ≈ 3.81 hours
+t_transit = 2·B_main / V∞   (physical time for spacecraft to cross the full field range)
+ratio = t_transit / τ_field
+```
+
+Ratios for each flyby fall between 0.15–0.61 — a meaningful competitive range (unlike the first version, where all ratios clustered near 0.005 with no differentiation).
+
+**Test results (fixed α=0.5, comparing fractional correction to standard P₁ value):**
+
+| Flyby | t_transit (s) | frac/P1 ratio |
+|-------|---------------|----------------|
+| Cassini | 2,008 | −0.563 |
+| **Juno** | **3,274** | **−0.640** |
+| NEAR | 4,693 | −0.689 |
+| Galileo I | 3,593 | −0.715 |
+| Galileo II | 3,622 | −0.545 |
+
+**Conclusion: Failed.** Juno's ratio (−0.640) falls within the middle of the range for other significantly anomalous flybys (−0.545 to −0.715), showing no anomaly or distinctiveness.
+
+**Broader negative result:**
+
+Two consecutive attempts (v1: spacecraft time scale; v2: field time scale) failed at the same point — **a fractional memory kernel applied to the "entire path" tends to scale all flybys' effects proportionally, rather than selectively suppressing a specific flyby (Juno)**. This rules out not just a parameter choice, but the entire class of models combining "fractional memory + blanket path weighting."
+
+**Direction for a more precise follow-up:**
+
+What is needed is not parameter tuning but a change in what is being weighted — shifting the fractional memory weight from "the entire path" to "only the P₂-mode path integral" (echoing direction 2 from the first failure's diagnosis). This is a structurally different model requiring redesign:
+
+```
+Concept: ΔV = ΔV_P1 (standard, instantaneous) + A₂ × ∫ [P₂ path integrand] × K_frac(τ; α) dt
+```
+
+Keeping P₁ instantaneous (already well-established) and applying memory correction only to the P₂ component — this way the correction acts only on the secondary, yet-to-be-explained part, without diluting the verified P₁ physics.
+
+**Status: Both whole-path-weighted model versions tested and failed (negative result, ruling out an entire model class); next step requires a structurally different model (P₂-only weighting), not implemented today | Priority: Low**
+
+---
+
 ### Candidate 5: Nonlinear Field Coupling (detailed, 2026-06-30)
 
 **Core idea (proposed by Rich Chang):**
