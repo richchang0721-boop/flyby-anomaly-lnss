@@ -1,6 +1,6 @@
 # 07 — Open Research Questions
 
-**Last updated:** 2026-06-28 v1.4
+**Last updated:** 2026-06-30 v1.4
 
 ---
 
