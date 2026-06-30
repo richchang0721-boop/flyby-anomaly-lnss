@@ -71,6 +71,102 @@ No physical multipole field structure can cancel all positive contributions simu
 
 ---
 
+### RQ4 Methodological Extension (2026-06-30): Is the Problem Limited by the Mathematical Language Itself?
+
+**Inspiration:** Observing that Chen Lijie et al. (UCSD, 2026) broke a decade-old bottleneck in the SETH lower bound proof for the "furthest pair" problem — not by finding a cleverer integer technique, but by re-expressing the problem in algebraic number fields instead of integers. The breakthrough came from changing the mathematical language, not from a smarter proof within the existing one.
+
+**Application to RQ4:**
+
+The current language — Legendre multipole expansion (P₁, P₂, P₃, P₄...) — implicitly assumes the field is an **instantaneous, memoryless function of angle**. The path integral depends only on the instantaneous inbound/outbound geometry.
+
+**A specific hypothesis tested and rejected:**
+
+> Hypothesis: Juno's high velocity (V∞) causes significant retardation effects that invalidate the spherical harmonic expansion.
+
+**Test:** Cassini's V∞ = 16.0 km/s is far higher than Juno's 9.82 km/s, yet Cassini shows a significant anomaly (−2.0 mm/s) rather than a null result. If retardation were speed-dominated, Cassini should be more affected than Juno — the opposite of what is observed.
+
+**Conclusion: This specific hypothesis is directly refuted by the data and is excluded.**
+
+**The deeper methodological question remains open:**
+
+Ruling out "speed → retardation" does not rule out the broader concern that spherical harmonic expansion itself may be the wrong language. Open question:
+
+> Does a **path-dependent** (rather than purely angle-dependent) field description exist, under which Juno's multipole coefficients become physically reasonable (rather than the current large-magnitude, alternating-sign values)?
+
+---
+
+### Candidate 4: Medium Backreaction (detailed, 2026-06-30)
+
+**Core idea (proposed by Rich Chang):**
+
+The existing framework (spherical harmonics, retarded Green's functions) assumes the spacecraft **passively reads** the background field Ψ_bg — the field is unaffected by the spacecraft's presence. Candidate 4 proposes the opposite class of mechanism: the spacecraft, in passing through the medium, **actively perturbs it**, and this perturbation backreacts on the spacecraft's trajectory.
+
+**Distinction from simple friction:**
+
+Pure friction F ∝ −v (always opposing velocity, purely dissipative) has already been excluded by the data — it can only explain deceleration, not the mixed-sign ΔV seen in the Anderson effect (NEAR: +13.46, Galileo II: −4.60). Candidate 4 is not friction, but draws on fluid dynamics concepts:
+
+| Mechanism | Physical picture | Directionality |
+|-----------|------------------|-----------------|
+| Added mass effect | Accelerating body must "drag" surrounding medium, increasing effective inertia | Changes effective inertia, not simple deceleration |
+| Wake-induced backreaction | Body leaves a wake; if medium is elastic, wake may push or pull the body | Can be positive or negative |
+| Cherenkov-like effect | If spacecraft speed exceeds medium wave speed v_p, shock radiation carries away momentum | Directional (cone angle) |
+
+**Preliminary test: the simple "intensity ∝ speed" version is excluded**
+
+Background field wave speed v_p = ω_E × B_main ≈ 1.172 km/s. Mach numbers M = V∞/v_p for all flybys:
+
+| Flyby | M | sin²θ_Cherenkov | Cherenkov cone angle θ_C |
+|-------|---|------------------|---------------------------|
+| Rosetta I | 3.30 | 0.908 | 72.3° |
+| Messenger | 3.46 | 0.917 | 73.2° |
+| NEAR | 5.85 | 0.971 | 80.2° |
+| Galileo II | 7.57 | 0.983 | 82.4° |
+| Galileo I | 7.64 | 0.983 | 82.5° |
+| **Juno** | **8.38** | **0.986** | **83.2°** |
+| Cassini | 13.66 | 0.995 | 85.8° |
+
+Juno (M=8.4) and Cassini (M=13.7) have nearly identical Cherenkov intensity factors (< 1% difference), yet opposite outcomes. **The simple "speed determines backreaction intensity" version is excluded**, suffering the same fate as the retardation hypothesis.
+
+**What remains viable: directionality, not intensity**
+
+True Cherenkov radiation is not a monotonic function of speed but is concentrated within a specific cone angle θ_C = arccos(1/M), with strong directionality. If this radiation cone couples with the spacecraft trajectory geometry (e.g., the angle relative to the perigee tangent direction) through resonance or cancellation, this — not the cone angle value itself — may be what determines Juno's outcome.
+
+**Status:** Simple intensity version excluded; directional/geometric coupling version untested, requires fluid-structure coupling mathematics beyond the current Helmholtz path-integral framework | **Priority: Low (conceptual record, requires new mathematical tools)**
+
+---
+
+### Candidate 5: Nonlinear Field Coupling (detailed, 2026-06-30)
+
+**Core idea (proposed by Rich Chang):**
+
+A complete physical picture in four layers: (1) background field Ψ_bg as a uniform "sea"; (2) Earth's rotation perturbs this sea, forming local field structure δΨ_Earth; (3) the spacecraft flies through this **already-perturbed** field; (4) the Earth-Moon-Sun three-body system further shapes the field.
+
+The existing framework handles layers (1)(2)(4) (Perturbation Model + three-body framework), but implicitly assumes for layer (3) that the spacecraft is a **passive reader** — measuring only the field's pre-existing value along its trajectory — and that all perturbation sources (Earth rotation, lunar-solar tides, solar wind) **linearly superpose** without coupling:
+
+```
+Current implicit assumption:
+  δΨ_total = δΨ_Earth + δΨ_Moon-Sun + δΨ_solar-wind  (independent)
+
+Candidate 5 proposes:
+  The spacecraft's local perturbation effect may couple nonlinearly with
+  "the shape the background field has already been molded into by other
+  sources," rather than simply adding.
+```
+
+**Explanatory power: rationalizing the ap effect**
+
+If pure linear superposition holds, ap (solar-wind-induced field perturbation) and the spacecraft's Anderson path-integral effect should be independent — the path integral depends only on trajectory geometry (δᵢ, δₒ), and ap should have no reason to alter it.
+
+But the data clearly show a real second-order ap correction (c₂ = −0.249 mm/s/nT, see 02_Constraints_EN.md). **If nonlinear coupling exists** — where the spacecraft's local perturbation effect depends on "the shape the background field has currently been molded into by solar wind" — then the ap effect has an intuitively reasonable physical mechanism, rather than being merely an empirically fitted coefficient.
+
+**Relationship to Candidate 4:**
+
+Candidate 4 asks "does the spacecraft perturb the field?" (passive vs. active reading); Candidate 5 asks "do multiple perturbation sources couple?" (linear superposition vs. nonlinear interaction). These may be facets of the same deeper mechanism — if the spacecraft does actively perturb the field (Candidate 4), that perturbation would naturally couple with the background field's current state (Candidate 5) rather than superposing independently.
+
+**Status:** Concept proposed, not yet formalized or computationally verified; requires nonlinear field equations beyond the current linear Helmholtz framework | **Priority: Low (conceptual record; may share a deeper mechanism with Candidate 4)**
+
+---
+
 ## RQ11: Background Field Origin (Dark Matter + Plasma Hypothesis)
 
 **Calculation results (2026-06-28):**
