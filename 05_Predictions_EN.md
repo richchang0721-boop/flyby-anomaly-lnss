@@ -99,6 +99,41 @@ Decision criteria:
 
 ---
 
+### ★★★ Independent Supplementary Sealed Prediction (Candidate 7: Topological Classification, sealed 2026-07-01) ★★★
+
+> **Important note: this section is an independent prediction added after the original sealed prediction above (2026-06-28); it does not modify or override the original content.** Both predictions use different criterion logic and both achieve 7/7 classification accuracy on the n=7 historical dataset, but they give **opposite** conclusions for JUICE 2026 — this is precisely why the framework deliberately retains both, letting observation adjudicate.
+
+**Criterion logic (see 07_Open_Problems_EN.md, Candidate 7):** Whether any of the trajectory's three characteristic angles (δᵢ, δ_peri, δₒ) ever has an absolute value exceeding P₂'s exact node at 54.7356° (zero free parameters, not a fitted value).
+
+**JUICE 2026-09-28/29's three angles:**
+```
+δᵢ = −0.690°,  δ_peri ≈ +1.4°,  δₒ = +4.385°
+max(|δᵢ|, |δ_peri|, |δₒ|) = 4.385°  ≪  54.7356° (the node)
+```
+
+**The topological criterion's sealed prediction:**
+
+```
+All three angles fall within the equatorial band (never approach the node)
+→ Classification: same class as Juno and Messenger (the two historical null results)
+→ Prediction: |ΔV| ≈ 0 (should be a null result, even though |P₂(cosδ_peri)|=0.9991 is large)
+```
+
+**Direct comparison with the original sealed prediction (based on |P₂(cosδ_peri)|):**
+
+| Criterion | Basis | JUICE prediction |
+|-----------|-------|--------------------|
+| \|P₂(cosδ_peri)\| criterion (original sealed prediction, RQ14) | δ_peri near equator, large P₂ value (0.9991) | If P₂ term exists, possible 1–3 mm/s anomaly |
+| **Topological criterion (this section, Candidate 7)** | **All three angles far from the node (54.7°)** | **Null result, |ΔV| ≈ 0** |
+
+**This is the first opportunity to observationally distinguish these two criteria.** Both perform identically on the n=7 historical dataset (7/7 each), purely a coincidence of an underdetermined model; the actual JUICE 2026-09 observation will directly tell us which one (or neither) reflects the true physical mechanism.
+
+**Confidence: Medium (historical classification perfect with zero free parameters, but mechanism unknown, and directly contradicts the other sealed criterion)**
+
+★ **Sealed: 2026-07-01** | Revealed: after the 2026-09-28/29 flyby, verified simultaneously with the original prediction above |
+
+---
+
 ## Europa Clipper Earth Flyby (2026-12-03) ★ Sealed Prediction ★
 
 | Parameter | Value | Source |

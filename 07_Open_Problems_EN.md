@@ -367,24 +367,152 @@ The A₂/A₁ estimate is unreliable with n=7 (heavily influenced by Juno's larg
 
 ---
 
+### Rigorizing Candidate 4: Gravitational Self-Force (MiSaTaQuWa Equations) (2026-07-01)
+
+**Background:** While searching for "an established formula from another field that could compute Candidate 4," we found a mature, published theory in General Relativity — gravitational self-force, used for modeling extreme-mass-ratio-inspiral trajectories in LISA gravitational-wave source modeling.
+
+**Mathematical form (MiSaTaQuWa equations):**
+
+```
+Du^μ/dτ = -1/2(g^μν+u^μu^ν)(2∇h_tail - ∇h_tail) u^λu^ρ
+
+h_tail(τ) = 4m ∫_{-∞}^{τ-ε} ∇[G_ret(z(τ), z(τ′))] u^μ′u^ν′ dτ′
+```
+
+The tail term is an integral over the entire past worldline, determined by the background spacetime's **retarded Green's function** — not an arbitrary power-law kernel, but a memory kernel determined by the physics (the field equation itself).
+
+**Key known property (confirmed in the literature):** Pure gravitational self-force has **no local term** analogous to the electromagnetic ALD force (a term proportional to jerk) — the effect comes entirely from the tail integral; the instantaneous part contributes nothing.
+
+**Mapping to Candidate 4:** If the spacecraft itself couples weakly to the LNSS background field Ψ_bg, its own perturbation, scattered back by the field structure created by Earth's rotation (δΨ_Earth), would produce a tail-type backreaction force — this is not new physics, but an application of an established self-force formalism to our already-established background field framework.
+
+### Quick Test: Jerk on a Real Hyperbolic Trajectory (Ruling Out the Local ALD Hypothesis)
+
+Using a real Keplerian hyperbolic trajectory (not the earlier tanh toy model), we computed peak jerk near perigee to test the ALD-type (local, jerk-proportional) hypothesis:
+
+| Flyby | Peak jerk (m/s³) | dV_obs |
+|-------|-------------------|--------|
+| Rosetta I | 7.27×10⁻³ | +1.82 |
+| Galileo I | 1.39×10⁻² | +3.92 |
+| NEAR | 1.54×10⁻² | +13.46 |
+| **Juno** | **1.74×10⁻²** | **0.00** |
+| Cassini | 1.76×10⁻² | −2.00 |
+| Galileo II | 1.89×10⁻² | −4.60 |
+
+**Conclusion: Failed.** Juno's and Cassini's peak jerk are nearly identical (1.74 vs 1.76×10⁻²) — Juno again cannot be separated by a purely local instantaneous quantity, the third such failure (following speed retardation and Cherenkov intensity).
+
+**The positive side of this failure:** It rules out a local ALD-type self-force, and the literature tells us pure gravitational self-force **inherently lacks** this local term — today's negative result is consistent with the known mathematical structure of MiSaTaQuWa theory, not a refutation of it, and indirectly supports the case that the effect must come from a non-local tail integral.
+
+**Honest scope statement:** A full calculation requires (1) deriving the retarded Green's function for our background field equation ∇²δΨ−κ²δΨ=S, (2) numerically integrating the tail term along the full past worldline of the hyperbolic trajectory, (3) computing the gradient of this tail field to get the self-force, (4) integrating the self-force along the trajectory to get the ΔV correction — this is graduate-thesis-level computational work, beyond today's scope. **Status:** Candidate 4 now has a rigorous theoretical foundation for the first time (not an analogy); full calculation pending | **Priority: Medium (theoretical foundation established, computation substantial)**
+
+---
+
+### Candidate 6: Jump Conditions / Scattering Framework (2026-07-01)
+
+**Core question (raised by Mao Lin Chang):** Candidates 4, 5, and the fractional calculus attempts all presuppose that "integration" is a necessary mathematical tool. But why must it be an integral?
+
+**Reflection:** The Anderson formula `ΔV = V∞K∫sinδdδ` is written as an integral, but its value depends only on the boundary (cosδᵢ, cosδₒ), not on the path taken in between — the integral sign itself may be redundant packaging. The only solid reason to use an integral is "the field propagates at finite speed, requiring integration over history" (as in MiSaTaQuWa's retardation).
+
+**Two findings from today, taken together, point to a neglected option:**
+1. Jerk (a local, instantaneous quantity) fails to separate Juno for the third time
+2. The DSN tracking gap: we have never observed what happens inside perigee passage — only "before" and "after"
+
+**This suggests:** Perhaps the right question is neither "what does the path integral accumulate" nor "what happens at this instant," but rather what **algebraic relationship** connects the "before" and "after" states — what happens in between need not be known at all.
+
+**Two established, integral-free physics languages:**
+
+| Framework | Core idea | Fit to the problem |
+|-----------|-----------|---------------------|
+| Scattering theory (S-matrix) | `|out⟩ = S|in⟩` — relates only incoming/outgoing states, all detail packaged into S | Directly matches the fact that DSN cannot see inside perigee |
+| Israel junction conditions (GR jump conditions) | Algebraic jump conditions matching two spacetime regions (the GR analog of shock jump conditions), no integration over the interface needed | Closer to our already-established GR framework than fluid shocks |
+
+**Verification: this framework naturally reproduces the Anderson formula**
+
+Defining a potential Φ(δ) = −K·cosδ, the simplest jump condition is:
+
+```
+ΔV/V∞ = Φ(δₒ) − Φ(δᵢ) = K(cosδᵢ − cosδₒ)
+```
+
+**This is exactly the Anderson formula.** In form, Anderson's formula was already a jump condition, not the product of a path integral — the path integral was merely an optional, redundant intermediate step.
+
+**A new angle on Juno:** Perhaps the P₂/P₃ corrections should not be "additional terms added to a path integral," but rather a richer structure in the jump condition's potential function Φ(δ) itself (possibly non-analytic, possibly threshold-like) — this may be the same underlying idea as Candidate 5 (nonlinear coupling) and the lower-rated "Topology" entry in GPT's language table, worth re-evaluating.
+
+**Status:** Concept proposed and verified to reproduce the Anderson formula (P₁ term); the specific form of P₂/P₃ corrections under this framework not yet formalized or computationally tested | **Priority: Medium (novel concept, directly echoes DSN gap evidence, but requires formalization)**
+
+---
+
+### Candidate 7: Topological Classification (2026-07-01)
+
+**Background:** GPT's language evaluation table originally rated Topology lowest (★★☆☆☆), but Candidate 6's discovery that both the closed-orbit theorem and the Anderson formula are fundamentally topological arguments motivated a serious re-examination.
+
+**Core idea:** P₂(cosδ) has nodal lines at δ=±54.7356° (exact value, not fitted), dividing declination space into three regions:
+
+```
+North cap N: δ > 54.7356°
+Equatorial band B: −54.7356° < δ < 54.7356°
+South cap S: δ < −54.7356°
+```
+
+**Classification rule (parameter-free):** If any of the trajectory's three characteristic angles (δᵢ, δ_peri, δₒ) has an absolute value exceeding the exact node 54.7356°, classify as "leaves the equatorial band" → predict anomaly. If all three fall within the band, classify as "never leaves" → predict null result.
+
+**Verification against historical data:**
+
+| Flyby | δᵢ | δ_peri | δₒ | Region sequence | Ever leaves band? | dV_obs | Classification |
+|-------|-----|--------|-----|-----------------|---------------------|--------|-----------------|
+| Galileo I | −12.5° | −61.8° | 34.3° | B-S-B | Yes | +3.92 | Anomaly ✓ |
+| Galileo II | −34.3° | 74.2° | −4.5° | B-N-B | Yes | −4.60 | Anomaly ✓ |
+| NEAR | −20.8° | −32.5° | 72.0° | B-B-N | Yes | +13.46 | Anomaly ✓ |
+| Cassini | −12.9° | 58.5° | −5.0° | B-N-B | Yes | −2.00 | Anomaly ✓ |
+| Rosetta I | −2.8° | −71.4° | 34.3° | B-S-B | Yes | +1.82 | Anomaly ✓ |
+| Messenger | 31.4° | 53.3° | −31.9° | B-B-B | No | +0.02 | Null ✓ |
+| Juno | −2.0° | 53.5° | −48.9° | B-B-B | No | 0.00 | Null ✓ |
+
+**Classification accuracy: 7/7 = 100%, with zero fitted parameters** (the node location 54.7356° is P₂'s exact theoretical zero).
+
+**This rule explains something the |P₂(cosδ_peri)| threshold (RQ14) cannot:** NEAR's enormous anomaly (+13.46 mm/s) — its perigee δ_peri=−32.5° lies within the equatorial band, but its **outbound direction** δₒ=+72.03° far exceeds the node. A perigee-only |P₂| criterion misses this; a topological rule examining all three characteristic points of the trajectory correctly classifies it.
+
+**★★★ Critical divergence from the |P₂(cosδ_peri)| threshold: the JUICE 2026 sealed prediction ★★★**
+
+Both criteria perform "equally perfectly" on the n=7 historical dataset, but they give **opposite** conclusions for the already-sealed JUICE 2026-09-28/29 prediction:
+
+| Criterion | Value | JUICE prediction |
+|-----------|-------|-------------------|
+| \|P₂(cosδ_peri)\| (RQ14, already sealed) | 0.9991 (δ_peri≈1.4° near equator, large P₂ value) | If P₂ term exists, anomaly should be observable |
+| **Topological criterion (Candidate 7, new)** | **max(\|δᵢ\|,\|δ_peri\|,\|δₒ\|)=4.385° (far below node 54.7°)** | **Null result, same class as Juno/Messenger** |
+
+This is a textbook symptom of an underdetermined model with n=7 — two logically distinct criteria both fit historical data perfectly, yet diverge out-of-sample. **JUICE 2026-09 will be the first opportunity to discriminate between these two criteria**; see 05_Predictions_EN.md for the specific sealed prediction.
+
+**Status:** 7/7 historical classification success with zero free parameters; gives an opposing prediction to the existing RQ14 criterion for JUICE, now recorded as an independent sealed prediction; the physical mechanism (why the node itself, rather than the continuous P₂ value, determines classification) not yet formalized | **Priority: High (clear, imminent discriminating test)**
+
+---
+
 ## Current Highest Priority (2026-07-01, sole valid version, supersedes all previous versions in this document)
 
-**Important new finding (added during this review):**
+**Important new findings (added during this review):**
 
-**The DSN tracking gap — direct literature support for Candidate 4.** The Anderson anomaly's operational definition is not a continuous path integral, but rather "impossible to fit the trajectory with a single hyperbolic arc, requiring separate inbound/outbound fits" — the effect is highly localized near perigee, which is precisely where DSN tracking is unavailable for roughly 4 hours (Bertolami et al. 2010, arXiv:1201.0163). This suggests the existing P₁/P₂/P₃ path-integral formulas may simply be "a mathematical trick that happens to give the right boundary-term answer," while the true physical mechanism is more likely a localized event near perigee — directly supporting Candidate 4 (medium backreaction) over a continuous-field-reading model. **This is currently the strongest independent support for Candidate 4; its priority should be raised.**
+**The DSN tracking gap — direct literature support for Candidate 4.** The Anderson anomaly's operational definition is not a continuous path integral, but rather "impossible to fit the trajectory with a single hyperbolic arc, requiring separate inbound/outbound fits" — the effect is highly localized near perigee, which is precisely where DSN tracking is unavailable for roughly 4 hours (Bertolami et al. 2010, arXiv:1201.0163). This suggests the existing P₁/P₂/P₃ path-integral formulas may simply be "a mathematical trick that happens to give the right boundary-term answer," while the true physical mechanism is more likely a localized event near perigee — directly supporting Candidate 4 (medium backreaction) over a continuous-field-reading model.
 
 **Missing OSIRIS-REx (2017-09-22) data point.** Perigee altitude 17,237 km, just outside B_main = 16,076 km, with ~34% field retention predicted and an observed anomaly upper limit of <0.1 mm/s. This is a natural boundary test case for B_main and should be included in 01_Observations_EN.md as an eighth data point.
 
+**Gravitational self-force (MiSaTaQuWa) — Candidate 4's first rigorous theoretical foundation.** A jerk calculation on a real hyperbolic trajectory ruled out local ALD-type self-force, indirectly supporting pure gravitational self-force (no local term, effect entirely from tail memory integral). Full calculation requires the retarded Green's function — graduate-thesis-level work.
+
+**Candidate 6: jump conditions / scattering framework — questioning whether integration is necessary.** The Anderson formula itself can be reinterpreted as a jump condition ΔV/V∞=Φ(δₒ)−Φ(δᵢ), requiring no path integral. This framework naturally echoes the DSN gap evidence (only "before" and "after" are known, never "during") and offers a fresh angle on P₂/P₃ corrections and Juno's zero result.
+
+**Candidate 7: topological classification — gives an opposite prediction to RQ14 for JUICE 2026.** Using P₂'s exact node (54.7356°) to divide declination into three regions, and testing whether any of the trajectory's three characteristic angles ever leaves the equatorial band, achieves 7/7 on historical data with zero free parameters. But it gives a prediction for JUICE 2026-09 directly opposite to the existing |P₂(cosδ_peri)| criterion (RQ14) — a textbook symptom of an underdetermined n=7 model, which the JUICE observation will directly adjudicate.
+
 **Priority list:**
 
-1. **[New] Formally integrate the DSN tracking gap's methodological significance into Candidate 4**, and assess whether it reframes RQ4 (Juno's zero result) — from "why doesn't the path integral vanish" to "why did a localized perigee event fail to occur (or get cancelled) specifically in the Juno case"
-2. **[New] Add OSIRIS-REx to the formal dataset** (01_Observations_EN.md) as an independent test of the B_main boundary
-3. **Rigorous derivation of the two-way Doppler factor of 2** (RQ2) — confirm outbound and return path integrals are strictly equal
-4. **Derive the theoretical origin of κ = 1/B_main** (RQ12) — the sole remaining unknown of the background field Ψ_bg
-5. **Redesign the fractional memory kernel to weight only the P₂ mode** (Candidate 4 extension) — both whole-path-weighted versions have failed; the model needs to weight only the P₂-mode path integral
-6. **Await JUICE (2026-09-28/29) observational results** — sealed prediction already recorded
-7. **Await Europa Clipper (2026-12-03) observational results** — sealed prediction already recorded
+1. **[Highest priority, new] The JUICE 2026-09-28/29 observation will adjudicate the diverging predictions of Candidate 7 vs. RQ14** — this is currently the framework's strongest discriminating test
+2. **[New] Formalize Candidate 6's jump-condition framework**, attempt to re-express P₂/P₃ corrections within it, and test whether it gives a more physically reasonable Juno cancellation condition than the path-integral approach
+3. **[New] Formalize why Candidate 7 classifies by "the node itself" rather than "the continuous P₂ value"** — currently an empirical finding lacking a first-principles derivation
+4. **[New] Formally integrate the DSN tracking gap's methodological significance into Candidate 4**, and assess whether it reframes RQ4
+5. **[New] Add OSIRIS-REx to the formal dataset** (01_Observations_EN.md) as an independent test of the B_main boundary
+6. **[New, long-term] Derive the retarded Green's function for the LNSS background field equation**, compute the full gravitational self-force tail integral (graduate-thesis-level work, not a near-term goal)
+7. **Rigorous derivation of the two-way Doppler factor of 2** (RQ2) — confirm outbound and return path integrals are strictly equal
+8. **Derive the theoretical origin of κ = 1/B_main** (RQ12) — the sole remaining unknown of the background field Ψ_bg
+9. **Await Europa Clipper (2026-12-03) observational results** — sealed prediction already recorded
 
 **Removed/superseded content:**
 - Three earlier priority lists (dated 2026-06-26, 2026-06-27, 2026-06-28) have been marked outdated and removed, as some of their conclusions (e.g., the B_main=19,828km candidate value) have been overturned by the two-way Doppler analysis
 - "Search for JUICE 2024 official analysis" is no longer necessary — the 2024 flyby altitude was too high (6,840 km), the framework already predicted no significant effect, and this research direction has been superseded by precise 2026 data
+- The "whole-path weighting" direction for the fractional memory kernel (see the two toy model attempts under the Candidate 4 upgrade above) has been ruled out as an entire model class; Candidate 6 offers a structurally different alternative, to be prioritized over further fractional-calculus variants

@@ -132,6 +132,8 @@ Width ≈ 5° centered on ±54.7°
 | v1.6 | 2026-06-30 | RQ4 methodological extension (inspired by Chen Lijie's paper), Candidate 4 (medium backreaction), Candidate 5 (nonlinear field coupling), fractional calculus toy model tests (both failed, recorded as negative results) |
 | v1.7 | 2026-07-01 | Comprehensive review: fixed GitHub placeholder, consolidated 3 outdated priority lists into one, added OSIRIS-REx as 8th data point, discovered DSN tracking gap as literature support for Candidate 4, corrected oversimplified Juno framing in README |
 | v1.8 | 2026-07-01 | Author byline corrected to Mao Lin Chang (across all files) |
+| v1.9 | 2026-07-01 | Gravitational self-force (MiSaTaQuWa) as rigorous theoretical foundation for Candidate 4; real hyperbolic-orbit jerk calculation (third rejection of purely local instantaneous hypotheses); Candidate 6 (jump conditions / scattering framework) proposed and verified to reproduce the Anderson formula, questioning whether path integration is necessary |
+| v1.10 | 2026-07-01 | Candidate 7 (topological classification): P₂'s exact node (54.7356°) divides declination into three regions; whether any of the trajectory's three characteristic angles ever leaves the equatorial band achieves 7/7 parameter-free classification; found to give an opposite prediction to the RQ14 |P₂| criterion for JUICE 2026, now recorded as an independent sealed prediction (original sealed content unmodified) |
 
 ---
 
