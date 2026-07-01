@@ -486,6 +486,70 @@ This is a textbook symptom of an underdetermined model with n=7 — two logicall
 
 ---
 
+### RQ15: Secular Geomagnetic Drift as a Slow Boundary-Condition Modulator (2026-07-01, proposed by GPT, verified and corrected)
+
+**Background:** GPT raised the question of whether long-term drift of the magnetic north pole affects the LNSS framework's coupling geometry. The original estimate extrapolated from the 2025-2026 instantaneous drift rate (36 km/year) back to historical cumulative drift — this extrapolation is flawed, since pole drift accelerated substantially after the 1990s (from roughly 15 km/yr up to 50-60 km/yr by the 2010s) and cannot be linearly back-extrapolated.
+
+**Corrected magnitude check (2026-07-01):**
+
+Using historical geomagnetic pole positions, the magnetic north pole drifted a cumulative **9.3°** in geographic angular distance from Galileo I (1990) to Juno (2013) — larger than GPT's original estimate, and **of the same order of magnitude as the P₂ calm-zone width (~5°, 52.3°–57.2°)**.
+
+**Physical assessment (agreeing with GPT's direction, but raising its priority):**
+
+```
+If the LNSS source term is purely Earth's rotating mass flow (geographic axis):
+  The Anderson main term 2ωR/c is unaffected by magnetic pole drift (geographic
+  rotation axis unchanged)
+
+If the LNSS background field couples to the magnetosphere/plasma structure:
+  Pole drift changes the coupling boundary's geometric orientation
+  → affects the "effective node location," ap coupling efficiency, SAA weak-field
+    zone position
+  → this is a second-order/boundary-condition effect, not a rewrite of the main model
+```
+
+**Testable hypothesis:** For a historical flyby whose δ_peri lies close to the calm-zone edge (e.g., Cassini's 58.5°, only 3.76° from the node), does recalculating the "effective node" position relative to the historical magnetic axis (via IGRF/WMM historical models) reduce the residual compared to using the geographic node?
+
+**Status:** Magnitude verification complete (9.3° cumulative drift, same order as calm-zone width, not negligible); specific IGRF-corrected recalculation for each flyby not yet performed | **Priority: Medium (clear testable method, but a slow second-order effect)**
+
+---
+
+### Candidate 5 Update: Nonlinear Dynamic Boundary Coupling (2026-07-01, proposed by GPT, confirmed)
+
+**Background:** GPT pointed out that solar wind's influence on the LNSS field should not be modeled as "a fixed-shape field multiplied by a suppression coefficient," but rather as "solar wind dynamically reshaping the field boundary's geometry." This is not a new mechanism — it is the concrete physical realization of Candidate 5 (nonlinear field coupling) — merged into Candidate 5 rather than creating a new Candidate 8.
+
+**Core revision:**
+
+```
+Original implicit assumption (tested in RQ13):
+  δΨ_total = δΨ_Earth + f(ap)   (ap as a linear suppression coefficient)
+
+Candidate 5 updated version:
+  δΨ_total(t) = F[δΨ_Earth, Boundary_solarwind(t)]
+  (solar wind does not add a term — it dynamically changes the boundary
+  condition of the solution itself)
+```
+
+**Why this explains ap's known partial effectiveness (RQ13's known limitation):**
+
+ap is a scalar proxy for geomagnetic disturbance intensity, losing directional information. The physical quantities actually determining boundary deformation may be:
+
+```
+Solar wind dynamic pressure
+IMF Bz direction (north-south component determines magnetopause reconnection efficiency)
+Magnetopause standoff distance
+Plasmasphere L-shell (already computed via the Carpenter-Anderson formula in 02_Constraints_EN.md)
+Magnetic Local Time (MLT) at perigee
+```
+
+**Relationship to Candidate 6:** If the field is instantaneously deformed by solar wind near perigee, the Anderson anomaly would more closely resemble a "before entering the deformed boundary" → "crossing" → "after leaving the deformed boundary" structure, which aligns closely with Candidate 6 (jump conditions / scattering framework) — not a slowly-accumulating path integral, but an instantaneous boundary jump.
+
+**Actionable next step:** Obtain IMF Bz and solar wind dynamic pressure data for the historical flyby dates from NASA OMNIWeb (ap and F10.7 already obtained, see 01_Observations_EN.md), and test whether these finer-grained parameters explain the "observed value minus pure P₁ prediction" residual better than ap alone.
+
+**Status:** Concept revised and confirmed (proposed by GPT, verified in agreement by this framework); specific parameters not yet obtained, not computationally tested | **Priority: Medium (clear actionable next step, data obtainable from NASA OMNIWeb)**
+
+---
+
 ## Current Highest Priority (2026-07-01, sole valid version, supersedes all previous versions in this document)
 
 **Important new findings (added during this review):**
@@ -500,17 +564,23 @@ This is a textbook symptom of an underdetermined model with n=7 — two logicall
 
 **Candidate 7: topological classification — gives an opposite prediction to RQ14 for JUICE 2026.** Using P₂'s exact node (54.7356°) to divide declination into three regions, and testing whether any of the trajectory's three characteristic angles ever leaves the equatorial band, achieves 7/7 on historical data with zero free parameters. But it gives a prediction for JUICE 2026-09 directly opposite to the existing |P₂(cosδ_peri)| criterion (RQ14) — a textbook symptom of an underdetermined n=7 model, which the JUICE observation will directly adjudicate.
 
+**RQ15 (new): secular geomagnetic drift, magnitude verified as non-negligible after correction.** GPT raised whether magnetic pole drift affects the framework; the original estimate method was flawed (extrapolating recent rate back historically), but the corrected 1990-2013 cumulative drift is 9.3°, the same order of magnitude as the P₂ calm-zone width — worth serious testing, though a slow second-order effect that does not rewrite the main model.
+
+**Candidate 5 update (proposed by GPT, confirmed): nonlinear dynamic boundary coupling.** ap is only a crude proxy for geomagnetic disturbance; the actual mechanism may be solar wind dynamically reshaping the LNSS field's boundary geometry (IMF Bz, dynamic pressure, magnetopause distance, MLT), not a simple suppression coefficient. Closely aligned with Candidate 6 (jump conditions).
+
 **Priority list:**
 
-1. **[Highest priority, new] The JUICE 2026-09-28/29 observation will adjudicate the diverging predictions of Candidate 7 vs. RQ14** — this is currently the framework's strongest discriminating test
-2. **[New] Formalize Candidate 6's jump-condition framework**, attempt to re-express P₂/P₃ corrections within it, and test whether it gives a more physically reasonable Juno cancellation condition than the path-integral approach
-3. **[New] Formalize why Candidate 7 classifies by "the node itself" rather than "the continuous P₂ value"** — currently an empirical finding lacking a first-principles derivation
-4. **[New] Formally integrate the DSN tracking gap's methodological significance into Candidate 4**, and assess whether it reframes RQ4
-5. **[New] Add OSIRIS-REx to the formal dataset** (01_Observations_EN.md) as an independent test of the B_main boundary
-6. **[New, long-term] Derive the retarded Green's function for the LNSS background field equation**, compute the full gravitational self-force tail integral (graduate-thesis-level work, not a near-term goal)
-7. **Rigorous derivation of the two-way Doppler factor of 2** (RQ2) — confirm outbound and return path integrals are strictly equal
-8. **Derive the theoretical origin of κ = 1/B_main** (RQ12) — the sole remaining unknown of the background field Ψ_bg
-9. **Await Europa Clipper (2026-12-03) observational results** — sealed prediction already recorded
+1. **[Highest priority] The JUICE 2026-09-28/29 observation will adjudicate the diverging predictions of Candidate 7 vs. RQ14** — this is currently the framework's strongest discriminating test
+2. **[New] Obtain IMF Bz and solar wind dynamic pressure data for historical flybys** (NASA OMNIWeb), test whether they explain the residual better than ap (Candidate 5 extension)
+3. **[New] For flybys with δ_peri near the calm-zone edge (e.g., Cassini), recalculate the effective node using historical IGRF magnetic pole positions** (RQ15)
+4. **[New] Formalize Candidate 6's jump-condition framework**, attempt to re-express P₂/P₃ corrections within it
+5. **[New] Formalize why Candidate 7 classifies by "the node itself" rather than "the continuous P₂ value"**
+6. **[New] Formally integrate the DSN tracking gap's methodological significance into Candidate 4**
+7. **[New] Add OSIRIS-REx to the formal dataset** (01_Observations_EN.md)
+8. **[New, long-term] Derive the retarded Green's function for the LNSS background field equation** (full gravitational self-force calculation)
+9. **Rigorous derivation of the two-way Doppler factor of 2** (RQ2)
+10. **Derive the theoretical origin of κ = 1/B_main** (RQ12)
+11. **Await Europa Clipper (2026-12-03) observational results** — sealed prediction already recorded
 
 **Removed/superseded content:**
 - Three earlier priority lists (dated 2026-06-26, 2026-06-27, 2026-06-28) have been marked outdated and removed, as some of their conclusions (e.g., the B_main=19,828km candidate value) have been overturned by the two-way Doppler analysis

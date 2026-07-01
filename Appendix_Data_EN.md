@@ -134,6 +134,7 @@ Width ≈ 5° centered on ±54.7°
 | v1.8 | 2026-07-01 | Author byline corrected to Mao Lin Chang (across all files) |
 | v1.9 | 2026-07-01 | Gravitational self-force (MiSaTaQuWa) as rigorous theoretical foundation for Candidate 4; real hyperbolic-orbit jerk calculation (third rejection of purely local instantaneous hypotheses); Candidate 6 (jump conditions / scattering framework) proposed and verified to reproduce the Anderson formula, questioning whether path integration is necessary |
 | v1.10 | 2026-07-01 | Candidate 7 (topological classification): P₂'s exact node (54.7356°) divides declination into three regions; whether any of the trajectory's three characteristic angles ever leaves the equatorial band achieves 7/7 parameter-free classification; found to give an opposite prediction to the RQ14 |P₂| criterion for JUICE 2026, now recorded as an independent sealed prediction (original sealed content unmodified) |
+| v1.11 | 2026-07-01 | RQ15 (secular geomagnetic drift, proposed by GPT and corrected/verified — 1990-2013 cumulative drift of 9.3°, same order as calm-zone width); Candidate 5 updated to "Nonlinear Dynamic Boundary Coupling" (proposed by GPT and confirmed — solar wind dynamically reshapes the field boundary rather than a simple suppression coefficient; incorporates IMF Bz, dynamic pressure, MLT as concrete parameters) |
 
 ---
 
