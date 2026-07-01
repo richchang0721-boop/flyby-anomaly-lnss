@@ -1,6 +1,6 @@
 # 07 — Open Research Questions
 
-**Last updated:** 2026-06-30 v1.4
+**Last updated:** 2026-06-28 v1.4
 
 ---
 
@@ -100,6 +100,32 @@ Ruling out "speed → retardation" does not rule out the broader concern that sp
 **Core idea (proposed by Mao Lin Chang):**
 
 The existing framework (spherical harmonics, retarded Green's functions) assumes the spacecraft **passively reads** the background field Ψ_bg — the field is unaffected by the spacecraft's presence. Candidate 4 proposes the opposite class of mechanism: the spacecraft, in passing through the medium, **actively perturbs it**, and this perturbation backreacts on the spacecraft's trajectory.
+
+---
+
+### ★ Independent Literature Support (added in 2026-07-01 review): The DSN Tracking Gap
+
+During the 2026-07-01 document review, a literature search revealed a previously unrecorded methodological fact that directly supports Candidate 4:
+
+**The Anderson anomaly's operational definition is not a continuous path integral.** Bertolami et al. (2010, arXiv:1201.0163) state explicitly:
+
+> *"The effect...showed the impossibility of fitting the trajectory with a single hyperbolic arc, but allowed for a separate fit of the inward and outward paths...highly localized at the perigee, where tracking through the Deep Space Network (DSN) is not available (with an approximate four hours gap)."*
+
+In other words, ΔV is actually measured by **separately fitting inbound and outbound hyperbolic arcs and comparing their asymptotic velocities** — the ~4-hour window near perigee is untracked and effectively invisible.
+
+**Implications for the framework:**
+
+The existing Legendre path-integral formula (P₁+P₂+P₃...) implicitly assumes the effect is a "force accumulated continuously along the path." But if the **actual measurement method itself** compares two separately-fit arcs across an invisible gap, then:
+
+1. The path-integral formula may simply be a mathematical convenience that happens to give the correct boundary-term answer, not evidence that the physical mechanism is truly continuous
+2. The real physical event is very plausibly **localized near perigee** (within the DSN gap), not distributed along the entire trajectory
+3. This is exactly the physical picture Candidate 4 ("medium backreaction") originally assumed — the effect concentrated where the spacecraft is closest and perturbs the medium most strongly
+
+**This is currently the strongest independent support for Candidate 4** — not a guess of ours, but a methodological detail revealed by the original anomaly-measurement literature itself, previously unnoticed by this framework.
+
+**Follow-up direction:** If a localized event near perigee is real, RQ4 (Juno's zero result) may need reframing — from "why doesn't the path integral vanish" to "why did a localized perigee event fail to occur (or get cancelled by some unknown condition) specifically in the Juno case." This is a new angle not yet formalized.
+
+---
 
 **Distinction from simple friction:**
 
@@ -338,3 +364,27 @@ Observed gap: 0.036 (Messenger, null) to 0.091 (Cassini, anomaly) → midpoint �
 The A₂/A₁ estimate is unreliable with n=7 (heavily influenced by Juno's large residual). More flyby data required.
 
 **Status:** Theoretical framework established; precise value requires n>10 | **Priority: Medium**
+
+---
+
+## Current Highest Priority (2026-07-01, sole valid version, supersedes all previous versions in this document)
+
+**Important new finding (added during this review):**
+
+**The DSN tracking gap — direct literature support for Candidate 4.** The Anderson anomaly's operational definition is not a continuous path integral, but rather "impossible to fit the trajectory with a single hyperbolic arc, requiring separate inbound/outbound fits" — the effect is highly localized near perigee, which is precisely where DSN tracking is unavailable for roughly 4 hours (Bertolami et al. 2010, arXiv:1201.0163). This suggests the existing P₁/P₂/P₃ path-integral formulas may simply be "a mathematical trick that happens to give the right boundary-term answer," while the true physical mechanism is more likely a localized event near perigee — directly supporting Candidate 4 (medium backreaction) over a continuous-field-reading model. **This is currently the strongest independent support for Candidate 4; its priority should be raised.**
+
+**Missing OSIRIS-REx (2017-09-22) data point.** Perigee altitude 17,237 km, just outside B_main = 16,076 km, with ~34% field retention predicted and an observed anomaly upper limit of <0.1 mm/s. This is a natural boundary test case for B_main and should be included in 01_Observations_EN.md as an eighth data point.
+
+**Priority list:**
+
+1. **[New] Formally integrate the DSN tracking gap's methodological significance into Candidate 4**, and assess whether it reframes RQ4 (Juno's zero result) — from "why doesn't the path integral vanish" to "why did a localized perigee event fail to occur (or get cancelled) specifically in the Juno case"
+2. **[New] Add OSIRIS-REx to the formal dataset** (01_Observations_EN.md) as an independent test of the B_main boundary
+3. **Rigorous derivation of the two-way Doppler factor of 2** (RQ2) — confirm outbound and return path integrals are strictly equal
+4. **Derive the theoretical origin of κ = 1/B_main** (RQ12) — the sole remaining unknown of the background field Ψ_bg
+5. **Redesign the fractional memory kernel to weight only the P₂ mode** (Candidate 4 extension) — both whole-path-weighted versions have failed; the model needs to weight only the P₂-mode path integral
+6. **Await JUICE (2026-09-28/29) observational results** — sealed prediction already recorded
+7. **Await Europa Clipper (2026-12-03) observational results** — sealed prediction already recorded
+
+**Removed/superseded content:**
+- Three earlier priority lists (dated 2026-06-26, 2026-06-27, 2026-06-28) have been marked outdated and removed, as some of their conclusions (e.g., the B_main=19,828km candidate value) have been overturned by the two-way Doppler analysis
+- "Search for JUICE 2024 official analysis" is no longer necessary — the 2024 flyby altitude was too high (6,840 km), the framework already predicted no significant effect, and this research direction has been superseded by precise 2026 data

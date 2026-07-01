@@ -1,7 +1,7 @@
 # LNSS Framework for Earth Flyby Anomaly
 
 **Author:** Mao Lin Chang (2026)  
-**Cite as:** Chang, R. (2026). *LNSS Framework for Earth Flyby Anomaly*. GitHub: github.com/[your-account]/flyby-anomaly-lnss  
+**Cite as:** Chang, M.L. (2026). *LNSS Framework for Earth Flyby Anomaly*. GitHub: github.com/richchang0721-boop/flyby-anomaly-lnss  
 **License:** CC0 v1.0 Universal  
 **Version:** v1.4 | **Created:** 2026-06-27 | **Collaborators:** Claude (Anthropic), GPT (OpenAI)
 
@@ -172,12 +172,13 @@ FlybyResearch/
 
 ---
 
-## 最高優先的下一步
+## 最高優先的下一步（2026-07-01 更新，詳見 07_Open_Problems.md 文末「當前最高優先事項」）
 
-1. **嚴格推導雙程 Doppler 的因子 2**（RQ2）——確認往返路徑積分嚴格相等
-2. **推導 κ = 1/B_main 的理論來源**（RQ12）——背景場 Ψ_bg 的唯一未知量
-3. **尋找 Juno 零結果的額外物理機制**（RQ4）——多極展開無法解釋，需要新思路
-4. **JUICE 2026 年 9 月地球飛掠預測**——查詢精確軌道參數，密封預測 ΔV
+1. **【新】DSN 追蹤空窗期的方法論意義**——候選4（介質反作用力）的直接文獻佐證，效應可能局部化在近地點而非連續路徑積分
+2. **嚴格推導雙程 Doppler 的因子 2**（RQ2）——確認往返路徑積分嚴格相等
+3. **推導 κ = 1/B_main 的理論來源**（RQ12）——背景場 Ψ_bg 的唯一未知量
+4. **尋找 Juno 零結果的額外物理機制**（RQ4）——多極展開無法解釋，需要新思路
+5. **等待 JUICE（2026-09-28/29）和 Europa Clipper（2026-12-03）觀測結果**——密封預測已完成
 
 ## 信號強度的正確排序（2026-06-27 確立）
 
@@ -186,6 +187,8 @@ FlybyResearch/
 2. 太陽風（次要）：ap 指數修正       c₂=−0.249 mm/s/nT，二階效應
 3. 三體潮汐（三階）：月球-太陽配置   RMS 改善 26%
 ```
+
+> ⚠️ **重要澄清（2026-07-01）：** 上表中「幾何主導 Juno 零結果」是簡化敘述。精確分析（見 07_Open_Problems.md RQ4）顯示：Juno 的 P₁ 積分本身應給出 +10.4 mm/s，P₂ 節點無法單獨解釋為何這個大的 P₁ 貢獻被完全消去。**Juno 的零結果仍是框架中最誠實的未解問題**，不應理解為「已被幾何完全解釋」。
 
 ## 已排除的問題（2026-06-27）
 

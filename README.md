@@ -1,7 +1,7 @@
 # LNSS Framework for Earth Flyby Anomaly
 
 **Author:** Mao Lin Chang (2026)  
-**Cite as:** Chang, R. (2026). *LNSS Framework for Earth Flyby Anomaly*. GitHub: github.com/[your-account]/flyby-anomaly-lnss  
+**Cite as:** Chang, M.L. (2026). *LNSS Framework for Earth Flyby Anomaly*. GitHub: github.com/richchang0721-boop/flyby-anomaly-lnss  
 **License:** CC0 v1.0 Universal  
 **Version:** v1.4 | **Created:** 2026-06-27 | **Collaborators:** Claude (Anthropic), GPT (OpenAI)
 
@@ -104,6 +104,8 @@ Background field Ψ_bg  (wavenumber κ = 1/B_main, origin unknown)
 3. Tidal (tertiary):     Moon-Sun configuration  26% RMS improvement
 ```
 
+> ⚠️ **Important clarification (2026-07-01):** The framing "geometry dominates Juno's null result" above is a simplification. Careful analysis (see 07_Open_Problems_EN.md, RQ4) shows that Juno's P₁ integral alone should give +10.4 mm/s, and the P₂ node cannot by itself explain why this large P₁ contribution is fully cancelled. **Juno's zero result remains the framework's most honest open problem** and should not be read as "fully explained by geometry."
+
 ### Threshold Prediction
 
 | Condition | Prediction |
@@ -191,7 +193,7 @@ The following mechanisms have been quantitatively excluded:
 
 | File | Contents |
 |------|----------|
-| [README.md](README.md) | This file — full English overview |
+| [README_EN.md](README_EN.md) | This file — full English overview |
 | [05_Predictions_EN.md](05_Predictions_EN.md) | **Sealed predictions (JUICE & Europa Clipper)** |
 | [06_Falsification_EN.md](06_Falsification_EN.md) | Falsification conditions |
 | [04_Mathematics_EN.md](04_Mathematics_EN.md) | Mathematical derivations |
@@ -205,7 +207,7 @@ The following mechanisms have been quantitatively excluded:
 
 | 文件 | 內容 |
 |------|------|
-| [README_ZH.md](README_ZH.md) | 中文總索引 |
+| [README.md](README.md) | 中文總索引 |
 | [01_Observations.md](01_Observations.md) | 飛掠觀測數據 |
 | [02_Constraints.md](02_Constraints.md) | 觀測約束、封閉軌道定理 |
 | [03_Hypotheses.md](03_Hypotheses.md) | 假說架構 |

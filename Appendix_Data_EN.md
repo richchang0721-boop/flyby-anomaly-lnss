@@ -128,3 +128,14 @@ Width ≈ 5° centered on ±54.7°
 | v1.2 | 2026-06-27 | P₂ analysis, threshold hypothesis, sealed predictions |
 | v1.3 | 2026-06-28 | Closed orbit theorem, GPS analysis, factor 2 (two-way Doppler), B_main plasmasphere validation |
 | v1.4 | 2026-06-28 | JPL Horizons precise predictions (JUICE & Europa Clipper), English versions, GitHub preparation |
+| v1.5 | 2026-06-28 | Bilingual publication (9 files × 2 languages), GitHub repo live, CC0 license, GitHub Release v1.0, Medium article published |
+| v1.6 | 2026-06-30 | RQ4 methodological extension (inspired by Chen Lijie's paper), Candidate 4 (medium backreaction), Candidate 5 (nonlinear field coupling), fractional calculus toy model tests (both failed, recorded as negative results) |
+| v1.7 | 2026-07-01 | Comprehensive review: fixed GitHub placeholder, consolidated 3 outdated priority lists into one, added OSIRIS-REx as 8th data point, discovered DSN tracking gap as literature support for Candidate 4, corrected oversimplified Juno framing in README |
+| v1.8 | 2026-07-01 | Author byline corrected to Mao Lin Chang (across all files) |
+
+---
+
+## Known Differences Between Language Versions (honest disclosure)
+
+- **The Chinese and English versions are not word-for-word translations.** English versions (`*_EN.md`) are condensed, focusing on core results, sealed predictions, and falsification conditions. The complete evolution of ideas (including superseded intermediate steps) exists only in the Chinese version. For the full derivation history, refer to the Chinese version.
+- **04_Mathematics.md retains superseded analysis** (e.g., the "Factor 2 and B_main Coupling" section), marked as outdated but not deleted, to preserve a complete record of how ideas evolved. This is a deliberate design choice, not an oversight.

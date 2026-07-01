@@ -15,6 +15,13 @@
 | Rosetta I | 2005-03-04 | +1.82 mm/s | −2.81° | +34.29° | 3.863 | 1,954 km | −71.4° |
 | Messenger | 2005-08-02 | +0.02 mm/s ≈ 0 | +31.44° | −31.92° | 4.056 | 2,347 km | +53.3° |
 | **Juno** | **2013-10-09** | **0.00 mm/s** | **−2.00°** | **−48.90°** | **9.820** | **561 km** | **+53.5°** |
+| **OSIRIS-REx** | **2017-09-22** | **< 0.1 mm/s (upper limit)** | TBD | TBD | 5.4* | **17,237 km** | TBD |
+
+\* V∞ shown is the launch escape velocity; the actual flyby value requires confirmation from precise trajectory data.
+
+**Significance of OSIRIS-REx (added 2026-07-01):** Perigee altitude of 17,237 km falls just outside the framework's derived B_main = 16,076 km (see 04_Mathematics_EN.md) — the only observed flyby with an altitude exceeding B_main. The framework predicts ~34% field retention at this altitude (exp(−17237/16076)); the observed <0.1 mm/s upper limit is consistent with this, but the signal is too weak and δ_in/δ_out have not yet been obtained, so this cannot serve as a strong test — recorded as a candidate boundary case.
+
+**Difference from the other seven cases:** OSIRIS-REx has not yet been analyzed with the same detail as the other seven cases (δ_peri, P₂ not computed). It is included for data completeness; the |P₂|_c classification accuracy (7/7) still refers to the original seven cases and does not include this one.
 
 **Excluded cases (non-coherent tracking):**
 Rosetta II (2007), Rosetta III (2009), EPOXI (2008): insufficient tracking precision to detect mm/s deviations — instrument limitation, not physical null result.
