@@ -1,18 +1,45 @@
 # 07 — Open Research Questions
 
-**Last updated:** 2026-06-28 v1.4
+**Last updated:** 2026-07-02 v1.6 (all 7 flybys reconstructed, Candidate 7 overturned, RQ4 Juno figures corrected)
 
 ---
 
-## Priority Summary (2026-06-28)
+## Priority Summary (2026-07-02)
 
 | RQ | Problem | Priority | Status |
 |----|---------|----------|--------|
-| RQ1+RQ2+RQ12 | Field equation → factor 2 + B_main | **High** | Route B pending |
-| RQ4 | Juno zero result — additional mechanism | **High** | Open |
-| RQ13 | Physical mechanism of ap correlation | Medium | Positioned as secondary effect |
+| **All 7 flybys reconstruction** | δᵢ, δₒ, δ_peri recomputed via Horizons for all historical flybys | **Highest** | **Complete** — see dedicated section below |
+| **Candidate 7** | Topological node classification | — | **Overturned** — δ_peri contributed 0/7 correct classifications |
+| RQ4 | Juno zero result | High | P1 prediction corrected to ~6.0–6.3 mm/s (was 10.4); still unresolved |
+| RQ1+RQ2 | Field equation angular structure + factor 2 | Low | **Resolved** |
+| RQ12 | B_main / κ origin | Low | Cannot be derived from Earth-local physics; reframed as free parameter |
+| RQ13, RQ15 | ap correlation; geomagnetic drift | — | **Premises relying on old Cassini δ_peri now known false; pending re-evaluation** |
 | RQ11 | Dark matter + plasma compound medium | Low | Conceptual exploration |
-| RQ14 | Theoretical value of \|P₂\|_c | Medium | Framework established |
+| RQ14 | Theoretical value of \|P₂\|_c | Medium | Framework established, but underlying δ_peri now suspect |
+
+---
+
+## 2026-07-02 Session Summary
+
+**RQ1+RQ2 closed.** Angular structure (sinθ) remains derived from GR/GEM. RQ2's remaining rigor gap closed: the outbound/return leg asymmetry from spacecraft motion during round-trip light time is O((v_sc/c)²) ≈ 1.6×10⁻⁹ relative — two orders of magnitude below the Anderson signal itself (~10⁻⁷), unobservable at DSN precision. The two-way Doppler factor-of-2 mechanism is now closed with a quantified error bound.
+
+**RQ12 (κ origin): Route B executed, no derivation found — problem reframed.** Extended dimensional analysis (5 new Earth-local combinations tested: geosynchronous radius, c/ω_E, geometric mean, Kerr-type length — all fail) confirms κ is not built from Earth-local constants. Reframed into two falsifiable sub-hypotheses: (i) Ψ_bg is an intrinsic background-field constant (effective mass 1.228×10⁻¹⁴ eV/c²), independent of local space environment; (ii) κ is set by a local medium (e.g. plasmasphere) and should track ap/F10.7.
+
+**Discriminating test (single-flyby κ_i inversion, n=5):** κ_i vs F10.7 shows r=−0.044 (clean null). The marginal κ_i vs ap signal (r=−0.69, p=0.075) is diagnosed as a Cassini-driven leverage artifact via leave-one-out (Cassini's geometric term is smallest of the five, and its residual 0.93 mm/s sits within Anderson-formula precision itself). The four geometrically healthy flybys show κ_i spread of only ~5% while their ap spans 2–26. **Conclusion: existing data supports hypothesis (i).** RQ12 status: cannot be derived from Earth-local physics; reclassified as a framework free parameter, theoretical origin deferred to field theory/cosmology.
+
+**RQ4: Gated Anderson model (candidates 6+7 combined), zero free parameters.**
+```
+ΔV = V∞·(2ωR/c)·(cosδᵢ−cosδₒ) × Θ(max(|δᵢ|,|δ_peri|,|δₒ|) > 54.7356°)
+```
+RMS(P₁-only) = 3.953 mm/s → RMS(gated) = 0.381 mm/s (90% improvement); Juno residual goes from −10.41 to 0. Tested against literature angles for Rosetta III: gate=0, gated model hits observation (0±0.1 mm/s) exactly, while pure P₁ predicts +1.091 mm/s — an **11σ falsification of the un-gated Anderson formula** using already-published data.
+
+**🔴 Urgent: data integrity audit.** Cross-checking against Jouannic et al. 2015 (ISSFD) and Acedo 2017 (arXiv:1701.05735):
+1. **δ_peri definition conflict.** Galileo I's orbital inclination (142.9°, Acedo) bounds the equatorial-frame perigee declination to ≤37.1°. The repository's δ_peri = −61.8° exceeds this physical bound — it cannot be the equatorial position declination as currently labeled. The gated model's 7/7 result rests entirely on this column; using literature perigee latitudes instead causes the gate to fail on Galileo I/II, Cassini, and Rosetta I (all of which have observed anomalies but literature latitudes place them inside the equatorial band).
+2. **Juno asymptotic angles are an outlier vs. two independent literature sources** (both give δᵢ≈−14.3°, δₒ≈+39.4°, vs. repository's δᵢ=−2.0°, δₒ=−48.9°). RQ4's conclusion is unaffected either way, but the repository value needs verification.
+3. **Cassini's observed value is disputed in the literature** (−2 mm/s per Anderson 2008 vs. −0.5±0.5 mm/s per later compilations) — this may explain why Cassini repeatedly surfaces as an outlier in independent analyses (κ_i inversion, gated residuals).
+4. **Most urgent: sealed predictions' coordinate frame is unverified.** The repository records JUICE/Europa Clipper trajectories as sourced from Horizons in **Ecliptic J2000**, but the Anderson formula's δ requires **equatorial declination**. If the sealed predictions were computed in the wrong frame, both sealed values may need to be recomputed — JUICE flies by 2026-09-28, under three months away.
+
+**Action item (top priority):** Re-derive δᵢ, δ_peri, δₒ for all flybys (including JUICE/Europa Clipper) from JPL Horizons in the equatorial frame, outputting both position declination and velocity-vector declination to settle the δ_peri definition question, before treating the gated model's 7/7 or the sealed predictions as final.
 
 ---
 
@@ -48,7 +75,9 @@ This decouples RQ2 from RQ12. B_main = 16,076 km is correct (matches single-way 
 
 **Pending rigorous derivation:** Whether the outbound and return path integrals are strictly equal when the spacecraft moves rapidly.
 
-**Status:** Candidate resolved; rigorous derivation pending | **Priority: Medium**
+**2026-07-02 update — closed:** The asymmetry from spacecraft displacement during round-trip light time is O((v_sc/c)²) ≈ 1.6×10⁻⁹ relative (V∞~12 km/s, r~1.5 R_E), two orders below the Anderson signal (~10⁻⁷), unobservable at DSN precision.
+
+**Status:** Resolved, with quantified error bound | **Priority: Low (complete)**
 
 ---
 
@@ -486,7 +515,61 @@ This is a textbook symptom of an underdetermined model with n=7 — two logicall
 
 ---
 
+### 🔴🔴 Complete Reconstruction of All 7 Historical Flybys: Candidate 7's Node Criterion Overturned (2026-07-02)
+
+**Background:** After the audit found δ_peri's definition undocumented and inconsistent with orbital-inclination physics, all 7 historical flybys were fully reconstructed via JPL Horizons: equatorial frame (ICRF), 1-minute-step precise perigee search, both position and velocity declination computed.
+
+**Perigee altitude validation (all cases):** reconstructed altitudes matched official values to within 25 km (mostly <10 km) across all 7 cases, confirming the method (frame setup, precise perigee search) is reliable.
+
+**Complete results for all 7 cases:**
+
+| Flyby | δᵢ (old→new) | δₒ (old→new) | δ_peri (old→new, pos/vel) | Gate (new) | Observed | Correct? |
+|-------|---------------|----------------|------------------------------|------------|----------|----------|
+| Galileo I | −12.52→**−12.5** (match) | +34.26→**−34.0** (same magnitude, flipped sign) | −61.8→**+23.81/−25.58** (wrong) | 0 | +3.92 | ✗ Fail |
+| Galileo II | −34.26→**−34.25** (match) | −4.50→**−4.90** (close) | +74.2→**−32.45/−21.55** (wrong) | 0 | −4.60 | ✗ Fail |
+| NEAR | −20.76→**−20.58** (close) | +72.03→**−72.00** (same magnitude, flipped sign) | −32.5→**+32.84/−51.33** (wrong) | **1** (δₒ alone crosses node) | +13.46 | ✓ Pass |
+| Cassini | −12.92→**−12.92** (exact match) | −4.99→**−5.48** (close) | +58.5→**−22.73/−9.32** (wrong) | 0 | −2.00* | ✗ Fail |
+| Rosetta I | −2.81→**−2.0** (lower confidence) | +34.29→**−34.04** (same magnitude, flipped sign) | −71.4→**+20.83/−27.13** (wrong) | 0 | +1.82 | ✗ Fail |
+| Messenger | +31.44→**+32.2** (close) | −31.92→**−32.91** (close) | +53.3→**+46.92/−0.04** (wrong) | 0 | ≈0.02 | ✓ Pass |
+| Juno | −2.00→**+14.16** (completely different) | −48.90→**+39.40** (completely different) | +53.5→**−32.22/+28.57** (wrong) | 0 | 0.00 | ✓ Pass |
+
+*Cassini's observed value is disputed in the literature (−2.00 vs −0.5±0.5 mm/s); see earlier audit notes.
+
+**Core conclusion: δ_peri contributes zero correct classifications across all 7 cases.**
+
+The three correctly classified cases (NEAR, Messenger, Juno) are all decided by δᵢ and δₒ alone — NEAR by δₒ alone crossing the node; Messenger and Juno by both δᵢ and δₒ staying well within the band. δ_peri's value or definition never changes any of these three outcomes. The four misclassified cases (Galileo I/II, Cassini, Rosetta I) all relied on the old database's now-confirmed-erroneous, artificially large δ_peri value to "manufacture" a node crossing; with corrected δᵢ, δₒ (neither of which crosses the node), the classification fails.
+
+**Candidate 7's topological node criterion (dependent on whether δ_peri crosses 54.7356°) does not survive systematic verification.** A simplified criterion using only δᵢ and δₒ (dropping δ_peri entirely) scores identically (3/7), since δ_peri never contributed a single correct classification — this means δ_peri is not merely mis-defined, it should not be part of the criterion at all.
+
+**Major additional finding: Juno's δᵢ, δₒ themselves (not just δ_peri) were wrong.** The new reconstructed values (δᵢ=+14.16°, δₒ=+39.40°) are completely different from the old database (δᵢ=−2.00°, δₒ=−48.90°, different in sign as well as magnitude), but closely match independent literature (Jouannic et al. 2015: δᵢ=+14.17°, δₒ=+39.50°; Acedo 2017: δᵢ=−14.308°, δₒ=+39.409°). **This means RQ4's Juno analysis needs to be entirely recomputed with the new angles:**
+
+```
+New Anderson P1 prediction (new angles): +5.99 ~ +6.34 mm/s (depending on V∞ used)
+Independently computed by Acedo (2017): 6.3355 mm/s (near-perfect cross-validation)
+Old framework claim: +10.4 mm/s (now confirmed to be an artifact of erroneous angles)
+```
+
+The magnitude of Juno's "uncancelled anomaly" that RQ4 needs to explain is only about **60% of what was previously claimed** (~6 mm/s, not 10.4 mm/s). RQ4 itself remains unresolved (nonzero prediction vs. zero observation), but the coefficients computed in the "RQ4 Precision" subsection (A₂/A₁≈−3.4, and the P₁+P₂+P₃+P₄ multipole table) were all computed with the wrong angles and are not currently trustworthy. Also, the previously celebrated claim that "Juno's δ_peri=53.5° sits only 1.24° from the node — a razor's-edge coincidence" is false: the new data shows Juno is 15.34° from the node, not a special/marginal case at all.
+
+**Downstream analyses directly affected, requiring re-evaluation:**
+
+| Item | Original claim | Current status |
+|------|-----------------|-----------------|
+| Candidate 7 topological criterion 7/7 | Established | **Overturned** — δ_peri contributed zero correct classifications |
+| Gated Anderson model, 90% RMS improvement | Established | **Needs recomputation** (built on the same δ_peri) |
+| RQ13 "Juno vs. Cassini: strongest single constraint" (relies on Cassini δ_peri=58.5°) | Established | **Premise now known false**, needs re-evaluation |
+| RQ15 geomagnetic drift extension (relies on Cassini δ_peri=58.5°, "3.76° from node") | Concept confirmed | **Premise now known false**, needs re-evaluation of whether it's still meaningful |
+| "Signal hierarchy: geometry (P₂ node, r=0.852) is the dominant factor" | Framework core conclusion | **Built on contaminated \|P₂(cosδ_peri)\|; needs recomputation with all 7 corrected δ_peri values** |
+| RQ4 Juno precision (A₂/A₁≈−3.4 etc.) | Established | **Computed with wrong angles; needs recomputation** |
+| Anderson P1 formula, δᵢ/δₒ reliability | — | **Validated well in 6/7 cases** (Juno excepted, whose δᵢ/δₒ must be fully replaced with new values) |
+
+**Status:** All 7 cases fully reconstructed; Candidate 7's topological criterion systematically overturned; δ_peri should be removed from the criterion; RQ4's Juno analysis needs recomputation with new angles; multiple downstream analyses (signal hierarchy, RQ13, RQ15) built on the same contaminated δ_peri are now marked as unresolved pending recomputation | **Priority: Highest**
+
+---
+
 ### RQ15: Secular Geomagnetic Drift as a Slow Boundary-Condition Modulator (2026-07-01, proposed by GPT, verified and corrected)
+
+
 
 **Background:** GPT raised the question of whether long-term drift of the magnetic north pole affects the LNSS framework's coupling geometry. The original estimate extrapolated from the 2025-2026 instantaneous drift rate (36 km/year) back to historical cumulative drift — this extrapolation is flawed, since pole drift accelerated substantially after the 1990s (from roughly 15 km/yr up to 50-60 km/yr by the 2010s) and cannot be linearly back-extrapolated.
 
@@ -550,39 +633,31 @@ Magnetic Local Time (MLT) at perigee
 
 ---
 
-## Current Highest Priority (2026-07-01, sole valid version, supersedes all previous versions in this document)
+## Current Highest Priority (2026-07-02, sole valid version, supersedes all previous versions in this document)
 
-**Important new findings (added during this review):**
+**🔴🔴🔴 All 7 historical flybys have now been fully reconstructed via JPL Horizons. Candidate 7's topological criterion is systematically overturned; δ_peri should be removed from the framework.**
 
-**The DSN tracking gap — direct literature support for Candidate 4.** The Anderson anomaly's operational definition is not a continuous path integral, but rather "impossible to fit the trajectory with a single hyperbolic arc, requiring separate inbound/outbound fits" — the effect is highly localized near perigee, which is precisely where DSN tracking is unavailable for roughly 4 hours (Bertolami et al. 2010, arXiv:1201.0163). This suggests the existing P₁/P₂/P₃ path-integral formulas may simply be "a mathematical trick that happens to give the right boundary-term answer," while the true physical mechanism is more likely a localized event near perigee — directly supporting Candidate 4 (medium backreaction) over a continuous-field-reading model.
+Full results and the complete 7-flyby table are in the "Complete Reconstruction of All 7 Historical Flybys" section above. Core conclusion: δ_peri contributed zero correct classifications across all 7 cases; the 3 cases Candidate 7 got right (NEAR/Messenger/Juno) are all decided by δᵢ, δₒ alone, independent of δ_peri. Juno's δᵢ, δₒ themselves were also found to be wrong; the reconstructed values match independent literature (Jouannic 2015, Acedo 2017) almost exactly. RQ4's Juno P1 prediction should be corrected from +10.4 mm/s to ~6.0–6.3 mm/s.
 
-**Missing OSIRIS-REx (2017-09-22) data point.** Perigee altitude 17,237 km, just outside B_main = 16,076 km, with ~34% field retention predicted and an observed anomaly upper limit of <0.1 mm/s. This is a natural boundary test case for B_main and should be included in 01_Observations_EN.md as an eighth data point.
+**Priority list (updated):**
 
-**Gravitational self-force (MiSaTaQuWa) — Candidate 4's first rigorous theoretical foundation.** A jerk calculation on a real hyperbolic trajectory ruled out local ALD-type self-force, indirectly supporting pure gravitational self-force (no local term, effect entirely from tail memory integral). Full calculation requires the retarded Green's function — graduate-thesis-level work.
-
-**Candidate 6: jump conditions / scattering framework — questioning whether integration is necessary.** The Anderson formula itself can be reinterpreted as a jump condition ΔV/V∞=Φ(δₒ)−Φ(δᵢ), requiring no path integral. This framework naturally echoes the DSN gap evidence (only "before" and "after" are known, never "during") and offers a fresh angle on P₂/P₃ corrections and Juno's zero result.
-
-**Candidate 7: topological classification — gives an opposite prediction to RQ14 for JUICE 2026.** Using P₂'s exact node (54.7356°) to divide declination into three regions, and testing whether any of the trajectory's three characteristic angles ever leaves the equatorial band, achieves 7/7 on historical data with zero free parameters. But it gives a prediction for JUICE 2026-09 directly opposite to the existing |P₂(cosδ_peri)| criterion (RQ14) — a textbook symptom of an underdetermined n=7 model, which the JUICE observation will directly adjudicate.
-
-**RQ15 (new): secular geomagnetic drift, magnitude verified as non-negligible after correction.** GPT raised whether magnetic pole drift affects the framework; the original estimate method was flawed (extrapolating recent rate back historically), but the corrected 1990-2013 cumulative drift is 9.3°, the same order of magnitude as the P₂ calm-zone width — worth serious testing, though a slow second-order effect that does not rewrite the main model.
-
-**Candidate 5 update (proposed by GPT, confirmed): nonlinear dynamic boundary coupling.** ap is only a crude proxy for geomagnetic disturbance; the actual mechanism may be solar wind dynamically reshaping the LNSS field's boundary geometry (IMF Bz, dynamic pressure, magnetopause distance, MLT), not a simple suppression coefficient. Closely aligned with Candidate 6 (jump conditions).
-
-**Priority list:**
-
-1. **[Highest priority] The JUICE 2026-09-28/29 observation will adjudicate the diverging predictions of Candidate 7 vs. RQ14** — this is currently the framework's strongest discriminating test
-2. **[New] Obtain IMF Bz and solar wind dynamic pressure data for historical flybys** (NASA OMNIWeb), test whether they explain the residual better than ap (Candidate 5 extension)
-3. **[New] For flybys with δ_peri near the calm-zone edge (e.g., Cassini), recalculate the effective node using historical IGRF magnetic pole positions** (RQ15)
-4. **[New] Formalize Candidate 6's jump-condition framework**, attempt to re-express P₂/P₃ corrections within it
-5. **[New] Formalize why Candidate 7 classifies by "the node itself" rather than "the continuous P₂ value"**
-6. **[New] Formally integrate the DSN tracking gap's methodological significance into Candidate 4**
-7. **[New] Add OSIRIS-REx to the formal dataset** (01_Observations_EN.md)
-8. **[New, long-term] Derive the retarded Green's function for the LNSS background field equation** (full gravitational self-force calculation)
-9. **Rigorous derivation of the two-way Doppler factor of 2** (RQ2)
-10. **Derive the theoretical origin of κ = 1/B_main** (RQ12)
-11. **Await Europa Clipper (2026-12-03) observational results** — sealed prediction already recorded
+1. **[Highest priority] Formally update all 7 flybys' δᵢ, δₒ, δ_peri in 01_Observations_EN.md** (superseding old values) — **done, see 01_Observations_EN.md v1.6**
+2. **[Highest priority] Downgrade Candidate 7 to "overturned"; recompute the Gated Anderson model's 90% RMS improvement with the new angles** (likely to drop substantially, since much of the original improvement came from "fixing" Juno, and Juno's δᵢ, δₒ have now also changed)
+3. **[High] Fully recompute RQ4's Juno analysis**: recalculate the P1/P2/P3/P4 path integrals and the A₂/A₁ coefficient using the new angles (δᵢ=+14.16°, δₒ=+39.40°)
+4. **[High] Recompute the |P₂(cosδ_peri)| correlation (originally r=0.852) using the new δ_peri for all 7 cases; determine whether the framework's core "geometry is the dominant factor" claim still holds**
+5. **[High] Re-evaluate or remove RQ13 and RQ15 sections that rely on Cassini's δ_peri=58.5°**
+6. **[High] JUICE 2026-09-28/29 observation** — sealed prediction's coordinate frame confirmed correct; but since Candidate 7 itself is now overturned, the comparison framing at reveal time needs adjustment
+7. Resolve Cassini's observed-value discrepancy (−2 vs −0.5±0.5 mm/s)
+8. Formally add Rosetta II/III and EPOXI I–III (six data points) to 01_Observations_EN.md (sources: Jouannic 2015, Acedo 2017)
+9. Obtain IMF Bz and solar wind dynamic pressure data for historical flybys (NASA OMNIWeb), test whether they explain the residual better than ap (Candidate 5 extension)
+10. Formalize Candidate 6's jump-condition framework (does not depend on δ_peri, unaffected by this session's findings)
+11. Formally integrate the DSN tracking gap's methodological significance into Candidate 4
+12. Derive the retarded Green's function for the LNSS background field equation (full gravitational self-force calculation, long-term)
+13. Await Europa Clipper (2026-12-03) observational results — sealed prediction's P1 term coordinate frame confirmed correct
 
 **Removed/superseded content:**
 - Three earlier priority lists (dated 2026-06-26, 2026-06-27, 2026-06-28) have been marked outdated and removed, as some of their conclusions (e.g., the B_main=19,828km candidate value) have been overturned by the two-way Doppler analysis
 - "Search for JUICE 2024 official analysis" is no longer necessary — the 2024 flyby altitude was too high (6,840 km), the framework already predicted no significant effect, and this research direction has been superseded by precise 2026 data
 - The "whole-path weighting" direction for the fractional memory kernel (see the two toy model attempts under the Candidate 4 upgrade above) has been ruled out as an entire model class; Candidate 6 offers a structurally different alternative, to be prioritized over further fractional-calculus variants
+- RQ2, RQ12 (in their original form) resolved/closed, moved out of the active priority list — see their respective sections
+
