@@ -126,8 +126,13 @@
       "v_inf_kms": 12.115,
       "dV_P1_predicted_mm_s": 0.107,
       "coordinate_frame_audit": "2026-07-02: 使用者以赤道座標(ICRF)重新查詢,結果與原密封值幾乎完全一致,確認原查詢雖標記'黃道'但實為赤道系。密封預測維持有效。",
-      "perigee_altitude_km": null,
-      "perigee_altitude_note": "尚未用1分鐘步長精確查證,若要精確δ_peri需另外查詢2026-09-28/29近地點窗口"
+      "perigee_altitude_km": 8645.5,
+      "perigee_time_tdb": "2026-Sep-28 11:46",
+      "perigee_r_km": 15016.5,
+      "perigee_speed_kms": 13.1233,
+      "delta_peri_position_deg": -22.1514,
+      "delta_peri_velocity_deg": 1.7422,
+      "reconstruction_note": "2026-07-03補齊: 1分鐘步長精確近地點已找到並用reconstruct.py驗證(與手動分析結果完全一致)。近地點高度8645.5km遠高於歷史異常案例(多在300-2000km)，B_main衰減因子exp(-8645.5/16076)≈0.584。|P2(cosδ_peri)|: 位置定義0.7867，速度定義0.9986，兩者分歧見07_Open_Problems.md。"
     },
     {
       "name": "Europa Clipper",
@@ -149,6 +154,7 @@
     "Rosetta I的δᵢ精度較低,建議之後用更長時間窗口重新查詢確認",
     "Cassini觀測值文獻分歧(-2.00 vs -0.5±0.5 mm/s)尚未定案",
     "P2/P3/P4多極擬合係數需要用全部7案新角度重新執行原始最小二乘擬合,目前無可信數值",
-    "Rosetta II/III、EPOXI I-III六筆數據尚未正式納入(來源: Jouannic 2015, Acedo 2017)"
+    "Rosetta II/III、EPOXI I-III六筆數據尚未正式納入(來源: Jouannic 2015, Acedo 2017)",
+    "JUICE的|P2(cosδ_peri)|因位置/速度定義分歧而數值差異大(0.7867 vs 0.9986)，兩者皆遠高於臨界值0.06但強度估計不同"
   ]
 }
