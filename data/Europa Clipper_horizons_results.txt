@@ -1,0 +1,189 @@
+*******************************************************************************
+ Revised: Jun 03, 2026    Europa Clipper (Spacecraft) / (Sun, Jupiter)     -159
+                       https://science.nasa.gov/mission/europa-clipper/
+                               https://europa.nasa.gov/
+
+ BACKGROUND:
+  NASA's Europa Clipper spacecraft carries a suite of science instruments to 
+  assess habitability of Jupiter's ice-covered moon Europa (502) while 
+  confirming the existence and nature of an expected sub-surface ocean.
+
+  Launched            : 2024-Oct-14 16:06 UTC (SpaceX Falcon Heavy, KSC LC-39A)
+  Mars gravity assist : 2025-Mar-01
+  Earth gravity assist: 2026-Dec-03
+         Arrival      : 2030-Apr-11 (5.50 year time-of-flight)
+  Mission length      : 4.12 years (prime mission, JOI to E49)
+  End-of-mission      : 2034-Sep   (directed to Ganymede impact ~30d after E49)
+
+  The spacecraft is expected to orbit Jupiter 75 times and conduct 49 flybys 
+  of Europa at altitudes as low as 25 km. This will reduce exposure to the high
+  levels of radiation Europa moves within.
+
+  Gravity-assists from Europa (49), Ganymede (7), and Callisto (9) will be used
+  to target different Europa close approach points on each flyby.
+
+ SPACECRAFT:
+  Considering solar arrays and radar antennas, Europa Clipper will be the
+  largest spacecraft NASA has developed to-date for an interplanetary mission. 
+  When arrays are deployed, the spacecraft will span 30.5 meters.
+
+  Main body (bus): 3 x 4.7 x 4 meters
+  Dry mass (no propellant): 3241 kg
+  Propellant: 2750 kg
+  Solar power arrays: 2 x 14.2 x 4.1 meters
+
+ SCIENCE INSTRUMENTS
+  Europa Imaging System (EIS)
+  Europa Thermal Emission Imaging System (E-THEMIS)
+  Europa Ultraviolet Spectrograph (Europa-UVS)
+  Mapping Imaging Spectrometer for Europa (MISE)
+  Europa Clipper Magnetometer (ECM)
+  Plasma Instrument for Magnetic Sounding (PIMS)
+  Gravity/Radio Science
+  Radar for Europa Assessment and Sounding: Ocean to Near-surface (REASON)
+  MAss Spectrometer for Planetary EXploration/Europa (MASPEX)
+  SUrface Dust Analyzer (SUDA)
+
+ SPACECRAFT TRAJECTORY (from JPL navigation):
+  Segments marked by '*' below are pre-launch predictions. Then based on 
+  tracking data through 2026-May-19. Trajectory thereafter is predicted:
+
+ Trajectory files (JPL mission design/nav)                Start         End
+ ----------------------------------------------------  -----------  -----------
+*21F31_MEGA_L241014_A300411_LP05_V7  (16:13 - 17:08)   2024-Oct-14  2024-Oct-14
+ trj_241014-241103-dco2410142047-postLaunch-OD001-v1   2024-Oct-14  2024-Oct-18
+ trj_241018-250130-dco2411082133-cru002-fin-OD018-v14  2024-Oct-18  2024-Nov-23
+ trj_241123-250315-dco2412031638-cru003-fin-OD020-v1   2024-Nov-23  2024-Dec-04
+ trj_241204-250311-dco2501221611-MGATRGa-OD034-v1      2024-Dec-04  2025-Jan-04 
+ trj_250104-250614-dco2502250958-cru005-fin-OD042-v1   2025-Jan-04  2025-Feb-15
+ trj_250215-250726-dco2504160749-cruise006-final-OD055 2025-Feb-15  2025-Mar-18
+ trj_250318-260101-dco2507142059-EGATRG1-PRELIM-OD068  2025-Mar-18  2025-Jun-01
+ trj_250601-251129-dco2507310113-cruise009-pred-OD070  2025-Jun-01  2025-Jun-26
+ trj_250626-260110-dco2509081213-cruise010-pred-OD072  2025-Jun-26  2025-Aug-01
+ trj_250801-260221-dco2510231804-cruise011-pred-OD074  2025-Aug-01  2026-Sep-18
+ trj_250918-251030-dco2511110259-cruise009-reco-OD075  2025-Sep-18  2025-Oct-01
+ trj_251001-260516-dco2601141914-cruise013-pred-OD078  2025-Oct-01  2025-Dec-11
+ trj_251211-260122-dco2602031544-cruise011-reco-OD079  2025-Dec-11  2026-Jan-01
+ trj_260101-260627-dco2602251849-cruise014-pred-OD080  2026-Jan-01  2026-Jun-27
+ trj_260122-260305-dco2603192035-cruise012-reco-OD081  2026-Jan-22  2026-Mar-05
+ trj_260305-260416-dco2604280459-cruise013-reco-OD083  2026-Mar-05  2026-Apr-16
+ trj_260101-260627-dco2602251849-cruise014-pred-OD080  2026-Apr-16  2026-Apr-01
+ trj_260401-260919-dco2605201244-cruise016-pred-OD084  2026-Apr-01  2026-Sep-19
+ ref_241014_340903_21F31_MEGA_L241014_A300411_LP05_V7  2026-Sep-19  2034-Sep-03
+*******************************************************************************
+
+
+*******************************************************************************
+Ephemeris / WWW_USER Sat Jun 27 21:31:04 2026 Pasadena, USA      / Horizons
+*******************************************************************************
+Target body name: Europa Clipper (spacecraft) (-159) {source: Europa_Clipper_merged}
+Center body name: Solar System Barycenter (0)     {source: DE441}
+Center-site name: BODY CENTER
+*******************************************************************************
+Start time      : A.D. 2026-Nov-30 00:00:00.0000 TDB
+Stop  time      : A.D. 2026-Dec-06 00:00:00.0000 TDB
+Step-size       : 360 minutes
+*******************************************************************************
+Center geodetic : 0.0, 0.0, 0.0                   {E-lon(deg),Lat(deg),Alt(km)}
+Center cylindric: 0.0, 0.0, 0.0                   {E-lon(deg),Dxy(km),Dz(km)}
+Center radii    : (undefined)
+Output units    : KM-S
+Calendar mode   : Mixed Julian/Gregorian
+Output type     : GEOMETRIC cartesian states
+Output format   : 2 (position and velocity)
+Reference frame : Ecliptic of J2000.0
+*******************************************************************************
+            JDTDB,            Calendar Date (TDB),                      X,                      Y,                      Z,                     VX,                     VY,                     VZ,
+**************************************************************************************************************************************************************************************************
+$$SOE
+2461374.500000000, A.D. 2026-Nov-30 00:00:00.0000,  5.646292571118522E+07,  1.316477514389381E+08, -3.973373724033609E+05, -2.762893451830800E+01,  2.289287222206411E+01,  1.196790969092346E+00,
+2461374.750000000, A.D. 2026-Nov-30 06:00:00.0000,  5.586555678326926E+07,  1.321408713085554E+08, -3.714818401002809E+05, -2.768286629295111E+01,  2.276640728106859E+01,  1.197236839951644E+00,
+2461375.000000000, A.D. 2026-Nov-30 12:00:00.0000,  5.526703178832719E+07,  1.326312617155686E+08, -3.456168610605076E+05, -2.773597848290914E+01,  2.264014836181573E+01,  1.197666043158419E+00,
+2461375.250000000, A.D. 2026-Nov-30 18:00:00.0000,  5.466736838290395E+07,  1.331189274007939E+08, -3.197427686473653E+05, -2.778827537886308E+01,  2.251412344742267E+01,  1.198081160748096E+00,
+2461375.500000000, A.D. 2026-Dec-01 00:00:00.0000,  5.406658413185007E+07,  1.336038737879774E+08, -2.938598320613205E+05, -2.783976117421101E+01,  2.238836828046573E+01,  1.198485603718979E+00,
+2461375.750000000, A.D. 2026-Dec-01 06:00:00.0000,  5.346469651091485E+07,  1.340861071888915E+08, -2.679682344614118E+05, -2.789043991562772E+01,  2.226293012874234E+01,  1.198884011221883E+00,
+2461376.000000000, A.D. 2026-Dec-01 12:00:00.0000,  5.286172291064350E+07,  1.345656351131863E+08, -2.420680399722680E+05, -2.794031543138157E+01,  2.213787394949638E+01,  1.199282905060701E+00,
+2461376.250000000, A.D. 2026-Dec-01 18:00:00.0000,  5.225768064215571E+07,  1.350424667538770E+08, -2.161591420239136E+05, -2.798939122645806E+01,  2.201329294647649E+01,  1.199691812723533E+00,
+2461376.500000000, A.D. 2026-Dec-02 00:00:00.0000,  5.165258694567192E+07,  1.355166137824678E+08, -1.902411787136123E+05, -2.803767033072126E+01,  2.188932766516034E+01,  1.200125303254617E+00,
+2461376.750000000, A.D. 2026-Dec-02 06:00:00.0000,  5.104645900290847E+07,  1.359880917246397E+08, -1.643133861779347E+05, -2.808515509355655E+01,  2.176620293907229E+01,  1.200606937316812E+00,
+2461377.000000000, A.D. 2026-Dec-02 12:00:00.0000,  5.043931395410792E+07,  1.364569225120133E+08, -1.383743259838745E+05, -2.813184698283090E+01,  2.164430575317167E+01,  1.201177621635474E+00,
+2461377.250000000, A.D. 2026-Dec-02 18:00:00.0000,  4.983116891636656E+07,  1.369231396681466E+08, -1.124213291327134E+05, -2.817774681145302E+01,  2.152436886811353E+01,  1.201915406571525E+00,
+2461377.500000000, A.D. 2026-Dec-03 00:00:00.0000,  4.922204097445811E+07,  1.373868002604546E+08, -8.644920777542144E+04, -2.822285792207168E+01,  2.140797690864068E+01,  1.202990434693967E+00,
+2461377.750000000, A.D. 2026-Dec-03 06:00:00.0000,  4.861194695258816E+07,  1.378480180919340E+08, -6.044664612638950E+04, -2.826720967395990E+01,  2.129932995928192E+01,  1.204858616714649E+00,
+2461378.000000000, A.D. 2026-Dec-03 12:00:00.0000,  4.800090132550008E+07,  1.383070902227362E+08, -3.438220995585620E+04, -2.831108703600015E+01,  2.121451900662550E+01,  1.209303424486666E+00,
+2461378.250000000, A.D. 2026-Dec-03 18:00:00.0000,  4.738886642580968E+07,  1.387655440162233E+08, -8.082000893220305E+03, -2.836643051510336E+01,  2.133104646297119E+01,  1.237698005481529E+00,
+2461378.500000000, A.D. 2026-Dec-04 00:00:00.0000,  4.670082654502951E+07,  1.392178887005690E+08,  3.070151328402013E+04, -3.376395396553823E+01,  1.981806227913285E+01,  2.003079819986596E+00,
+2461378.750000000, A.D. 2026-Dec-04 06:00:00.0000,  4.597174812292510E+07,  1.396429787615171E+08,  7.367359363788366E+04, -3.375702756541902E+01,  1.957745476153377E+01,  1.982048567750074E+00,
+2461379.000000000, A.D. 2026-Dec-04 12:00:00.0000,  4.524231382632193E+07,  1.400641528474088E+08,  1.164194062309787E+05, -3.378497075780984E+01,  1.942457493641111E+01,  1.976706572503705E+00,
+2461379.250000000, A.D. 2026-Dec-04 18:00:00.0000,  4.451219704748402E+07,  1.404822252980990E+08,  1.590864544314221E+05, -3.381890969629365E+01,  1.928720405065917E+01,  1.974193169125477E+00,
+2461379.500000000, A.D. 2026-Dec-05 00:00:00.0000,  4.378132532725097E+07,  1.408973988457697E+08,  2.017114554631412E+05, -3.385453341544581E+01,  1.915538962493891E+01,  1.972670094787306E+00,
+2461379.750000000, A.D. 2026-Dec-05 06:00:00.0000,  4.304967852068026E+07,  1.413097569040142E+08,  2.443089610434324E+05, -3.389055126865621E+01,  1.902623118669519E+01,  1.971594739685706E+00,
+2461380.000000000, A.D. 2026-Dec-05 12:00:00.0000,  4.231725448318428E+07,  1.417193427332252E+08,  2.868859823334068E+05, -3.392644234285774E+01,  1.889857679221275E+01,  1.970749701356790E+00,
+2461380.250000000, A.D. 2026-Dec-05 18:00:00.0000,  4.158405894686652E+07,  1.421261822622086E+08,  3.294462471222207E+05, -3.396195705739935E+01,  1.877188033207983E+01,  1.970030994061995E+00,
+2461380.500000000, A.D. 2026-Dec-06 00:00:00.0000,  4.085010162309649E+07,  1.425302927417276E+08,  3.719918230082393E+05, -3.399696176212175E+01,  1.864585135809380E+01,  1.969382698835902E+00,
+$$EOE
+**************************************************************************************************************************************************************************************************
+ 
+TIME
+
+  Barycentric Dynamical Time ("TDB" or T_eph) output was requested. This
+continuous coordinate time is equivalent to the relativistic proper time
+of a clock at rest in a reference frame co-moving with the solar system
+barycenter but outside the system's gravity well. It is the independent
+variable in the solar system relativistic equations of motion.
+
+  TDB runs at a uniform rate of one SI second per second and is independent
+of irregularities in Earth's rotation.
+ 
+CALENDAR SYSTEM
+
+  Mixed calendar mode was active such that calendar dates after AD 1582-Oct-15
+(if any) are in the modern Gregorian system. Dates prior to 1582-Oct-5 (if any)
+are in the Julian calendar system, which is automatically extended for dates
+prior to its adoption on 45-Jan-1 BC.  The Julian calendar is useful for
+matching historical dates. The Gregorian calendar more accurately corresponds
+to the Earth's orbital motion and seasons. A "Gregorian-only" calendar mode is
+available if such physical events are the primary interest.
+
+REFERENCE FRAME AND COORDINATES
+
+  Ecliptic at the standard reference epoch
+
+    Reference epoch: J2000.0
+    X-Y plane: adopted Earth orbital plane at the reference epoch
+               Note: IAU76 obliquity of 84381.448 arcseconds wrt ICRF X-Y plane
+    X-axis   : ICRF
+    Z-axis   : perpendicular to the X-Y plane in the directional (+ or -) sense
+               of Earth's north pole at the reference epoch.
+
+  Symbol meaning:
+
+    JDTDB    Julian Day Number, Barycentric Dynamical Time
+      X      X-component of position vector (km)
+      Y      Y-component of position vector (km)
+      Z      Z-component of position vector (km)
+      VX     X-component of velocity vector (km/sec)                           
+      VY     Y-component of velocity vector (km/sec)                           
+      VZ     Z-component of velocity vector (km/sec)                           
+
+ABERRATIONS AND CORRECTIONS
+
+ Geometric state vectors have NO corrections or aberrations applied.
+
+Computations by ...
+
+    Solar System Dynamics Group, Horizons On-Line Ephemeris System
+    4800 Oak Grove Drive, Jet Propulsion Laboratory
+    Pasadena, CA  91109   USA
+
+    General site: https://ssd.jpl.nasa.gov/
+    Mailing list: https://ssd.jpl.nasa.gov/email_list.html
+    System news : https://ssd.jpl.nasa.gov/horizons/news.html
+    User Guide  : https://ssd.jpl.nasa.gov/horizons/manual.html
+    Connect     : browser        https://ssd.jpl.nasa.gov/horizons/app.html#/x
+                  API            https://ssd-api.jpl.nasa.gov/doc/horizons.html
+                  command-line   telnet ssd.jpl.nasa.gov 6775
+                  e-mail/batch   https://ssd.jpl.nasa.gov/ftp/ssd/horizons_batch.txt
+                  scripts        https://ssd.jpl.nasa.gov/ftp/ssd/SCRIPTS
+    Inquiries   : Jon.D.Giorgini@jpl.nasa.gov
+*******************************************************************************
