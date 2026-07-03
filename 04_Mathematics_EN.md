@@ -1,6 +1,6 @@
 # 04 — Mathematics
 
-**Last updated:** 2026-06-28 v1.4
+**Last updated:** 2026-07-02 v1.5 (Juno angles and P₂ correlation r=0.852 overturned — see RQ4 and RQ13/RQ14 sections)
 
 ---
 
@@ -200,9 +200,9 @@ The two problems are **decoupled**. B_main = 16,076 km is the correct value.
 
 ## ap Correlation: Mechanism Testing (RQ13, 2026-06-28)
 
-### Signal hierarchy (established 2026-06-28)
+### Signal hierarchy (established 2026-06-28, 🔴 overturned 2026-07-02)
 
-**Primary (dominant):** Geometry — P₂ node at ±54.7°, r = 0.852, zero free parameters
+**~~Primary (dominant): Geometry — P₂ node at ±54.7°, r = 0.852, zero free parameters~~** — could not be reproduced with corrected δ_peri (see 02_Constraints_EN.md, 2026-07-02 update: position-based r=+0.082; velocity-based r=−0.863, opposite sign)
 
 **Secondary (modifier):** ap index — c₂ = −0.249 mm/s/nT, second-order effect
 
@@ -226,9 +226,25 @@ RMS = 2.11 mm/s (51% improvement over Anderson alone)
 
 ---
 
-## Juno Cancellation Analysis (2026-06-28)
+## Juno Cancellation Analysis (2026-06-28, 🔴 input angles known incorrect, updated 2026-07-02)
 
-**Path integrals for Juno (δᵢ = −2°, δₒ = −48.9°):**
+### 🔴 2026-07-02: The Juno angles used throughout this section (δᵢ=−2°, δₒ=−48.9°) are confirmed incorrect
+
+JPL Horizons reconstruction (equatorial frame, precise perigee) gives Juno's true angles as **δᵢ=+14.16°, δₒ=+39.40°**, closely matching independent literature (Jouannic et al. 2015: +14.17°/+39.50°; Acedo 2017: −14.308°/+39.409°). See 07_Open_Problems_EN.md, "Complete Reconstruction of All 7 Historical Flybys."
+
+**Reliable recomputation (P₁ term, standard Anderson coefficient, not a fitted value):**
+```
+New ΔV_P1 = V∞·K·(cosδᵢ−cosδₒ) = +5.99 to +6.34 mm/s (depending on V∞ = 9.820 or 10.389)
+Cross-check against Acedo (2017)'s independently computed value: 6.3355 mm/s — close match
+```
+
+**The magnitude of Juno's "uncancelled anomaly" is only about 60% of the originally claimed size** (~6 mm/s, not the originally stated 10.4 mm/s). RQ4 itself (why the prediction is nonzero while the observation is zero) remains unresolved.
+
+**⚠️ The P₂/P₃/P₄ multipole table below is not currently reliable.** Its I_Pl, A₂, A₃ coefficients were obtained by least-squares fitting across all 7 flybys (not a single closed-form calculation), and all 7 flybys' angles have now changed. A full refit using the new angles is required and is beyond the scope of a single-value recomputation; the original fitting procedure's exact normalization is not documented in enough detail to safely reproduce here. **Until the fit is rerun with corrected angles for all 7 cases, the table below should be treated as a historical record, not a current result.**
+
+### ~~Path integrals for Juno~~ (old angles, retained for traceability)
+
+~~(δᵢ = −2°, δₒ = −48.9°):~~
 
 | Mode | I_Pl | Contribution (mm/s) |
 |------|------|---------------------|
@@ -237,16 +253,16 @@ RMS = 2.11 mm/s (51% improvement over Anderson alone)
 | P₃ | 0.082 | +2.49 |
 | P₄ | 0.001 | ≈ 0 (geometric cancellation) |
 
-**Multipole fit results:**
+### ~~Multipole fit results~~ (old angles, retained for traceability, refit pending)
 
 | Model | RMS | Juno prediction | Physical? |
 |-------|-----|----------------|-----------|
-| P₁ only | 3.82 mm/s | +8.62 | ✓ Physical |
+| P₁ only | 3.82 mm/s | +8.62 | ✓ Physical (Juno prediction superseded by new P1 value +5.99~6.34; RMS etc. pending refit with new angles) |
 | P₁+P₂ | 2.75 mm/s | +4.91 | △ A₂ = −1.98 (marginal) |
 | P₁+P₂+P₃ | 0.61 mm/s | +0.37 | ✗ A₁=11.8, A₂=−25.4 (unphysical) |
 | P₁+P₂+P₃+P₄ | 0.14 mm/s | 0.000 | ✗ Overfitting (n=7, 4 parameters) |
 
-**Conclusion:** All path integral modes for Juno are co-signed positive. No physical multipole field structure can cancel them. **Juno's zero result requires a mechanism outside the current framework.** (RQ4)
+**Conclusion (partly outdated, see 2026-07-02 update above):** All path integral modes for Juno are co-signed positive. No physical multipole field structure can cancel them. **This qualitative conclusion likely still holds under the new angles, but exact figures require a refit and should not be cited from the table above.** Juno's zero result requires a mechanism outside the current framework (RQ4).
 
 ---
 
@@ -260,7 +276,7 @@ RMS = 2.11 mm/s (51% improvement over Anderson alone)
 
 Observed gap: 0.036 (Messenger, null) to 0.091 (Cassini, anomaly) → midpoint ≈ 0.06
 
-**Key insight:** δ_peri does not directly enter the path integral. The Anderson formula and P₂ path integral depend only on δᵢ and δₒ. The |P₂(cosδ_peri)| correlation (r = 0.852) reflects **orbital symmetry** — when perigee falls near ±54.7°, the inbound and outbound segments become nearly mirror-symmetric, causing the P₂ path integral to vanish.
+**Key insight:** δ_peri does not directly enter the path integral. The Anderson formula and P₂ path integral depend only on δᵢ and δₒ. ~~The |P₂(cosδ_peri)| correlation (r = 0.852) reflects **orbital symmetry**~~ — this proxy-logic argument may still hold conceptually, but **the r=0.852 figure it was based on is known incorrect and could not be reproduced with corrected δ_peri as of 2026-07-02** (see 02_Constraints_EN.md). The underlying idea — that near ±54.7° the inbound/outbound segments become nearly mirror-symmetric, causing the P₂ path integral to vanish — remains a plausible mechanism in principle, but is no longer empirically supported by the data as originally claimed.
 
 ---
 

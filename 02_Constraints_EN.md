@@ -1,6 +1,6 @@
 # 02 — Constraints
 
-**Last updated:** 2026-06-28 v1.4
+**Last updated:** 2026-07-02 v1.5 (P₂ node correlation r=0.852 overturned — could not be reproduced with corrected δ_peri)
 
 ---
 
@@ -25,10 +25,13 @@ Empirically established:
 
 This must be reproduced by any successful theory.
 
-### Signal Hierarchy (established 2026-06-28)
+### Signal Hierarchy (established 2026-06-28, 🔴 overturned 2026-07-02)
 
 ```
-1. Geometry (dominant):   P₂ node ±54.7°    r = 0.852, zero free parameters
+~~1. Geometry (dominant):   P₂ node ±54.7°    r = 0.852, zero free parameters~~
+   ← Could not be reproduced with corrected δ_peri from JPL Horizons reconstruction
+     (position-based δ_peri: r=+0.082, p=0.836, n=7 — null;
+      velocity-based δ_peri: r=−0.863, p=0.053 — opposite sign to original claim, borderline)
 2. Solar wind (secondary): ap index           c₂ = −0.249 mm/s/nT
 3. Tidal (tertiary):       Moon-Sun geometry  26% RMS improvement
 ```
@@ -62,7 +65,7 @@ sinδ is an odd function; its integral over a symmetric closed path cancels exac
 | Zero result | Mechanism | Type |
 |-------------|-----------|------|
 | LEO/GPS/Starlink/ISS | δᵢ = δₒ, topological cancellation | **Topological necessity, ΔV ≡ 0** |
-| Juno (open flyby) | Perigee near P₂ node (53.5° ≈ ±54.7°) | Geometric coincidence, ΔV ≈ 0 |
+| Juno (open flyby) | ~~Perigee near P₂ node (53.5° ≈ ±54.7°)~~ Mechanism unknown (original "near P₂ node" explanation now known incorrect; reconstructed δ_peri=−32.22°/+28.57° is far from the node — see 07_Open_Problems_EN.md RQ4) | Geometric coincidence? (pending new explanation) |
 | Messenger (open flyby) | δᵢ ≈ −δₒ, near-symmetric orbit | Geometric coincidence, ΔV ≈ 0 |
 
 ---
@@ -87,35 +90,34 @@ GPS satellites orbit at 20,200 km = 3.17 R_E, close to B_main = 2.52 R_E.
 
 ---
 
-## Threshold Constraint (2026-06-28)
+## Threshold Constraint (2026-06-28, 🔴 overturned 2026-07-02 — see note below)
 
-### The Juno–Cassini Comparison: Strongest Single Constraint
+### 🔴 2026-07-02: This section's evidence rests on now-known-incorrect δ_peri values
+
+The "Juno vs Cassini" comparison below was once called the framework's "strongest single constraint," but its core numbers (|P₂(cosδ_peri)|=0.031 for Juno, 0.091 for Cassini) come entirely from the old repository's δ_peri (Juno: +53.5°, Cassini: +58.5°), both now confirmed wrong via JPL Horizons reconstruction (Juno: −32.22°/+28.57°; Cassini: −22.73°/−9.32° — neither remotely close to the node). Re-testing the |P₂(cosδ_peri)| vs |dV| correlation with all 7 flybys' corrected δ_peri: position-based r=+0.082 (p=0.836, null); velocity-based r=−0.863 (p=0.053, opposite sign to the original claim, borderline significance). **No δ_peri definition reproduces the originally claimed r=0.852.** The content below is retained (struck through) for traceability only and should no longer be cited as a valid framework constraint.
+
+### ~~The Juno–Cassini Comparison: Strongest Single Constraint~~ (overturned, retained for traceability)
 
 | Flyby | ap | \|P₂(cosδ_peri)\| | dV | Result |
 |-------|-----|-------------------|-----|--------|
-| Juno | 29 | **0.031** | 0.00 | null |
-| Cassini | 28 | **0.091** | −2.00 | anomaly |
+| Juno | 29 | ~~0.031~~ | 0.00 | null |
+| Cassini | 28 | ~~0.091~~ | −2.00 | anomaly |
 
-Two flybys with nearly identical ap (29 vs 28), completely different outcomes. The only difference: |P₂|. This rules out ap as the primary driver.
+~~Two flybys with nearly identical ap (29 vs 28), completely different outcomes. The only difference: |P₂|. This rules out ap as the primary driver.~~ **(The |P₂| numbers behind this claim are known incorrect; why Juno and Cassini differ has no currently verified explanation.)**
 
-### Threshold Range
+### ~~Threshold Range~~ (based on known-incorrect numbers, retained for traceability)
 
 ```
-0.036 < |P₂|_c < 0.091
-Midpoint estimate: |P₂|_c ≈ 0.06
-Corresponding "calm zone" latitude: 52.3° to 57.2°  (width ≈ 5°, centered on 54.7°)
+0.036 < |P₂|_c < 0.091   (computed from incorrect δ_peri — not reliable)
 ```
 
-### Signal Rankings in Anomalous Flybys Only (excluding null cases)
+### ~~Signal Rankings in Anomalous Flybys Only~~ (overturned)
 
-| Feature | r vs \|dV\| | Conclusion |
-|---------|------------|------------|
-| \|P₂(cosδ_peri)\| | **+0.783** | Primary factor |
-| ap | −0.362 | Secondary factor |
+~~\|P₂(cosδ_peri)\| | +0.783 | Primary factor~~ **← built on incorrect δ_peri; not supported under corrected data (see new correlation results above)**
 
-### Partial Explanation of the ap r = −0.72 Correlation
+### Partial Explanation of the ap r = −0.72 Correlation (this part does not depend on δ_peri; remains valid)
 
-The full-dataset ap vs dV correlation (r = −0.72) includes a confound: Juno simultaneously has high ap (29) **and** low |P₂| (0.031). The true cause of Juno's null result is geometry, not ap. Removing null cases reduces ap correlation to −0.36.
+The full-dataset ap vs dV correlation (r = −0.72) includes a confound: Juno simultaneously has high ap (29) **and** (under the old numbers) low |P₂|. **The second half of this confound explanation no longer has a basis** — why Juno is a null result currently has no verified geometric explanation; this reverts to an open problem (RQ4).
 
 ---
 

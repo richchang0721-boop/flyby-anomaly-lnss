@@ -1,6 +1,6 @@
 # Appendix — Data, Symbols, and Constants
 
-**Last updated:** 2026-06-28 v1.4
+**Last updated:** 2026-07-02 v1.12 (all 7 historical flybys reconstructed via JPL Horizons; δ_peri and P₂ correlation overturned)
 
 ---
 
@@ -63,19 +63,35 @@
 
 ---
 
-## Historical Flyby Data (complete)
+## Historical Flyby Data (complete) — 🔴 2026-07-02: superseded by JPL Horizons reconstruction
 
-| Flyby | Date | ΔV (mm/s) | δᵢ (°) | δₒ (°) | V∞ (km/s) | Alt (km) | ap | F10.7 | \|P₂(δ_peri)\| |
+**All δᵢ, δₒ, δ_peri below are the OLD (pre-reconstruction) values, retained for traceability only.** Full reconstruction (equatorial frame, 1-minute-step precise perigee) is documented in 01_Observations_EN.md and 07_Open_Problems_EN.md. Key changes: Juno's δᵢ/δₒ were themselves wrong (not just δ_peri); δ_peri for all 7 cases was wrong and contributed zero correct classifications in the Candidate 7 test; the |P₂(δ_peri)| correlation with |dV| (r=0.852, driving the "geometry is dominant" claim) could not be reproduced with corrected δ_peri (position-based: r=+0.082; velocity-based: r=−0.863, opposite sign).
+
+| Flyby | Date | ΔV (mm/s) | δᵢ (°, OLD) | δₒ (°, OLD) | V∞ (km/s) | Alt (km) | ap | F10.7 | \|P₂(δ_peri)\| (OLD) |
 |-------|------|-----------|--------|--------|-----------|---------|-----|-------|----------------|
-| Galileo I | 1990-12-08 | +3.92 | −12.52 | +34.26 | 8.949 | 960 | 8 | 223.6 | 0.165 |
-| Galileo II | 1992-12-08 | −4.60 | −34.26 | −4.50 | 8.877 | 303 | 26 | 124.8 | 0.389 |
-| NEAR | 1998-01-23 | +13.46 | −20.76 | +72.03 | 6.851 | 539 | 4 | 93.9 | 0.567 |
-| Cassini | 1999-08-18 | −2.00 | −12.92 | −4.99 | 16.010 | 1172 | 28 | 133.9 | 0.091 |
-| Rosetta I | 2005-03-04 | +1.82 | −2.81 | +34.29 | 3.863 | 1954 | 2 | 77.7 | 0.347 |
-| Messenger | 2005-08-02 | ≈0.02 | +31.44 | −31.92 | 4.056 | 2347 | 1 | 93.5 | 0.036 |
-| Juno | 2013-10-09 | 0.00 | −2.00 | −48.90 | 9.820 | 561 | 29 | 113.1 | 0.031 |
+| Galileo I | 1990-12-08 | +3.92 | ~~−12.52~~ | ~~+34.26~~ | 8.949 | 960 | 8 | 223.6 | ~~0.165~~ |
+| Galileo II | 1992-12-08 | −4.60 | ~~−34.26~~ | ~~−4.50~~ | 8.877 | 303 | 26 | 124.8 | ~~0.389~~ |
+| NEAR | 1998-01-23 | +13.46 | ~~−20.76~~ | ~~+72.03~~ | 6.851 | 539 | 4 | 93.9 | ~~0.567~~ |
+| Cassini | 1999-08-18 | −2.00* | ~~−12.92~~ | ~~−4.99~~ | 16.010 | 1172 | 28 | 133.9 | ~~0.091~~ |
+| Rosetta I | 2005-03-04 | +1.82 | ~~−2.81~~ | ~~+34.29~~ | 3.863 | 1954 | 2 | 77.7 | ~~0.347~~ |
+| Messenger | 2005-08-02 | ≈0.02 | ~~+31.44~~ | ~~−31.92~~ | 4.056 | 2347 | 1 | 93.5 | ~~0.036~~ |
+| Juno | 2013-10-09 | 0.00 | ~~−2.00~~ | ~~−48.90~~ | 9.820 | 561 | 29 | 113.1 | ~~0.031~~ |
 
-**Sealed predictions (2026-06-28):**
+*Cassini's observed value is disputed in later literature compilations (−0.5±0.5 mm/s per Jouannic et al. 2015), see 01_Observations_EN.md.
+
+**Corrected values (2026-07-02, JPL Horizons, equatorial/ICRF frame):**
+
+| Flyby | δᵢ (°, NEW) | δₒ (°, NEW) | δ_peri (°, position) | δ_peri (°, velocity) | Precise alt. (km) |
+|-------|--------------|--------------|------------------------|------------------------|---------------------|
+| Galileo I | −12.5 | −34.0 | +23.81 | −25.58 | 970.58 |
+| Galileo II | −34.25 | −4.90 | −32.45 | −21.55 | 309.62 |
+| NEAR | −20.58 | −72.00 | +32.84 | −51.33 | 539.63 |
+| Cassini | −12.92 | −5.48 | −22.73 | −9.32 | 1,196.78 |
+| Rosetta I | −2.0 | −34.04 | +20.83 | −27.13 | 1,962.71 |
+| Messenger | +32.2 | −32.91 | +46.92 | −0.04 | 2,343.75 |
+| Juno | +14.16 | +39.40 | −32.22 | +28.57 | 570.82 |
+
+Sealed predictions (2026-06-28):
 
 | Flyby | Date | δᵢ (°) | δₒ (°) | V∞ (km/s) | ΔV_P1 (mm/s) | \|P₂(δ_peri)\| |
 |-------|------|--------|--------|-----------|-------------|----------------|
@@ -135,6 +151,7 @@ Width ≈ 5° centered on ±54.7°
 | v1.9 | 2026-07-01 | Gravitational self-force (MiSaTaQuWa) as rigorous theoretical foundation for Candidate 4; real hyperbolic-orbit jerk calculation (third rejection of purely local instantaneous hypotheses); Candidate 6 (jump conditions / scattering framework) proposed and verified to reproduce the Anderson formula, questioning whether path integration is necessary |
 | v1.10 | 2026-07-01 | Candidate 7 (topological classification): P₂'s exact node (54.7356°) divides declination into three regions; whether any of the trajectory's three characteristic angles ever leaves the equatorial band achieves 7/7 parameter-free classification; found to give an opposite prediction to the RQ14 |P₂| criterion for JUICE 2026, now recorded as an independent sealed prediction (original sealed content unmodified) |
 | v1.11 | 2026-07-01 | RQ15 (secular geomagnetic drift, proposed by GPT and corrected/verified — 1990-2013 cumulative drift of 9.3°, same order as calm-zone width); Candidate 5 updated to "Nonlinear Dynamic Boundary Coupling" (proposed by GPT and confirmed — solar wind dynamically reshapes the field boundary rather than a simple suppression coefficient; incorporates IMF Bz, dynamic pressure, MLT as concrete parameters) |
+| v1.12 | 2026-07-02 | Data integrity audit: all 7 historical flybys reconstructed from scratch via JPL Horizons (equatorial/ICRF frame, 1-minute-step precise perigee search). Juno's δᵢ/δₒ found to be wrong in the old dataset (confirmed via independent match to Jouannic 2015 and Acedo 2017); δ_peri wrong for all 7 cases, contributing zero correct classifications in the Candidate 7 topological test — Candidate 7 overturned. The |P₂(cosδ_peri)| vs \|dV\| correlation (r=0.852, "geometry is dominant") could not be reproduced with corrected δ_peri (position: r=+0.082; velocity: r=−0.863, opposite sign). RQ4's Juno P1 prediction corrected from +10.4 to ~6.0–6.3 mm/s. Downstream sections in 02_Constraints, 04_Mathematics updated accordingly. |
 
 ---
 
