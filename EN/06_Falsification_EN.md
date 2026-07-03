@@ -1,6 +1,6 @@
 # 06 — Falsification Conditions
 
-**Last updated:** 2026-06-28 v1.4
+**Last updated:** 2026-07-03 v1.5 (corrected Juno GRACE figure, 10.4→6.0-6.3 mm/s)
 
 ---
 
@@ -16,7 +16,7 @@ A good scientific hypothesis must specify what observations would cause it to fa
 |-----------|-------------|----------------|
 | Future coherent-tracking flyby (altitude < 2,000 km) shows no anomaly AND Anderson formula completely fails | Full framework failure | LNSS does not exist |
 | Anderson formula error > 10 mm/s in any flyby, unexplained by P₂ or Busack terms | Major revision required | Framework incomplete |
-| Juno's zero result fully explained by gravitational model errors (GRACE correction exactly +10.4 mm/s) | LNSS explanation excluded | Shift to gravitational modeling error hypothesis |
+| Juno's zero result fully explained by gravitational model errors (GRACE correction exactly matches the P₁ prediction, corrected 2026-07-02 to +6.0–6.3 mm/s, not the originally stated 10.4 mm/s — see 07_Open_Problems_EN.md) | LNSS explanation excluded | Shift to gravitational modeling error hypothesis |
 
 ---
 

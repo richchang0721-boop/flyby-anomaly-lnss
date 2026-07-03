@@ -1,10 +1,23 @@
 # 05 — Predictions (Sealed)
 
-**Last updated:** 2026-06-28 v1.4  
-**Sealed date:** 2026-06-28  
+**Last updated:** 2026-07-03 v1.6 (coordinate frame audit closed: JUICE confirmed correct, Europa Clipper partially confirmed)
+**Sealed date:** 2026-06-28
 **Data source:** JPL Horizons (queried 2026-06-28)
 
-> All predictions were written before observational results were available and will not be modified retroactively. Verification results may be appended after each flyby date.
+---
+
+## Coordinate Frame Audit Record (raised 2026-07-02 → resolved 2026-07-03)
+
+All sealed values below are **unchanged** — the sealing principle does not permit retroactive adjustment. Process record:
+
+**2026-07-02 audit warning:** This document records the Horizons queries as using "Ecliptic J2000" (see data source notes below), but the Anderson formula's δ requires **equatorial declination** (symmetry axis = Earth's rotation axis, not the orbital plane). The two frames differ by Earth's obliquity, 23.44°. JUICE's three characteristic angles are all single-digit (−0.69°, +1.4°, +4.385°) — an error of this magnitude could flip the "near the P₂ node" vs. "far from the node" classification entirely. Flagged as highest priority, to be resolved before the flyby.
+
+**2026-07-03 resolution:**
+
+- **JUICE: fully resolved.** The user re-queried Horizons with an explicitly specified equatorial reference plane (ICRF, "x-y axes of reference frame equatorial"). Result: δᵢ=−0.690°, δₒ=+4.385°, **matching the sealed values in this document exactly** (see 07_Open_Problems_EN.md, results.json). The original query, despite being labeled "Ecliptic J2000" in the write-up, was already outputting equatorial-frame values — this was a documentation labeling error, not a computational one. **The sealed prediction stands unchanged; no re-sealing needed.**
+- **Europa Clipper: partially confirmed.** Using the same method over the query window (2026-11-03 to 2027-01-03), the window endpoints give δᵢ≈26.75°→29.34° and δₒ≈29.36°→30.61° in trend, matching sign and magnitude with the sealed values — no sign of a coordinate-frame error. However, the window endpoints are not true converged asymptotic points (the same pitfall JUICE's early estimate ran into), so a fully rigorous confirmation would require locating a clearly stable asymptotic plateau, as was done for JUICE. The perigee/δ_peri portion has already been precisely verified via 1-minute-step reconstruction (see 07_Open_Problems_EN.md); only the δᵢ/δₒ asymptotic convergence precision remains to be tightened — medium priority (the coordinate-frame-correctness evidence itself is already sufficient).
+
+**Status:** JUICE closed; Europa Clipper pending a precise asymptote query | **Priority: Medium (no longer blocks prediction validity)**
 
 ---
 
