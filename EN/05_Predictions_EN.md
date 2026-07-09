@@ -1,6 +1,6 @@
 # 05 — Predictions (Sealed)
 
-**Last updated:** 2026-07-03 v1.6 (coordinate frame audit closed: JUICE confirmed correct, Europa Clipper partially confirmed)
+**Last updated:** 2026-07-03 v1.7 (P₃ hypothesis gains GEM theoretical magnitude support)
 **Sealed date:** 2026-06-28
 **Data source:** JPL Horizons (queried 2026-06-28)
 
@@ -201,6 +201,20 @@ If P₂ contributes (A₂ unknown):  |ΔV| up to ~2 mm/s
 **Confidence: Low (P₁ term precise; flyby geometry nearly symmetric; P₂ term uncertain)**
 
 ★ **Sealed: 2026-06-28** | Revealed: after 2026-12-03 flyby |
+
+---
+
+## P₃ Correction Term (any future flyby)
+
+If the Helmholtz framework is correct, the l=3 P₃(cosδ) node is at ±39.2°.
+
+**2026-07-03 update: this hypothesis now has its first theoretical magnitude backing** (see 07_Open_Problems_EN.md, "GEM derivation establishes A₂=0"). Using the GEM spin-octupole formula (Iorio 2019, MNRAS, citing Panhans & Soffel 2014), the A₃/A₁ amplitude ratio is estimated at roughly 1/300 to 1/2000, giving a P₃ magnitude estimate of **0.01–0.05 mm/s** — consistent in direction with the "very low confidence" assessment below, but now backed by a GR-derived order-of-magnitude estimate rather than pure intuition. A sealed-prediction-quality number requires further derivation (the boundary-term integral has not yet been completed — see the honest confidence notes in 07_Open_Problems_EN.md).
+
+**Prediction:** A flyby with perigee near ±39.2° should show a smaller residual correction beyond the pure Anderson formula.
+
+This requires high-precision tracking and a precise gravity model to detect (expected effect << 1 mm/s; current theoretical estimate: 0.01–0.05 mm/s).
+
+**Confidence: Low (previously "very low"; upgraded slightly on 2026-07-03 due to GEM-theoretical magnitude support; still requires a dedicated mission to test observationally)**
 
 ---
 

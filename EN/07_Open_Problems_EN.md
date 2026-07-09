@@ -1,6 +1,6 @@
 # 07 — Open Research Questions
 
-**Last updated:** 2026-07-02 v1.6 (all 7 flybys reconstructed, Candidate 7 overturned, RQ4 Juno figures corrected)
+**Last updated:** 2026-07-03 v1.7 (GEM derivation establishes A₂=0; P₃ gains theoretical magnitude support)
 
 ---
 
@@ -81,9 +81,11 @@ This decouples RQ2 from RQ12. B_main = 16,076 km is correct (matches single-way 
 
 ---
 
-## RQ4: Juno Zero Result — Additional Mechanism Required (2026-06-28)
+## RQ4: Juno Zero Result — Additional Mechanism Required (2026-06-28, 🔴 input angles corrected 2026-07-02, A₂=0 finding added 2026-07-03)
 
-**Precise formulation:**
+**🔴 Note:** The table below uses Juno's OLD (now known incorrect) angles (δᵢ=−2°, δₒ=−48.9°). Reconstruction via JPL Horizons found the correct values (δᵢ=+14.16°, δₒ=+39.40°), matching independent literature (Jouannic et al. 2015; Acedo 2017) almost exactly. The corrected P₁-only prediction is **+5.99 to +6.34 mm/s** (not +8.62/+10.4 mm/s as below) — see results.json and the 2026-07-02 update. The table's P₂/P₃/P₄ rows are retained for traceability only; a refit with corrected angles is pending.
+
+**Precise formulation (historical, pending refit):**
 
 Juno's P₁ path integral is large (should give +8.62 mm/s). All multipole path integrals are co-signed positive:
 
@@ -96,7 +98,9 @@ Juno's P₁ path integral is large (should give +8.62 mm/s). All multipole path 
 
 No physical multipole field structure can cancel all positive contributions simultaneously. The P₁+P₂+P₃+P₄ fit gives unphysical coefficients (large magnitudes, alternating signs) — clear overfitting with n=7 and 4 free parameters.
 
-**Status:** Problem precisely formulated; additional mechanism unknown | **Priority: High**
+**🆕 2026-07-03: this whole cancellation approach is now directly contradicted by theory.** The GEM-derived requirement for exact Juno cancellation would need A₂/A₁≈−3.4 (see RQ14 addition below), but the GEM field equation's multipole selection rule gives A₂=0 exactly. A₂ cannot be simultaneously 0 and −3.4 — **internal P₁/P₂ cancellation within the GEM framework is now excluded as an explanation for Juno's null result.**
+
+**Status:** Problem precisely formulated; internal GEM cancellation path excluded; additional mechanism still unknown | **Priority: High**
 
 ---
 
@@ -393,6 +397,36 @@ Observed gap: 0.036 (Messenger, null) to 0.091 (Cassini, anomaly) → midpoint �
 The A₂/A₁ estimate is unreliable with n=7 (heavily influenced by Juno's large residual). More flyby data required.
 
 **Status:** Theoretical framework established; precise value requires n>10 | **Priority: Medium**
+
+---
+
+### 🆕 RQ14/RQ4 key addition: A₂ = 0 in the GEM framework — P₂ requires a mechanism outside pure Earth rotation (2026-07-03)
+
+**Background:** Both RQ14 and RQ4 were stuck on "what should A₂ be" — different flybys gave mutually contradictory A₂/A₁ estimates (from −0.005 to −3.4), suggesting A₂ isn't a stable free parameter at all. This section derives A₂'s theoretical value directly from the GEM field equation's multipole structure, rather than continuing to fit it from data.
+
+**Derivation (GEM current-multipole selection rule):** Earth's rotational mass current J(r') = ρ(r')(Ω×r') = ρ(r')Ω r' sinθ' φ̂' has an angular dependence that is exactly sinθ'φ̂' — a pure l=1 pattern. In the multipole expansion of the vector potential, angular and radial integrals separate; the current's angular shape alone determines which l survive. **As long as Earth's density is spherically stratified (ρ=ρ(r'), not required to be uniform) and rotation is rigid, the vector potential's multipole expansion has l=1 only — l=2 vanishes exactly, regardless of the interior density profile's shape.**
+
+**Confirmed directly in the literature (not just by analogy):** Iorio (2019, MNRAS) cites the exact formula from Panhans & Soffel (2014, *Classical and Quantum Gravity*):
+
+```
+φ_gm = -(GS/r²) Σᵢ [(-1)ⁱ/((2i+3)(2i+5))] (R_eε/r)^(2i) P_(2i+1)(ξ)
+     = -(GS/r²) [2ξ - (6/7)(R_eε/r)²P₃(ξ) + ...]
+```
+
+The expansion contains only P₁, P₃, P₅... (odd orders) — l=2 is structurally absent, not merely small. Earth's real l=3 term (spin-octupole) arises from the coupling between rotation (l=1) and oblateness J₂ (l=2 shape), matching the formula's ∝G·S·J₂/c² dependence exactly.
+
+**Implications for the framework:**
+1. If A₂ (the P₂ amplitude) were meant to arise from "the same GEM mechanism, next order," its theoretical value should be zero. The mutually inconsistent A₂/A₁ values fitted across flybys now have an explanation: **A₂ shouldn't exist in the first place — any nonzero fitted value is likely noise or another effect masquerading as an l=2 gravitomagnetic signal.**
+2. If a genuine P₂ effect exists, it cannot come from Earth's rotation via a simple next-order GEM correction — it would require a mechanism outside the framework (e.g., an intrinsic l=2 structure in the background field Ψ_bg itself, RQ12), not "the natural extension of P₁."
+3. **RQ4's Juno-cancellation condition (requiring A₂≈−3.4) is now directly contradicted** — theory gives A₂=0, which cannot simultaneously equal −3.4. This further supports that Juno's null result needs a mechanism outside GEM's P₁/P₂ path-integral framework, not an internal cancellation.
+
+**Byproduct: P₃ (l=3) magnitude estimate — the first theoretical backing for the previously "very low confidence" P₃ hypothesis.** Using Earth's flattening (f=1/298.257), the A₃/A₁ amplitude ratio is estimated at roughly 1/300 to 1/2000 depending on flyby altitude. If P₁ effects are mm/s-scale, P₃ is estimated at **0.01–0.05 mm/s** — well below current DSN tracking precision (~0.1 mm/s), consistent with 05_Predictions_EN.md's prior (previously unsupported) "very low confidence, needs a dedicated mission" assessment.
+
+**Honest confidence levels:**
+- A₂=0 (no l=2 current multipole): **high confidence**, directly confirmed by a cited literature formula, independent of Earth's interior density profile details
+- P₃ magnitude estimate (0.01–0.05 mm/s): **medium confidence**, an amplitude-ratio order-of-magnitude analogy, not a rigorous re-derivation of the boundary-term integral; a sealed-prediction-quality number would require converting Iorio's orbital-precession formalism into a single-pass boundary-term ΔV formula (as was done for P₁ in 04_Mathematics_EN.md) — not yet done
+
+**Status:** A₂=0 established; P₂ requires a mechanism outside simple Earth rotation; P₃ gains its first theoretical magnitude estimate | **Priority: Medium-high (clarifies a key confound in RQ14/RQ4, does not directly resolve RQ4 itself)**
 
 ---
 
