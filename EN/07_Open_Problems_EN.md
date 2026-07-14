@@ -1,6 +1,6 @@
 # 07 — Open Research Questions
 
-**Last updated:** 2026-07-03 v1.7 (GEM derivation establishes A₂=0; P₃ gains theoretical magnitude support)
+**Last updated:** 2026-07-03 v1.8 (Candidate 6 formalized as partial-wave scattering; GEM-allowed channels excluded as Juno explanation)
 
 ---
 
@@ -500,7 +500,44 @@ Defining a potential Φ(δ) = −K·cosδ, the simplest jump condition is:
 
 **A new angle on Juno:** Perhaps the P₂/P₃ corrections should not be "additional terms added to a path integral," but rather a richer structure in the jump condition's potential function Φ(δ) itself (possibly non-analytic, possibly threshold-like) — this may be the same underlying idea as Candidate 5 (nonlinear coupling) and the lower-rated "Topology" entry in GPT's language table, worth re-evaluating.
 
-**Status:** Concept proposed and verified to reproduce the Anderson formula (P₁ term); the specific form of P₂/P₃ corrections under this framework not yet formalized or computationally tested | **Priority: Medium (novel concept, directly echoes DSN gap evidence, but requires formalization)**
+**Status:** Concept proposed and verified to reproduce the Anderson formula (P₁ term); now formalized as partial-wave scattering language (see 2026-07-03 update below), with P₂/P₃'s specific form given by GEM constraints, and a new round of testing against Juno completed | **Priority: High (formalized, and yields a decisive negative result that shrinks the search space)**
+
+---
+
+### 🆕 Candidate 6 formalized: partial-wave scattering language, GEM-allowed channels excluded as an explanation for Juno (2026-07-03)
+
+**Formalization:** Generalize the already-verified jump condition Φ₁(δ)=−K·cosδ so that each Legendre order l corresponds to an independent scattering channel:
+
+```
+Φ_l(δ) = -A_l·P_l(cosδ)
+ΔV_l/V∞ = A_l[P_l(cosδᵢ) - P_l(cosδₒ)]
+Total: ΔV/V∞ = Σ_l A_l[P_l(cosδᵢ) - P_l(cosδₒ)]
+```
+
+In scattering-matrix language: S_l=1 (identity) ↔ channel closed (A_l=0); S_l≠1 ↔ channel open. **This is not new free parameters repackaged — it directly inherits the hard constraints from the GEM derivation above (see the RQ14 addition), not fitted values:**
+
+```
+l=1: A₁=K (open, Anderson main term, verified)
+l=2: A₂=0 (closed, confirmed by the GEM derivation, not fitted)
+l=3: A₃ given by Iorio (2019)'s formula (open but suppressed, not freely fitted; magnitude in 05_Predictions_EN.md's P₃ section)
+l=4: expected closed by parity selection rule (even-order current multipoles don't exist)
+```
+
+**Key test: can the physically-constrained channels (only odd l=1,3 open) explain Juno?**
+
+Using Juno's corrected angles (δᵢ=+14.16°, δₒ=+39.40°):
+
+```
+l=1 channel contribution (A₁=K, theoretical): +5.988 mm/s (the amount that needs cancelling)
+l=3 channel contribution (A₃/A₁ in Iorio's range 0.0005–0.0033): +0.013 to +0.084 mm/s
+Gap: l=3 is 120–1200× too small, and same sign (adds, doesn't cancel)
+```
+
+**Conclusion: if scattering channels are restricted to GEM-allowed odd orders (l=1,3,5...), Juno's null result cannot be explained by internal cancellation within the framework.** This is the fourth test of "can Juno be separated by a single local/geometric quantity" to fail (following speed retardation, Cherenkov intensity, and real hyperbolic-trajectory jerk) — but this one carries more weight, because it fails under a framework with **no free parameters, strictly constrained by theory** (the earlier three failed in a relatively open parameter space; this one fails because theory itself forbids the needed magnitude).
+
+**Implication for the candidate list:** Any future attempt to "add a term that zeroes out Juno" must now contend with this constraint — A₂ and A₄ must be zero, and A₃'s amplitude is fixed by Iorio's formula, not freely adjustable. This shrinks the search space — genuine progress by elimination, not a standstill.
+
+**Status:** Candidate 6 formalized as a partial-wave scattering framework; GEM-allowed channels confirmed unable to explain Juno (a negative result that narrows the search space); Juno still requires a mechanism outside the framework (scattering off the background field Ψ_bg itself, Candidate 4's retarded tail term, or another as-yet-unidentified channel) | **Priority: High**
 
 ---
 
