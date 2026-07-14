@@ -1,8 +1,24 @@
 # 05 — Predictions (Sealed)
 
-**Last updated:** 2026-07-03 v1.7 (P₃ hypothesis gains GEM theoretical magnitude support)
+**Last updated:** 2026-07-03 v1.8 (added post-seal validity notice)
 **Sealed date:** 2026-06-28
 **Data source:** JPL Horizons (queried 2026-06-28)
+
+---
+
+## ⚠️ Post-seal Validity Notice (added 2026-07-03)
+
+**No sealed value below has been, or will be, modified — this is the core of the sealing principle and is not negotiable.**
+
+But in the interest of honest disclosure: the **assumptions underlying** some sealed predictions below have since been overturned or downgraded by later research:
+
+| Sealed content | Underlying assumption | Current status of assumption |
+|-----------------|------------------------|-------------------------------|
+| Candidate 7 topological criterion's prediction for JUICE (\|ΔV\|≈0) | Whether δ_peri crossing the 54.7356° node correctly classifies flybys | **Overturned** (2026-07-02; see 07_Open_Problems_EN.md — δ_peri contributed zero correct classifications across all 7 historical cases) |
+| \|P₂(cosδ_peri)\| criterion's predictions for JUICE and Europa Clipper | The |P₂(cosδ_peri)| vs \|ΔV\| correlation, r=0.852 | **Overturned** (2026-07-02; reconstruction gives r=0.082 or −0.863, inconsistent in direction with the original claim) |
+| P₃ correction term prediction | GEM-framework magnitude estimate | **Confidence upgraded** (2026-07-03, from pure speculation to a theoretically grounded estimate — see 07_Open_Problems_EN.md) |
+
+**What this means:** if the actual JUICE or Europa Clipper flyby matches the Candidate-7 or |P₂| sealed predictions, **this cannot be taken as validation of those criteria themselves** — the historical data foundation those criteria were built on is known to be compromised. Both sealed predictions remain valid and will still be checked against observation (the sealing principle requires this), but the **interpretation** of the outcome must account for this contamination, and a correct match should not be used to vindicate Candidate 7 or the original |P₂| criterion.
 
 ---
 
