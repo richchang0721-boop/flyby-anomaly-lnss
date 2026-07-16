@@ -1,6 +1,6 @@
 # 07 — Open Research Questions
 
-**Last updated:** 2026-07-14 v2.0 (RQ12 Route B attempt: m_eff-oscillation unification hypothesis for k/κ tested and excluded, narrows search space)
+**Last updated:** 2026-07-14 v2.1 (RQ12 Route B second attempt: Mexican-hat potential confirmed as parameter matching, v/λ unidentifiable)
 
 ---
 
@@ -396,6 +396,40 @@ Comparison:
 **Scoping, to avoid overclaiming:** This test only excludes the most direct literal version ("m_eff as a literal oscillation frequency"). The broader question of whether k and κ share some other unifying structure remains open — this specific attempt failed, not the general idea.
 
 **Status:** One concrete RQ12 Route B attempt completed and failed (a negative result with clear elimination power, not a vague abandonment); the broader k/κ unification possibility remains open; the origin of κ as the background field's intrinsic characteristic length is still unresolved | **Priority: Medium (narrows the search space, but the main question remains open)**
+
+---
+
+### 🆕 RQ12 Route B, another attempt: a Mexican-hat potential can fit m_eff, but v/λ/α are unidentifiable (2026-07-14)
+
+**Background:** Discussion with GPT explored writing Ψ_bg as an ultra-light scalar background field φ_bg, coupled to Earth's GEM vector field A_μ via a Higgs-portal-like mechanism, written as `[□+m_eff²(φ_bg)]A_μ=α(φ_bg)J_μ`. GPT proactively supplied a concrete potential to test this:
+
+```
+V(φ) = λ(φ²−v²)²/4    (Mexican-hat potential, standard symmetry-breaking form)
+Take v=1 eV, λ=7.533×10⁻²⁹
+→ ⟨φ⟩=v, m_eff=√V''(v)=1.227×10⁻¹⁴ eV
+```
+
+**Verification result: the math checks out.** Step-by-step verification with SymPy: V'(v)=0 (confirms v is genuinely a minimum, not an arbitrary substitution); V''(v)=2λv² (standard mass-squared definition); solving gives λ=7.5399×10⁻²⁹, a 0.09% relative difference from GPT's 7.533×10⁻²⁹ (rounding in intermediate steps, not an arithmetic error).
+
+**But GPT itself honestly flagged this as "parameter matching, not a first-principles derivation," and noted "α is not determined by V(φ); it requires an independent interaction term," and "the current framework does not yet provide a symmetry, boundary eigenvalue, or independent physical scale that uniquely fixes v, λ, and α" — these judgments were checked and confirmed correct, and quantified to show the severity:**
+
+```
+V(φ)=λ(φ²−v²)²/4 has two free parameters (v,λ) but only one number (m_eff)
+to fit — one equation, two unknowns, with infinitely many solutions:
+
+  v=1×10⁻³ eV → λ=7.540×10⁻²³  (still gives m_eff=1.228×10⁻¹⁴ eV)
+  v=1×10⁰  eV → λ=7.540×10⁻²⁹  (still gives m_eff=1.228×10⁻¹⁴ eV)
+  v=1×10³  eV → λ=7.540×10⁻³⁵  (still gives m_eff=1.228×10⁻¹⁴ eV)
+  v=1×10¹⁰ eV → λ=7.540×10⁻⁴⁹  (still gives m_eff=1.228×10⁻¹⁴ eV)
+```
+
+**v spans 13 orders of magnitude, with λ automatically compensating to always reproduce the same m_eff — a textbook case of parameter unidentifiability. Every (v,λ) pair is "mathematically correct," but none of them is a prediction — all are post-hoc fits.**
+
+**A methodological point worth recording on its own:** GPT's three self-assessments (parameter matching not derivation; α undetermined; no independent constraint exists) matched exactly what Claude confirmed and quantified after checking — a concrete instance of cross-model discussion operating per the project's established "Perspective Generator, not Truth Validator" principle. GPT did not declare victory upon producing a number that "looked right"; it proactively flagged its own limitations — this restraint is itself more worth recording than the proposal's content.
+
+**Conclusion: this path (φ_bg + Higgs-portal-style coupling) is currently not viable, in the same status as χ_boundary — the language is usable and mathematically self-consistent, but lacks a derivation path independent of the already-known answers (m_eff, B_main). Until v, λ, and α are given an independent physical origin, this framework cannot be used to explain any residual.**
+
+**Status:** Math verified but confirmed to be parameter matching, not derivation; v/λ unidentifiability quantitatively demonstrated; classified alongside χ_boundary and the Patrick tensor-field proposal as "unresolved degrees of freedom" | **Priority: Low (conceptual recording value only, not a usable tool, pending independent constraints before re-evaluation)**
 
 ---
 
