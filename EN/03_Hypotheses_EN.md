@@ -1,6 +1,6 @@
 # 03 — Hypotheses
 
-**Last updated:** 2026-06-28 v1.4
+**Last updated:** 2026-07-14 v1.6 (added citation check: Einstein's 1920 Leiden address cannot support Ψ_bg)
 
 ---
 
@@ -97,6 +97,28 @@ The background field wave number k = 1/B_main may arise from an interaction betw
 
 ---
 
+## Hypothesis: Excitable Medium as the Source of P₂/P₃ Correction Terms (2026-07-03)
+
+**Background:** An extension of the Kármán vortex street analogy (see the Chinese version, 03_Hypotheses.md, for the full vortex-street discussion) into a mathematically well-defined nonlinear-dynamics framework. Excitable media are a real, established scientific concept (FitzHugh-Nagumo model, Belousov-Zhabotinsky chemical oscillations, cardiac tissue electrical propagation are standard examples) — not a borrowed term from an unrelated field.
+
+**Defining features (all required):**
+1. Threshold behavior: below threshold, perturbations decay naturally; above threshold, triggers an **all-or-none** response of fixed strength
+2. Refractory period: after firing, the medium needs recovery time, during which further stimulation produces no response
+3. Propagation is a traveling wave at a fixed speed, not instantaneous field superposition
+
+**Structural tension with the framework's established results (recorded honestly, not avoided):**
+
+- **The Anderson formula (P₁ main term) is smooth and linear** — ΔV ∝ V∞ ∝ (cosδᵢ−cosδₒ), varying continuously — directly at odds with an "all-or-none" threshold response.
+- **The closed-orbit topological theorem** (★★★★★, the framework's strongest result) is proven via linear superposition of sinδ integrating to zero; a nonlinear excitable-medium system offers no guarantee of this clean cancellation.
+
+**A narrowed, potentially viable scope:** Keep P₁ on the existing linear GEM mechanism (now established via the GEM derivation, see 07_Open_Problems_EN.md "GEM derivation establishes A₂=0"), and restrict the excitable-medium idea to **P₂/P₃-type secondary corrections only**. This narrowed scope happens to fill an existing gap: the GEM derivation already showed A₂'s theoretical value is zero, meaning any real P₂ effect must come from "a mechanism outside the framework" — and excitable media are currently the only concretely proposed, mathematically well-defined candidate for that outside mechanism.
+
+**An untested but theoretically implied new falsifiable prediction:** If the excitable-medium hypothesis holds, the "refractory period" feature predicts that two flybys close together in time should show a weakened second signal (the medium still recovering). All 7 historical cases are years apart — this prediction has never been tested and there is currently no opportunity to test it; recorded as a condition that could be checked against a future closely-spaced flyby schedule.
+
+**Hypothesis grade: ★☆☆☆☆ (Conceptual, same tier as the Kármán vortex analogy; scope narrowed to P₂/P₃ to avoid conflict with the linear P₁ formula and the closed-orbit theorem)**
+
+---
+
 ## External Related Hypotheses (2026-06-28)
 
 ### E1: Galactic Center as Fermionic Dark Matter Core (Crespi et al. 2026)
@@ -128,3 +150,26 @@ Fermion mass estimate: ~10–100 keV/c²
 **Relevance to LNSS:** Dark energy decay does not affect B_main calculations — Λ's characteristic length scale is Gpc (10⁴⁰× too large, confirmed excluded in RQ11). However, if dark energy is a dynamic field (quintessence) rather than a constant, it could have spatial variations at sub-cosmological scales. This is a conceptual avenue worth tracking.
 
 **Hypothesis grade: ★☆☆☆☆ (externally related; scale mismatch too large)**
+
+---
+
+### 🆕 Citation Check: Einstein's 1920 Leiden Address Cannot Support Ψ_bg (2026-07-14)
+
+**Note on nature of this entry: not a new hypothesis, but a citation-verification record — to prevent this common misreading from being cited again in the future.**
+
+**A commonly cited claim:**
+> "According to the general theory of relativity, space without ether is unthinkable" — Albert Einstein, inaugural address at the University of Leiden, May 5, 1920, "Ether and the Theory of Relativity"
+
+**Verification result: the quote is accurate verbatim, but the very next sentence excludes the property Ψ_bg needs:**
+
+> "But this ether may not be thought of as endowed with the quality characteristic of ponderable media, as consisting of parts which may be tracked through time. **The idea of motion may not be applied to it.**"
+
+**The core mismatch: Einstein's "ether" = the general-relativistic metric field g_μν itself, with no independent dynamics, no trackable motion, no state of its own. This is the opposite of what Ψ_bg requires — an intrinsic characteristic length (B_main), local perturbability by Earth's rotation, and possibly a preferred CMB-dipole direction. Einstein explicitly excludes exactly the properties Ψ_bg structurally requires.**
+
+**Modern scholarly consensus (cited):**
+> "Einstein referred to the metric field g_μν itself—varying from place to place, determined by material phenomena, and never assignable to an independent state of motion...the ether that Einstein reintroduced differed fundamentally from the ether he had banished."
+> — from a commentary on the Weinstein controversy (arXiv:2510.03793, 2025)
+
+In other words: this lecture was a deliberate rhetorical repurposing of the word "ether" to mean "spacetime itself has physical qualities," not the reintroduction of an independent medium with its own dynamics that could be locally perturbed.
+
+**Disposition: this does not exclude the Ψ_bg concept itself** (background-field concepts remain fully legitimate in modern physics — see the dark energy/quintessence/Higgs-field discussion in section E2 above) — **it only excludes citing Einstein's 1920 lecture as physical support for Ψ_bg's existence.** This is a widely-circulated case of quoting only the first sentence while dropping the qualifying clause that follows; not an error specific to this framework, but worth recording to prevent reuse.

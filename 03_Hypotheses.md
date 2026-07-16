@@ -1,6 +1,6 @@
 # 03 — 假說架構
 
-**最後更新：** 2026-07-03 v1.6（新增激發介質假說；GPT review後移除ap最強信號標註、P₂模式加註GEM限定）
+**最後更新：** 2026-07-14 v1.7（新增文獻查核記錄：愛因斯坦1920萊頓演講不能佐證Ψ_bg）
 
 ---
 
@@ -299,3 +299,28 @@ RAR 模型預測三個物理區域：
 3. **結論**：暗費米子即使存在，在 B_main = 16,076 km 的尺度上表現為古典粒子，其集體引力效應等同於普通暗物質。不改變 RQ11 的計算結論（局部暗物質差 100 倍）。
 
 **需要持續追蹤：** 如果未來確認銀河系中心為費米子核心，且局部暗物質密度修正幅度接近 100 倍，則可能和 LNSS 框架的「差 100 倍」產生意外的關聯。目前純屬巧合觀察。
+
+---
+
+### 🆕 文獻查核記錄：愛因斯坦1920年萊頓演講不能當作Ψ_bg的佐證（2026-07-14）
+
+**性質說明：這不是新假說，是一次文獻查核記錄——防止未來重複引用同一個常見誤讀。**
+
+**常被引用的說法：**
+> 「根據廣義相對論，沒有以太的空間是不可想像的」——愛因斯坦，1920年5月5日萊頓大學就職演講《Ether and the Theory of Relativity》
+
+**查證結果：引言逐字準確，但緊接的下一句話排除了Ψ_bg需要的性質，原句是：**
+
+> "But this ether may not be thought of as endowed with the quality characteristic of ponderable media, as consisting of parts which may be tracked through time. **The idea of motion may not be applied to it.**"
+>
+> （這個以太不能被想成具有可稱重介質的性質、由可被追蹤運動的部分組成——「運動」這個概念不適用於它。）
+
+**核心矛盾：愛因斯坦的「以太」＝廣義相對論度規場g_μν本身，沒有獨立動力學、不能被追蹤運動、不能有自己的狀態變化。這跟Ψ_bg需要的性質——獨立特徵長度B_main、可被地球自轉局部擾動、可能有CMB方向偏好性——性質上是相反的。他明確排除的正是Ψ_bg結構上必須具備的東西。**
+
+**現代學界對此的共識（引用文獻）：**
+> "Einstein referred to the metric field g_μν itself—varying from place to place, determined by material phenomena, and never assignable to an independent state of motion...the ether that Einstein reintroduced differed fundamentally from the ether he had banished."
+> —— 引自對Weinstein爭議的評論文章（arXiv:2510.03793, 2025）
+
+意即：愛因斯坦這次演講是刻意把「以太」這個詞的意義掏空重填成「時空本身有物理性質」的修辭包裝，不是重新引入一個有自己動力學、可以被局部擾動的獨立介質。
+
+**處理方式：不排除Ψ_bg概念本身**（背景場概念在現代物理仍完全合法，見暗能量/quintessence/Higgs場相關討論，本文件E2一節已涉及），**只排除「引用愛因斯坦1920年演講當作Ψ_bg存在的物理支持」這個具體論證方式**——這是這句名言常見的斷章取義引用案例（只取第一句，略去限定條件），不是這個框架獨有的錯誤，但值得記錄下來避免未來重複引用。

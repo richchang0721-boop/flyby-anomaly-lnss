@@ -1,6 +1,6 @@
 # 07 — Open Research Questions
 
-**Last updated:** 2026-07-14 v1.9 (Candidate 4+6 mathematical unification recorded; χ_boundary flagged as unresolved degree of freedom)
+**Last updated:** 2026-07-14 v2.0 (RQ12 Route B attempt: m_eff-oscillation unification hypothesis for k/κ tested and excluded, narrows search space)
 
 ---
 
@@ -364,6 +364,38 @@ If Yukawa interpretation: m_eff = ℏk/c = 12.3 feV/c² (ultra-light boson, ~10�
 **Route B target:** Derive k from a candidate background field equation; compare to 6.22×10⁻⁸ m⁻¹.
 
 **Status:** Numerically determined; theoretical origin open | **Priority: High**
+
+---
+
+### 🆕 RQ12 Route B attempt: are k and κ two branches of the same dispersion relation? (2026-07-14)
+
+**Background:** While discussing with GPT whether Schrödinger/eigenvalue language could derive B_main, a structural check surfaced: the two existing field equations — background ∇²Ψ_bg+k²Ψ_bg=0 (positive sign, oscillatory solutions) and perturbation ∇²δΨ−κ²δΨ=S (negative sign, decaying K₁(κr) solutions) — are currently treated as sharing the same numerical value (k=κ=1/B_main), but have opposite signs, representing oscillatory vs. evanescent regimes. No document has ever given a common equation connecting the two.
+
+**Proposed unifying hypothesis:** If Ψ_bg satisfies a massive Klein-Gordon equation (∂²_t−c²∇²+(m_eff·c²/ℏ)²)Ψ=0, the static (ω=0, source-driven) limit naturally gives k²=−(m_eff·c/ℏ)², i.e. k becomes purely imaginary, k=iκ with κ=m_eff·c/ℏ — this is the standard derivation of the Yukawa screening solution, exactly matching δΨ's equation.
+
+**Connection to an existing result:** κ=m_eff·c/ℏ is the same formula already used earlier in RQ12 to compute m_eff=ℏκ/c=1.228×10⁻¹⁴ eV/c² (originally just a Yukawa-mass side note) — this isn't a new proposal; it connects two previously-computed but unconnected results.
+
+**Derived falsifiable prediction:** If this unification holds, the background field Ψ_bg can no longer be "uniform and static" — it must genuinely oscillate in time at frequency ω≈m_eff·c²/ℏ (a truly static massive KG field at ω=0 only yields decaying solutions, never the oscillatory ones the background equation requires). This ω implies a specific period, testable against known dynamical timescales in the system.
+
+**Calculation and test result:**
+
+```
+ω = m_eff·c²/ℏ = 18.66 rad/s
+Period T = 2π/ω = 0.3368 s
+
+Comparison:
+  vs. Earth's rotation period (86,164 s): shorter by 255,831×
+  vs. solar wind dynamic pressure variability (~1,800–36,000 s): shorter by 5,344–106,888×
+  vs. Juno's Doppler integration timescale (1,000 s, per Iorio 2019): shorter by 2,969×
+```
+
+**Conclusion: the T=0.34 s oscillation frequency matches no known physical dynamical timescale in the framework, off by at least three orders of magnitude in every comparison. The specific "background field oscillates at the m_eff-implied frequency" version of the unification hypothesis is excluded.**
+
+**Honest note on a process error:** In the first pass, Claude's comparison logic was wrong and incorrectly judged T to fall within the solar wind timescale range; this was caught on review and corrected — recorded here per the project's standing "errors are not hidden" principle.
+
+**Scoping, to avoid overclaiming:** This test only excludes the most direct literal version ("m_eff as a literal oscillation frequency"). The broader question of whether k and κ share some other unifying structure remains open — this specific attempt failed, not the general idea.
+
+**Status:** One concrete RQ12 Route B attempt completed and failed (a negative result with clear elimination power, not a vague abandonment); the broader k/κ unification possibility remains open; the origin of κ as the background field's intrinsic characteristic length is still unresolved | **Priority: Medium (narrows the search space, but the main question remains open)**
 
 ---
 
