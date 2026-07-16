@@ -1,6 +1,6 @@
 # 07 — Open Research Questions
 
-**Last updated:** 2026-07-03 v1.8 (Candidate 6 formalized as partial-wave scattering; GEM-allowed channels excluded as Juno explanation)
+**Last updated:** 2026-07-14 v1.9 (Candidate 4+6 mathematical unification recorded; χ_boundary flagged as unresolved degree of freedom)
 
 ---
 
@@ -538,6 +538,46 @@ Gap: l=3 is 120–1200× too small, and same sign (adds, doesn't cancel)
 **Implication for the candidate list:** Any future attempt to "add a term that zeroes out Juno" must now contend with this constraint — A₂ and A₄ must be zero, and A₃'s amplitude is fixed by Iorio's formula, not freely adjustable. This shrinks the search space — genuine progress by elimination, not a standstill.
 
 **Status:** Candidate 6 formalized as a partial-wave scattering framework; GEM-allowed channels confirmed unable to explain Juno (a negative result that narrows the search space); Juno still requires a mechanism outside the framework (scattering off the background field Ψ_bg itself, Candidate 4's retarded tail term, or another as-yet-unidentified channel) | **Priority: High**
+
+---
+
+### 🆕 Unifying Candidate 4 and Candidate 6: Non-Local Effective Action (2026-07-14)
+
+**Not a new candidate — a higher-level repackaging of two existing ones; this needs saying up front.**
+
+Discussion with GPT revealed that Candidate 4's (medium backreaction / MiSaTaQuWa) retarded tail term `a_μ(τ)=∫K_μν(τ,τ')u^ν(τ')dτ'` and Candidate 6's (jump conditions / scattering framework) path holonomy `B_hol=logP exp(∫_γ A)` are, structurally, the same mathematical object written two ways — Candidate 6's already-verified jump condition (depending only on boundary angles δᵢ, δₒ, not on the intermediate path) is the special "path-independent" case of this more general holonomy integral. Unified form:
+
+```
+S_eff = S_GR + S_LNSS
+S_LNSS = ∫d⁴x√(-g) R·F(□)R    (non-local kernel F(□), encodes Candidate 4's memory effect)
+B_main = B_local + B_hol + B_tail
+  B_local: local rotation/orbital term (known, given by GEM)
+  B_hol: holonomy accumulated along the path (Candidate 6's verified boundary jump is its special case)
+  B_tail: non-local history term (Candidate 4's retarded effect)
+```
+
+**Value of this unification:** not new physics, but the observation that two candidates already independently verified may not be independent hypotheses at all, but different facets of one underlying framework — Candidate 6's success on the P₁ term (exactly reproducing the Anderson formula) and Candidate 4's success explaining the DSN tracking-gap evidence may be the same thing showing up under different observational conditions.
+
+**🔴 A problem that must be flagged: χ_boundary is currently an unresolved degree of freedom, violating the already-established selection-rule principle**
+
+To keep any LNSS correction confined to flybys — not also showing up in GPS/LAGEOS/Gravity Probe B and other long-duration Earth-orbiting satellites' high-precision orbits (a real, serious physical constraint — past attempts at an "enhanced gravitomagnetic field" explanation failed precisely on this consistency issue) — the discussion introduced a boundary-activation function:
+
+```
+ΔΓ ∝ χ_boundary · H(γ) · f(Ω⊕, v∞, δ)
+```
+
+**χ_boundary currently has no specified form — it is a placeholder.** This runs directly into the principle just established via the partial-wave scattering formalization (see the Candidate 6 section above): any new degree of freedom needs a selection rule or theoretical origin, not a dial that gets turned on or off whenever convenient — the same risk category as the excluded "free P₁+P₂+P₃+P₄ fit (A₂=−25.4, unphysical)." This isn't new physics; it's an adjustable knob added to the model.
+
+**Until χ_boundary is given a concrete form (e.g., derived from GEM selection rules or Candidate 5's dynamic boundary-coupling mechanism) or explicitly excluded, this entire non-local action framework cannot be used to explain any residual — it remains at the level of unified mathematical language only.**
+
+**Suggested path forward (proposed by GPT, judged reasonable and adopted by Claude):**
+1. Layer 1: classical effective geometry `Γ̃=Γ+ΔΓ_LNSS`, test whether it fits all flyby data (especially Juno's residual) — but the χ_boundary problem must be resolved before this can actually be executed
+2. Layer 2: fiber/holonomy model, relating the effect to parallel transport along the entire path (Candidate 6's verified boundary jump is a special case of this layer)
+3. Layer 3: quantum-gravity origin — **only after the first two layers give stable predictions**; introducing this too early would make the model's burden of proof unmanageable
+
+Layer 3 (deeper quantum-gravity/fiber-structure origin) is not prioritized until the χ_boundary problem is resolved — deferred.
+
+**Status:** The Candidate 4+6 mathematical unification is recorded; χ_boundary flagged as an unresolved degree of freedom that blocks this framework from being used for any substantive explanation; the GPB/LAGEOS consistency check has been added to 06_Falsification_EN.md | **Priority: Medium (the unified view has recording value, but the framework cannot be used to explain residuals until χ_boundary is resolved)**
 
 ---
 

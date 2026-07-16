@@ -1,6 +1,6 @@
 # 06 — Falsification Conditions
 
-**Last updated:** 2026-07-03 v1.5 (corrected Juno GRACE figure, 10.4→6.0-6.3 mm/s)
+**Last updated:** 2026-07-14 v1.6 (added long-duration satellite consistency check)
 
 ---
 
@@ -17,6 +17,19 @@ A good scientific hypothesis must specify what observations would cause it to fa
 | Future coherent-tracking flyby (altitude < 2,000 km) shows no anomaly AND Anderson formula completely fails | Full framework failure | LNSS does not exist |
 | Anderson formula error > 10 mm/s in any flyby, unexplained by P₂ or Busack terms | Major revision required | Framework incomplete |
 | Juno's zero result fully explained by gravitational model errors (GRACE correction exactly matches the P₁ prediction, corrected 2026-07-02 to +6.0–6.3 mm/s, not the originally stated 10.4 mm/s — see 07_Open_Problems_EN.md) | LNSS explanation excluded | Shift to gravitational modeling error hypothesis |
+
+---
+
+## 🆕 Long-Duration Earth-Orbiting Satellite Consistency Check (added 2026-07-14)
+
+**Background:** A constraint raised while discussing Candidate 4/6's unified mathematical language (non-local effective action, fiber-connection correction) with GPT — recorded in 07_Open_Problems_EN.md. This is not a new speculation: past attempts to explain the flyby anomaly directly via an "enhanced gravitomagnetic field" have failed for exactly this reason — unless such a correction is sufficiently selective, it simultaneously predicts anomalies in other long-duration Earth-orbiting systems whose orbits have already been independently verified to high precision, with no such anomaly observed.
+
+| Condition | Interpretation |
+|-----------|-----------------|
+| Any proposed LNSS correction term (including the unified Candidate 4/6 non-local framework) predicts, in its given form, anomalies in Gravity Probe B, LAGEOS satellite laser ranging, GPS/GNSS precision orbit determination, or Lunar Laser Ranging (LLR) that conflict with existing high-precision observations | That form of the correction is excluded; a conditional switch (e.g. a boundary-activation function) must be added, and this switch must have a theoretical origin — it cannot be a freely-adjustable dial |
+| The Candidate 4/6 unified framework's χ_boundary (boundary-activation function), if ultimately shown to only be settable via "turn it on/off whenever needed" with no specific form derivable from GEM selection rules or another independent mechanism | The unified framework has no explanatory power; Candidates 4 and 6 revert to being treated as separate candidates, not a validated unified theory |
+
+**Status:** Recorded as a constraint; χ_boundary's specific form is currently unresolved (see 07_Open_Problems_EN.md), so this check cannot yet be executed — it awaits a concrete form for χ_boundary before it can actually be tested against long-duration satellite data | **Priority: Medium (an important consistency safeguard, but gated on resolving χ_boundary first)**
 
 ---
 
