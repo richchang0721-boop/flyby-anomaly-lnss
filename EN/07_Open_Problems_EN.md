@@ -1,6 +1,6 @@
 # 07 — Open Research Questions
 
-**Last updated:** 2026-07-14 v2.1 (RQ12 Route B second attempt: Mexican-hat potential confirmed as parameter matching, v/λ unidentifiable)
+**Last updated:** 2026-07-14 v2.2 (Candidate 6 supplement: coordinate-free geometric formulation of Anderson endpoint map, incl. pole-singularity correction)
 
 ---
 
@@ -604,6 +604,47 @@ Gap: l=3 is 120–1200× too small, and same sign (adds, doesn't cancel)
 **Implication for the candidate list:** Any future attempt to "add a term that zeroes out Juno" must now contend with this constraint — A₂ and A₄ must be zero, and A₃'s amplitude is fixed by Iorio's formula, not freely adjustable. This shrinks the search space — genuine progress by elimination, not a standstill.
 
 **Status:** Candidate 6 formalized as a partial-wave scattering framework; GEM-allowed channels confirmed unable to explain Juno (a negative result that narrows the search space); Juno still requires a mechanism outside the framework (scattering off the background field Ψ_bg itself, Candidate 4's retarded tail term, or another as-yet-unidentified channel) | **Priority: High**
+
+---
+
+### 🆕 Candidate 6 supplement: Coordinate-Free Geometric Formulation of the Anderson endpoint map (2026-07-14)
+
+**Nature of this entry: this is the formal geometric language for the Anderson/GEM result, not a new mechanism, and it does not explain Juno.**
+
+**Layer 1 — established, zero free parameters, ready for formal adoption:**
+
+```
+M = S² × S²                    (space of incoming/outgoing asymptotic velocity directions)
+G = SO(2)                       (rotational symmetry about Earth's spin axis Ω̂)
+P⊥ = I − Ω̂Ω̂ᵀ                   (equatorial-plane projection operator)
+u(v̂) = ‖P⊥v̂‖ = cosδ            (SO(2) invariant: the projected length in the equatorial plane)
+
+F(v̂ᵢ, v̂ₒ) = K[u(v̂ᵢ) − u(v̂ₒ)] = K(cosδᵢ − cosδₒ)   (exactly reproduces the Anderson formula)
+```
+
+**A geometric detail corrected mid-discussion (recorded honestly):** Claude initially described cosδ as "the inner product of the velocity direction with the rotation axis" — this was wrong, confirmed by numerical verification. The correct relations are **Ω̂·v̂=sinδ** (axial component) and **‖P⊥v̂‖=cosδ** (equatorial-plane projected length). Corrected after GPT flagged it and Claude verified numerically (see below).
+
+**A technical detail (contributed by GPT, verified by Claude):** u=cosδ has a cone-point singularity at the poles (v̂=±Ω̂) — u→0 there, but the gradient direction depends on the direction of approach, so it has no well-defined tangent direction at the poles (numerical check: u/angular-distance→1, matching the classic √(x²+y²) cone-point signature). This has no practical effect on the existing 7 flyby cases (none has an asymptotic direction near the geographic poles), but the documentation should not claim "ω₀=Kdu is a smooth 1-form defined on all of S²." **Adopting GPT's more rigorous suggestion: use the direct pairwise endpoint map F(v̂ᵢ,v̂ₒ) instead of introducing 1-form/path-integral language** — this is closer to the physical fact that the Anderson formula only cares about the two endpoints and requires no assumed path between them.
+
+**Layer 2 — open extension, explicitly unresolved, but more precisely locates the gap than χ_boundary/V(φ):**
+
+To accommodate environment-dependence (solar wind, magnetic axis direction, etc.), one can generalize to a path-integral form and restrict the possible coupling terms using SO(2) invariants:
+
+```
+I₁=Ω̂·v̂,  I₂=m̂·v̂ (magnetic axis),  I₃=ŝ·v̂ (solar wind direction),  I₄=Ω̂·(m̂×v̂)
+
+ΔV∞/V∞ = ∫_γ ω,   ω = K du + c₁I₂dP_dyn + c₂I₃dB_z + c₃I₄du + ...
+```
+
+This narrows "an arbitrary function A_a(u,e)" down to "a finite set of coefficients constrained by SO(2) symmetry" — more constrained than an arbitrary function, but the coefficients c₁,c₂,c₃ remain unknown, not derived from independent physical principles. **With n=7, a responsible fit can accommodate at most ~1 additional parameter, or risks repeating the overfitting seen in the RQ4/Juno multipole fit (A₂=−25.4, "unphysical").**
+
+**Explicit disclaimer (adopting GPT's proposed wording): no explicit connection one-form or environment-dependent coupling has yet been derived. The extension presently identifies the mathematical location of the missing physics, but does not solve it.**
+
+**Comparison with χ_boundary and V(φ):** the unknown A_a (or c₁,c₂,c₃) is the same category of gap as the unknown χ_boundary and the unknown V(φ) — different notation, same substance: all are missing a concrete function/coefficient fixed by an independent physical principle. The difference here is that the SO(2)-invariant truncation adds a layer of symmetry constraint beyond a fully arbitrary function — a relatively more constrained instance of the same open problem.
+
+**What this round actually delivers:** not "geometry has explained the flyby anomaly," but that the Anderson P₁ term has been formally placed inside a well-defined axisymmetric geometric framework (zero free parameters, Layer 1), while the new physics Juno requires has been precisely located at "a non-endpoint, non-exact, path-dependent structure" (Layer 2, still unresolved) — genuine progress, without packaging an unknown as an answer.
+
+**Status:** Layer 1 (geometric reformulation) established, recommended for formal adoption; Layer 2 (environment-dependent extension) has its location pinpointed but coefficients unresolved, same category as χ_boundary | **Priority: Layer 1 high (usable now); Layer 2 low (pending independent constraints)**
 
 ---
 
