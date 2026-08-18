@@ -86,6 +86,18 @@ def declination_position(row):
     return math.degrees(math.asin(row["z"] / row["r"]))
 
 
+def ra_position(row):
+    """位置赤經 (度, 0-360)：atan2(y,x)"""
+    ra = math.degrees(math.atan2(row["y"], row["x"]))
+    return ra % 360
+
+
+def ra_velocity(row):
+    """速度方向赤經 (度, 0-360)：atan2(vy,vx)"""
+    ra = math.degrees(math.atan2(row["vy"], row["vx"]))
+    return ra % 360
+
+
 def declination_velocity(row):
     """速度赤緯 (度)：arcsin(vz/|v|)"""
     vmag = math.sqrt(row["vx"] ** 2 + row["vy"] ** 2 + row["vz"] ** 2)
@@ -113,6 +125,57 @@ def find_asymptote_window(rows, idx_perigee, direction, window_days=1, step_per_
     else:
         i = min(n - 1, idx_perigee + window_days * step_per_day)
     return rows[i]
+
+
+def find_asymptote_auto(rows, idx_perigee, direction, step_per_day=1440, min_days_from_perigee=3):
+    """自動偵測漸近段收斂點:在遠離近地點(min_days_from_perigee天以上)的區域,
+    找逐日赤緯變化量(|dδ/dt|)最小的那一天,回傳該日的完整row。
+    這取代了先前用肉眼判斷"哪天看起來穩定"的做法,結果可重現、不依賴人工判斷。
+    """
+    n = len(rows)
+    min_offset = min_days_from_perigee * step_per_day
+
+    if direction == "in":
+        candidates = list(range(0, max(0, idx_perigee - min_offset), step_per_day))
+    else:
+        candidates = list(range(idx_perigee + min_offset, n, step_per_day))
+
+    if len(candidates) < 2:
+        # 資料不夠遠離近地點,退回邊界點並標記低信心
+        idx = candidates[0] if candidates else (0 if direction == "in" else n - 1)
+        return rows[idx], "low_confidence_insufficient_range"
+
+    best_idx = None
+    best_slope = None
+    for i in range(len(candidates) - 1):
+        idx_a, idx_b = candidates[i], candidates[i + 1]
+        d_a = declination_velocity(rows[idx_a])
+        d_b = declination_velocity(rows[idx_b])
+        slope = abs(d_b - d_a)
+        if best_slope is None or slope < best_slope:
+            best_slope = slope
+            best_idx = idx_a
+
+    confidence = "high" if best_slope < 0.05 else ("medium" if best_slope < 0.3 else "low")
+    return rows[best_idx], confidence
+
+
+def extract_asymptotes(rows, idx_perigee, **kwargs):
+    """自動抽取入射/出射漸近段的完整資訊(δ, RA, V∞),回傳dict"""
+    row_in, conf_in = find_asymptote_auto(rows, idx_perigee, "in", **kwargs)
+    row_out, conf_out = find_asymptote_auto(rows, idx_perigee, "out", **kwargs)
+    return dict(
+        delta_i_deg=round(declination_velocity(row_in), 4),
+        ra_i_deg=round(ra_velocity(row_in), 4),
+        v_inf_i_kms=round(speed(row_in), 4),
+        delta_i_date=row_in["date"],
+        delta_i_confidence=conf_in,
+        delta_o_deg=round(declination_velocity(row_out), 4),
+        ra_o_deg=round(ra_velocity(row_out), 4),
+        v_inf_o_kms=round(speed(row_out), 4),
+        delta_o_date=row_out["date"],
+        delta_o_confidence=conf_out,
+    )
 
 
 def daily_declination_trend(rows, step_per_day=1440):
@@ -161,10 +224,13 @@ def reconstruct_flyby(filepath, official_alt_km=None, name=None):
         perigee_altitude_km=round(peri["r"] - R_EARTH_KM, 2),
         perigee_speed_kms=round(speed(peri), 4),
         delta_peri_position_deg=round(declination_position(peri), 4),
+        ra_peri_position_deg=round(ra_position(peri), 4),
         delta_peri_velocity_deg=round(declination_velocity(peri), 4),
+        ra_peri_velocity_deg=round(ra_velocity(peri), 4),
         daily_trend=daily_declination_trend(rows),
         reconstructed_at=datetime.now(timezone.utc).isoformat(),
     )
+    result.update(extract_asymptotes(rows, idx))
 
     if official_alt_km is not None:
         result["altitude_validation"] = validate_perigee_altitude(

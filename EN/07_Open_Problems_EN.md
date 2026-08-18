@@ -1,6 +1,6 @@
 # 07 — Open Research Questions
 
-**Last updated:** 2026-07-14 v2.2 (Candidate 6 supplement: coordinate-free geometric formulation of Anderson endpoint map, incl. pole-singularity correction)
+**Last updated:** 2026-07-14 v2.3 (reconstruct.py extended with RA output + auto asymptote detection; I2/I3 invariant tests negative)
 
 ---
 
@@ -645,6 +645,26 @@ This narrows "an arbitrary function A_a(u,e)" down to "a finite set of coefficie
 **What this round actually delivers:** not "geometry has explained the flyby anomaly," but that the Anderson P₁ term has been formally placed inside a well-defined axisymmetric geometric framework (zero free parameters, Layer 1), while the new physics Juno requires has been precisely located at "a non-endpoint, non-exact, path-dependent structure" (Layer 2, still unresolved) — genuine progress, without packaging an unknown as an answer.
 
 **Status:** Layer 1 (geometric reformulation) established, recommended for formal adoption; Layer 2 (environment-dependent extension) has its location pinpointed but coefficients unresolved, same category as χ_boundary | **Priority: Layer 1 high (usable now); Layer 2 low (pending independent constraints)**
+
+---
+
+### 🆕 Candidate 6 Layer 2: I₂ (magnetic axis) and I₃ (solar wind direction) invariant tests — pipeline extension + negative result (2026-07-14)
+
+**Pipeline extension:** `reconstruct.py` now outputs right ascension (RA) in addition to declination, and auto-detects the asymptote convergence point (minimum day-to-day declination change) instead of relying on manual inspection — a genuine methodological improvement. Re-running all 7 cases reproduced the previously manually-determined δᵢ, δₒ closely (differences <0.15°, 6/7 "high confidence").
+
+**Test results (exact permutation test, n=7):**
+
+| Invariant | r | p | Conclusion |
+|-----------|---|---|------------|
+| ap (prior result) | −0.576 | 0.038 | Superficially significant, but driven entirely by the Cassini+Juno outliers; the 5 "clean" cases (residual <0.25 mm/s) reverse sign (r=+0.377) |
+| I₂ (magnetic axis) | +0.450 | 0.306 | Not significant |
+| I₃ (solar wind direction) | +0.519 | 0.233 | Not significant |
+
+**Conclusion:** Neither I₂ nor I₃ shows a significant signal — this narrows Candidate 6 Layer 2's search space; the three most intuitive candidate invariants (ap, magnetic axis, solar wind direction) cannot simply explain the P₁ residuals (especially Cassini and Juno, the dominant residual sources).
+
+**Honest scoping:** Only linear correlations of I₂, I₃ individually were tested — I₄=Ω̂·(m̂×v̂) and interaction terms remain untested; n=7's statistical power ceiling is low, so "not significant" does not mean "definitely unrelated," only that current data doesn't support these three simple linear hypotheses; I₃ used a simplified solar ephemeris formula (not precision-grade), I₂ used a linearly-interpolated historical geomagnetic pole table — sufficient for screening, not sealed-prediction quality.
+
+**Status:** Pipeline extension complete (RA output, auto asymptote detection) — supports future invariant testing; I₂, I₃ individually tested as negative; I₄ pending | **Priority: Medium (the pipeline itself is a durable asset; specific invariant tests currently narrow but haven't broken through)**
 
 ---
 

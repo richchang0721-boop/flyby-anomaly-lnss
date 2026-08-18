@@ -1,6 +1,6 @@
 # 01 — Observational Data
 
-**Last updated:** 2026-07-02 v1.6 (all 7 historical flyby angles reconstructed via JPL Horizons, replacing original estimates)
+**Last updated:** 2026-07-14 v1.7 (added Juno flyby-day safe-mode operational note, not a physical mechanism)
 
 ---
 
@@ -113,3 +113,18 @@ Source: https://omniweb.gsfc.nasa.gov/form/dx1.html — OMNI2 daily, ap index + 
 - Anderson formula prediction accuracy with the new angles (re-verified 2026-07-02): Galileo I/II, NEAR, Messenger errors <0.2 mm/s; Rosetta I ~0.2mm/s; Cassini ~1mm/s (but the observed value itself is disputed in the literature); **Juno now predicts +5.99~6.34 mm/s (not the old 10.4 mm/s), closely matching Acedo (2017)'s independently computed 6.3355 mm/s**
 - Juno's residual is now corrected to approximately **−6.0 to 6.3 mm/s** (the previously recorded −10.4 mm/s was computed from erroneous angles and has been corrected)
 - Messenger's null result comes from geometric symmetry in the orbit design (δᵢ ≈ −δₒ; the new angles show even better symmetry than the old ones: 32.2° vs 32.91°), not identical in origin to Juno's null result
+
+---
+
+## 🆕 Juno Flyby-Day Operational Note (2026-07-14, not a physical mechanism record)
+
+**Background:** While checking whether October 9, 2013 (Juno's Earth flyby date) coincided with a notable astronomical event (e.g., a planetary alignment), no record of a "six-planet alignment" or similar configuration was found (checked against NASA's official releases, astronomy calendars, and contemporary news coverage). However, this check surfaced a real operational event not previously recorded in this project's documents:
+
+**Shortly after completing the Earth flyby, Juno entered a precautionary safe mode after detecting an "anomalous condition"** — the mission team publicly confirmed at the time that this was the first time Juno had ever entered safe mode. Source: contemporary NASA/JPL news coverage (space.com, Universe Today, October 2013).
+
+**Explicit scoping, to prevent misreading:**
+- **This is not part of the ΔV velocity anomaly.** It was a spacecraft self-protection mechanism triggered by the craft's own systems detecting an anomalous condition (similar in nature to a sensor reading out of expected range or an attitude-control issue) — a different category of event from the Doppler-tracked orbital velocity discrepancy.
+- **No literature was found connecting this safe-mode event to the flyby anomaly's ΔV measurement.** The relationship between the two, if any, is unknown; this is recorded purely for data completeness, not to imply a suspected causal link.
+- If anyone wants to investigate this direction in the future, the correct next step is checking whether NASA/JPL ever published a technical report on the safe-mode trigger cause — not assuming a connection exists beforehand.
+
+**Status:** Purely an operational-context record, not a physical-mechanism hypothesis; no known connection to the ΔV anomaly found | **Priority: Low (data-completeness purpose only)**
