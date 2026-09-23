@@ -178,5 +178,71 @@
     "Rosetta II/III、EPOXI I-III六筆數據尚未正式納入(來源: Jouannic 2015, Acedo 2017)",
     "JUICE的|P2(cosδ_peri)|因位置/速度定義分歧而數值差異大(0.7867 vs 0.9986)，兩者皆遠高於臨界值0.06但強度估計不同",
     "I2(磁軸)、I3(太陽風方向)不變量已測試,與P1殘差相關性均不顯著(I2: r=+0.450,p=0.306; I3: r=+0.519,p=0.233)——候選6第二層(SO(2)不變量截斷展開)的搜索範圍進一步收斂;I4(Ω̂·(m̂×v̂))尚未測試;I3使用簡化太陽日心黃經公式(非精確星曆),I2使用線性內插地磁極位置,精度足供篩選但非sealed-prediction等級"
-  ]
+  ],
+  "JUICE_2026_boundary_conditions": {
+    "purpose": "05a Section 4 / 5.4 environmental boundary conditions — record only, not a prediction",
+    "source_files": {
+      "juice": "data/raw/Juice_horizons_results_min.txt",
+      "moon": "data/raw/Moon_2026Sep_horizons_geocentric.txt",
+      "sun": "data/raw/Sun_2026Sep_horizons_geocentric.txt"
+    },
+    "horizons_ref_frame": {
+      "juice": "ICRF",
+      "moon": "ICRF",
+      "sun": "ICRF"
+    },
+    "horizons_center": {
+      "juice": "Earth (399)                     {source: DE441}",
+      "moon": "Earth (399)                     {source: DE441}",
+      "sun": "Earth (399)                     {source: DE441}"
+    },
+    "query_step": {
+      "juice": "1 minutes",
+      "moon": "1 minutes",
+      "sun": "1 minutes"
+    },
+    "perigee_time_tdb": "A.D. 2026-Sep-28 11:46:00.0000",
+    "perigee_time_utc_approx": "2026-09-28 11:44:50 (TT−UTC = 69.184 s)",
+    "perigee_altitude_km_crosscheck": 8645.5,
+    "perigee_speed_kms_crosscheck": 13.1233,
+    "full_moon_definition": "geometric geocentric ecliptic longitude difference = 180° (no light-time/aberration)",
+    "full_moon_search_window_tdb": [
+      "2026-09-24 00:00:00",
+      "2026-10-01 00:00:00"
+    ],
+    "full_moon_times_found_tdb": [
+      "2026-09-26 16:50:48"
+    ],
+    "nearest_full_moon_tdb": "2026-09-26 16:50:48",
+    "hours_from_full_moon_to_perigee": 42.92,
+    "sun_earth_moon_elongation_deg": 156.683,
+    "lunar_phase_angle_deg": 23.261,
+    "lunar_illuminated_fraction": 0.9594,
+    "earth_moon_distance_km": 373532.1,
+    "earth_sun_distance_km": 149901355.0,
+    "moon_ra_deg": 24.2886,
+    "moon_dec_deg": 14.867,
+    "sun_ra_deg": 184.5928,
+    "sun_dec_deg": -1.9875,
+    "angle_moon_vs_perigee_position_deg": 121.485,
+    "angle_moon_vs_perigee_velocity_deg": 147.917,
+    "angle_sun_vs_perigee_position_deg": 81.207,
+    "angle_sun_vs_perigee_velocity_deg": 8.861,
+    "tidal_accel_at_perigee_note": "Newtonian third-body differential acceleration; assumed absorbed by conventional OD (05a §5.1). Record only.",
+    "tidal_accel_moon_m_s2": 1.867828e-06,
+    "tidal_accel_sun_m_s2": 6.12038e-07,
+    "tidal_accel_total_m_s2": 2.249518e-06,
+    "tidal_accel_total_radial_m_s2": -7.37043e-07,
+    "tidal_accel_total_along_velocity_m_s2": 2.116439e-06,
+    "gm_constants_used": {
+      "moon": 4902.800118,
+      "sun": 132712440041.0,
+      "status": "to be verified against DE440 and moved to constants.py"
+    },
+    "earth_rotation_angle_deg": 183.1372,
+    "gmst_deg": 183.4798,
+    "gmst_note": "IAU 2006, UT1 ≈ UTC",
+    "computed_at": "2026-09-23T04:19:11.203607+00:00",
+    "warnings": []
+  }
 }
