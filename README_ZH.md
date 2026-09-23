@@ -42,7 +42,7 @@ Mao Lin Chang，研究過程中以 GPT（OpenAI）與 Claude（Anthropic）作�
 
 **即將到來的可證偽測試：**
 - **JUICE 飛掠，2026-09-28/29** 與 **Europa Clipper 飛掠，2026-12-03**——密封預測見 `05_Predictions.md`，在觀測結果公布前寫定，事後不得修改。
-- **JUICE 預先登記邊界條件**見 `05a_JUICE_2026_Boundary_Conditions.md`——近地點時刻的日—地—月幾何（滿月後約兩天）、預先宣告的輔助項，以及常規定軌（OD）後若出現殘差時的解讀規則。於近地點前 commit，不修改密封預測。
+- **JUICE 預先登記邊界條件**見 [`05a_JUICE_2026_Boundary_Conditions.md`](https://github.com/richchang0721-boop/flyby-anomaly-lnss/blob/dd6ec21db989b37528141de7911db8289dc525d3/05a_JUICE_2026_Boundary_Conditions.md)——近地點時刻的日—地—月幾何（滿月後約兩天）、預先宣告的輔助項，以及常規定軌（OD）後若出現殘差時的解讀規則。已凍結於 commit [`dd6ec21`](https://github.com/richchang0721-boop/flyby-anomaly-lnss/tree/dd6ec21db989b37528141de7911db8289dc525d3)（2026-09-23，近地點前），不修改密封預測。
 ---
 
 ## 檔案結構
