@@ -42,8 +42,7 @@ Mao Lin Chang, in collaboration with GPT (OpenAI) and Claude (Anthropic) as rese
 
 **Upcoming falsifiable tests:**
 - **JUICE flyby, 2026-09-28/29** and **Europa Clipper flyby, 2026-12-03** — sealed predictions in `05_Predictions.md`, written before the observations, not to be modified afterward.
-- **JUICE pre-registered boundary conditions** in `05a_JUICE_2026_Boundary_Conditions.md` — Sun–Earth–Moon geometry at perigee (~2 days after full Moon), pre-declared auxiliary terms, and the interpretation rule for any post-OD residual. Committed before perigee; does not modify the sealed prediction.
-
+- **JUICE pre-registered boundary conditions** in [`05a_JUICE_2026_Boundary_Conditions.md`](https://github.com/richchang0721-boop/flyby-anomaly-lnss/blob/dd6ec21db989b37528141de7911db8289dc525d3/EN/05a_JUICE_2026_Boundary_Conditions_EN.md) — Sun–Earth–Moon geometry at perigee (~2 days after full Moon), pre-declared auxiliary terms, and the interpretation rule for any post-OD residual. Frozen at commit [`dd6ec21`](https://github.com/richchang0721-boop/flyby-anomaly-lnss/tree/dd6ec21db989b37528141de7911db8289dc525d3) (2026-09-23, before perigee); does not modify the sealed prediction.
 ---
 
 ## Repository Structure
