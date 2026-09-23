@@ -42,6 +42,7 @@ Mao Lin Chang, in collaboration with GPT (OpenAI) and Claude (Anthropic) as rese
 
 **Upcoming falsifiable tests:**
 - **JUICE flyby, 2026-09-28/29** and **Europa Clipper flyby, 2026-12-03** — sealed predictions in `05_Predictions.md`, written before the observations, not to be modified afterward.
+- **JUICE pre-registered boundary conditions** in `05a_JUICE_2026_Boundary_Conditions.md` — Sun–Earth–Moon geometry at perigee (~2 days after full Moon), pre-declared auxiliary terms, and the interpretation rule for any post-OD residual. Committed before perigee; does not modify the sealed prediction.
 
 ---
 
@@ -55,6 +56,7 @@ LNSS/
 ├── 03_Hypotheses.md                  ← the Perturbation Model, candidate mechanisms
 ├── 04_Mathematics.md                 ← derivations: Anderson formula, closed-orbit theorem, etc.
 ├── 05_Predictions.md                 ← sealed predictions for upcoming flybys (immutable once sealed)
+├── 05a_JUICE_2026_Boundary_Conditions.md ← pre-registered environmental conditions for JUICE (immutable once committed)
 ├── 06_Falsification.md               ← what observations would refute this framework
 ├── 07_Open_Problems.md               ← research questions, candidate mechanisms, current priorities
 ├── Appendix_Data.md                  ← constants, symbols, full historical data table, references
